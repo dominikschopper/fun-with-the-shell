@@ -1,0 +1,2771 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+        <meta charset="utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="expires" content="0">
+
+
+        <link rel="stylesheet" href="../jmpress/bootstrap.min.css" />
+        <link rel="stylesheet" href="../font-awesome-4.2.0/css/font-awesome.css" />
+
+        <link href="../jmpress/basic-animations.css" rel="stylesheet"/>
+
+
+        <link href="./css/linux.css" rel="stylesheet" />
+        <link href="../highlight/styles/github.css" rel="stylesheet"/>
+
+        <script type="text/javascript" src="../jmpress/jquery.js"></script>
+        <script src="../jmpress/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../jmpress/bootstrap.min.js"></script>
+        <script src="../highlight/highlight.pack.js"></script>
+
+        <script type="text/javascript" src="../jmpress/jmpress.js"></script>
+        <script type="text/javascript" src="../jmpress/jmpress.all.js"></script>
+
+        <script type='text/javascript' src='../jmpress/jsvt.js'></script>
+        <script type='text/javascript' src='../jmpress/scriptreplay.js'></script>
+
+        <script type="text/javascript" src="../jmpress/plugins/presentations.jmpress.js"></script>
+
+        <title>Linux Introduction</title>
+        <meta name="date" content="2014-08-27"/>
+        <meta name="author" content="Dominik Schopper"/>
+        <meta name="author" content="Peter Grund"/>
+
+    </head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#/start" class="navbar-brand"><i class="fa fa-lg fa-home" title="Start"></i></a>
+                </div>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#/chaplinux">Linux</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bash<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/explore">Explore the system</a></li>
+                                <li><a href="#/files">File Manipulation</a></li>
+                                <li><a href="#/rights">Access Rights</a></li>
+                                <li><a href="#/interpretation"><i class="fa fa-thumb-tack text3"></i> Command Substitution</a></li>
+                                <li><a href="#/inputoutput">Input/Output Streams</a></li>
+                                <li><a href="#/jobcontrol">Shell Job Control</a></li>
+                                <li><a href="#/config">Configuration</a></li>
+                                <li><a href="#/admin">Administration</a></li>
+                                <li><a href="#/help">Help</a></li>
+                            </ul>
+                        </li>
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filtering<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/moreless">view content</a></li>
+                                <li><a href="#/grep">search for content</a></li>
+                                <li><a href="#/sed">search and replace</a></li>
+                                <li><a href="#/tr">transform text</a></li>
+                                <li><a href="#/cut">cut by columns</a></li>
+                                <li><a href="#/awk">complex matching</a></li>
+                                <li><a href="#/wc">counting</a></li>
+                            </ul>
+                        </li>
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+								<li><a href="#/tools-find">find</a></li>
+                                <li><a href="#/tools-screen">screen</a></li>
+							</ul>
+						</li>
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Editors<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/vi">vi</a></li>
+                                <li><a href="#/emacs">emacs</a></li>
+                                <li><a href="#/otherEditor">smaller ones</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bash Scripting<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/scriptintro">Definition</a></li>
+                                <li><a href="#/shabang">Sha-Bang</a></li>
+                                <li><a href="#/scriptbasics">Basics</a></li>
+                                <li><a href="#/scripttests">Tests</a></li>
+                                <li><a href="#/scriptloops">Loops</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assignments<b class="caret"></b></a>
+                            <ul id="assignmentList" class="dropdown-menu">
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right fa-lg">
+                        <li>
+                            <a target="_blank" id="print" title="print">
+                                <i class="fa fa-print"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="breakbutton" title="break">
+                                <i class="fa fa-coffee"></i>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="https://github.com/pgrund/presentations" title="source">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div id="break" class="modal fade" data-show="false" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-header">
+                    <button class="close btn" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title">Break</h3>
+                </div>
+                <div class="modal-content">
+                    <div id="counter"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="solution" class="modal fade" data-show="false" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-header">
+                    <span class="close">
+                        <i id="play" class="fa fa-play"></i>
+                        <i id="stop" class="fa fa-stop"></i>
+                    </span>
+                    <h3 class="modal-title">
+                     Solving <span id="currentlySolving">Assignments ...</span>
+                    </h3>
+                </div>
+                <div class="modal-content">
+
+                    <div id="term" class="model-cont"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="impress">
+            <div id="start" class="step slide title" data-x="-1200">
+                <header>
+                    <h2>Linux - an introduction</h2>
+                    <p>&nbsp;</p>
+                </header>
+            </div>
+            <div id="linuxmovie" class="step" data-x="-2200" data-rotate-z="90">
+                <div id="ytplayer">
+                </div>
+                <p class="visible-print-block text-center">
+                    <i class="fa fa-youtube fa-3x"></i><br/>
+                    see video<br/>
+                    <!--a href="http://www.youtube-nocookie.com/embed/YqqkdgE8RpM"><em>Codename: Linux</em></a-->
+                    <a href="https://archive.org/download/codename_gnu_linux/codename_gnu_linux.avi"><em>Codename: Linux</em></a>
+                </p>
+            </div>
+
+            <div id="chaplinux" class="step slide chapter" >
+                <header>Linux OS</header>
+                <footer></footer>
+            </div>
+            <div id="unix" class="step" data-z="-1000" data-rotate-x="90" data-view-port-zoomable="10" data-view-port-max-scale="4">
+                <header>Unix Development</header>
+                <img src="http://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" />
+            </div>
+            <div id="linux" class="step slide" data-x="1500">
+                <header>Linux</header>
+                <i class="fa fa-linux fa-5x pull-right"></i>
+                <blockquote>
+                        Linux is a <em>Unix</em>-like and mostly <a href="http://en.wikipedia.org/wiki/POSIX" target="_blank">POSIX-compliant</a> <em>computer operating system</em> assembled under the model of <em>free</em> and <em>open source</em> software development and distribution ...
+
+                    <small class="text-right">
+                        <a href="http://en.wikipedia.org/wiki/Linux">Wikipedia</a>
+                    </small>
+                </blockquote>
+                <br class="clearfix"/>
+                <p>main principals:</p>
+                <ul class="agenda item">
+                    <li>
+                    <em>everything</em> is a file (directories, hardware[-access], ...)</li>
+                    <li>
+                    <em>One</em> tool for <em>ONE</em> task
+                    </li>
+                    <li>
+                    ... <em>pipe</em> input/output of tools
+                    </li>
+                </ol>
+                <footer></footer>
+            </div>
+            <div id="foss" class="step" data-x="1500" data-z="-1000" data-rotate-x="90">
+                <header class="akzent1">Opensource</header>
+                <blockquote>
+                        <em>Open-source software</em> (OSS) is computer software with its source code made available with a license in which the copyright holder provides the rights to study, change and distribute the software to anyone and for any purpose.<br/>
+                        Open-source software is very often <em>developed in a public, collaborative manner</em>.<br/>
+                         Open-source software is the most prominent example of open-source development and often compared to (technically defined) user-generated content or (legally defined) open-content movements.
+                         <small class="text-right">
+                            <a href="http://en.wikipedia.org/wiki/Open_source_software" target="_blank">Wikipedia</a><br/>
+                        </small>
+                </blockquote>
+                <header class="akzent2">Free</header>
+                <blockquote>
+                         ... is computer software that gives users the freedom to <em>run</em> the software <em>for any purpose as well as to study, modify, and distribute</em> the original software and the adapted versions.<br/>
+                         The rights to study and modify free software imply unfettered <em>access to its source code</em>. For computer programs which are covered by copyright law this is achieved by a software license where the author grants users the aforementioned freedoms. ...<br/>
+                         Free software may be developed <em>collaboratively</em> by volunteer computer programmers or by corporations; as part of a commercial activity or not.
+                    <small class="text-right">
+                        <a href="http://en.wikipedia.org/wiki/Free_software" target="_blank">Wikipedia</a>
+                    </small>
+                </blockquote>
+            </div>
+            <div id="kernel" class="step slide" data-x="1500" data-y="-1000">
+                <header>Kernel</header>
+                <blockquote class="right">
+                    Central part of Linux operating system is the <em>Kernel</em>, it seperates hardware resources from user programs.<br/>
+                    So no (user) program can access hardware resources directly, <em>only via operating system</em>.
+                </blockquote>
+                 <div class="container text-center left">
+                    <div class="row">
+                        <div class="col-md-8 akzent1">user programs</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 text1"><small>system calls</small></div>
+                    </div>
+                    <div class="row text1">
+                        <div class="col-md-2"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 text2"><small>system call interface</small></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 initialism akzent2">Linux Kernel</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 text2"><small>driver interface</small></div>
+                    </div>
+                    <div class="row text3">
+                        <div class="col-md-2"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2 hidden-print"><i class="fa fa-arrows-v"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 text3">driver</div>
+                        <div class="col-md-2 text3 hidden-print">driver</div>
+                        <div class="col-md-2 text3 hidden-print">driver</div>
+                        <div class="col-md-2 text3 hidden-print">driver</div>
+                    </div>
+                    <div class="row text4">
+                        <div class="col-md-2"><i class="fa fa-arrows-v"></i></div>
+                        <div class="col-md-2"><i class="fa fa-arrows-v hidden-print"></i></div>
+                        <div class="col-md-2"><i class="fa fa-arrows-v hidden-print"></i></div>
+                        <div class="col-md-2"><i class="fa fa-arrows-v hidden-print"></i></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 initialism akzent4">hardware</div>
+                    </div>
+                </div>
+                <br class="clearfix"/>
+                <footer></footer>
+            </div>
+            <div id="userprograms" class="step" data-x="1500" data-y="-1200" data-z="-1000" data-rotate-y="-45">
+                <header>What are user programs?</header>
+                 <div data-jmpress="appear after 2s step">
+                    <ul class="fa-ul">
+                        <li><i class="fa fa-chevron-circle-right text1"></i>... started by user (video player, web browser, ...)</li>
+                        <li><i class="fa fa-chevron-circle-right text2"></i>... desktop environment (graphical UI)</li>
+                        <li><i class="fa fa-chevron-circle-right text3"></i>... shell (<a href="#/bash">see next slides</a>)</li>
+                    </ul>
+                </div>
+            </div>
+              <div id="distributions" class="step slide" data-x="1500" data-y="900" data-z="-1000" data-rotate-y="90" data-rotate-z="90">
+                <header>Distributions</header>
+                <blockquote>
+                    ... Linux <em>Kernel</em> packaged together with different <em>software bundles</em>.
+                </blockquote>
+                <p>Want to build your own distribution ? </p>
+                <p data-jmpress="appear" class="pull-right">
+                    <i class="fa fa-long-arrow-right text2"></i>
+                    <a href="http://www.linuxfromscratch.org/" target="_blank">
+                        Linux from scratch
+                    </a>
+                    <span data-jmpress="zoom after 3s prev" class="hidden-print">
+                        <i class="fa fa-code"></i> updates ?, <i class="fa fa-cog"></i> patches ?
+                    </span>
+                </p>
+                <br class="clearfix"/>
+                <div data-jmpress="appear">
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li class="active">
+                            <a href="#debian" role="tab" data-toggle="tab">
+                                <img src="./img/debian-logo.png"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#fedora" role="tab" data-toggle="tab">
+                                <img src="./img/fedora-logo.png"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#opensuse" role="tab" data-toggle="tab">
+                                <img src="./img/opensuse-logo.png"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a role="tab" data-toggle="tab">
+                                ...
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ubuntu" role="tab" data-toggle="tab">
+                                <img src="./img/ubuntu-logo.png"/>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="debian">
+                             <a href="http://www.debian.org" target="_blank">Debian</a>
+                             <ul>
+                                <li>
+                                    <em>Debian Social Contract</em> - completely free
+                                </li>
+                                <li>
+                                    <em>giant</em> of all linux distribution
+                                </li>
+                                <li>
+                                    trade-off: long developement time <i class="fa fa-arrows-h"></i> stability
+                                </li>
+                                <li>
+                                    multiple versions (<a href="http://www.debian.org/releases/stable" target="_blank>">stable</a>, <a href="http://www.debian.org/releases/testing" target="_blank>">testing</a>, <a href="http://www.debian.org/releases/unstable" target="_blank>">unstable</a>)
+                                </li>
+                             </ul>
+                             <p class="akzent3 text-center"> <i class="fa fa-lg fa-rotate-270 fa-thumbs-o-down"></i> ... not too easy for beginners ... </p>
+                        </div>
+                        <div id="fedora" class="tab-pane">
+                            <a href="http://www.fedoraproject.org" target="_blank">Fedora</a>
+                            <ul>
+                                <li>successor of commercial <img src="./img/redhat-logo.gif"/><em>Red Hat</em></li>
+                                <li>strict, only completely open licensed software bundles get accepted</li>
+                                <li>very innovative <i class="fa fa-arrows-h"></i> stability</li>
+                            </ul>
+                            <br/>
+                            <p class="bg-danger text-center"> <i class="fa fa-lg fa-thumbs-o-down"></i> ... not so good for beginners ... </p>
+                        </div>
+                        <div id="opensuse" class="tab-pane">
+                            <a href="http://www.opensuse.org" target="_blank">openSUSE</a>
+                            <ul>
+                                <li><em>formerly</em> widely spread around private dekstops</li>
+                                <li>non-commercial version of SUSE distribution bought by Novell</li>
+                            </ul>
+                            <br/><br/>
+                            <p class="akzent4 text-center"> <i class="fa fa-lg fa-thumbs-o-up"></i> ... nice for beginners ... </p>
+                        </div>
+                        <div id="ubuntu" class="tab-pane">
+                            <a href="http://www.ubuntu.com" target="_blank">ubuntu</a>
+                            <ul>
+                                <li><em>derivate</em> of debian, using unstable repositories</li>
+                                <li><em>most common</em> used on desktop</li>
+                                <li>extremely easy to install and use</li>
+                            </ul>
+                            <br/>
+                            <p class="akzent1 text-center"> <i class="fa fa-lg fa-thumbs-o-up"></i> ... best for beginners ... </p>
+                        </div>
+                    </div>
+                </div>
+                <footer></footer>
+            </div>
+            <div id="processes" class="step slide" data-x="2400" data-y="-1000" data-z="-500" data-rotate-y="45">
+                <header>Processes</header>
+                <blockquote>
+                    Linux is a <em>multi tasking</em> operating system: multiple <em>processes</em> - those are programs, after loaded to memory and started - <em>run in parallel</em>.
+                </blockquote>
+                <i class="fa fa-4x fa-clock-o pull-right text2"></i>
+                <p>
+                    This actually means, that the operating system splits available computation time of the processor in small <em>time slots</em> (milliseconds), which are provided to severale processes. This task is accomplished by a central instance - <em>scheduler</em>. He manages which process gets which timeslot.
+                </p>
+                <br/>
+                <i class="fa fa-spinner fa-spin fa-5x pull-left text4"></i>
+                <p>Therefore, no single process gains total control of all computation time and any <em>"freezed"</em> process cannot shutdown the whole system.</p>
+                <footer></footer>
+            </div>
+            <div id="linuxusers" class="step slide" data-x="1500" data-y="-2000">
+                <header>Users</header>
+                <blockquote>
+                    Linux is also a <em>multi-user operating system</em>, multiple users can operate on the same machine on several <em>terminal</em>s at the same time.
+                </blockquote>
+                 <i class="fa fa-users fa-5x pull-right"></i>
+                <p>
+                    A <em>user</em> is identified by its <em>username</em>.<br/>
+                    Internally, all users are managed via their unique <em>userID</em> (<kbd>UID</kbd>).
+                </p>
+                <p>
+                    Each user is <em>at least</em> member of one <em>group</em>. There might be many different groups in the system - internally handled via <em>groupID</em> (<kbd>GID</kbd>).
+                </p>
+                <br class="clearfix"/>
+                <p>
+                    Generally speaking, groups are just an opportunity to <em>restrict access</em> in more detailed way (see <a href="#/linuxfiles">file access</a> on the next slides ...).
+                </p>
+                <footer></footer>
+            </div>
+            <div id="root" class="step slide" data-x="2400" data-y="-2000" data-z="-500" data-rotate-y="45">
+                <header>Root</header>
+
+                <span class="fa-stack fa-3x pull-left">
+                  <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+                  <i class="fa fa-user fa-stack-1x text0"></i>
+                </span>
+                <p>
+                    User with <kbd>userID 0</kbd> has a special role - he's <em>root</em>.<br/>
+                    Root has no security constraint by the system - in short - he is allowed to <em class="text-uppercase">do anything</em>.
+                </p>
+                <span class="fa-stack fa-3x pull-right">
+                  <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+                  <i class="fa fa-warning fa-stack-1x text0"></i>
+                </span>
+                <p>
+                    Root is capable of destroying the whole system with only one command. He can delete all the work of a week, a month ...
+                    That's the reason, why the system administrator logs on with his regular user - he <em>becomes root</em> only for administrative tasks, which needs special access rights.
+                </p>
+                <br class="clearfix"/>
+                <p class="text-right">see also <a href="#/admin">being super</a></p>
+                <footer></footer>
+            </div>
+
+            <div id="linuxfiles" class="step slide" data-x="1500" data-y="-3000">
+                <header>files</header>
+                <ul>
+                    <li>
+                        Filenames as well as foldernames can be up to <em>256 character</em> long.
+                    </li>
+                    <li>
+                        Names are case-sensitive: <code>FILE</code>, <code>file</code>, <code>File</code>
+                    </li>
+                    <li>
+                        Names may contain multiple (dots): <code>File.Part.1.txt</code>
+                    </li>
+                    <li>
+                        Files <em>starting</em> with a dot, are considered to be <em>hidden files</em>: <code>.bashrc</code>
+                    </li>
+                </ul>
+                <p>Character <code>/</code> is defined as path separator (e.g. Windows system use: <code>\</code>).</p>
+                <header>filesystem</header>
+                <table class="table">
+                    <thead>
+                        <th>operating system</th>
+                        <th>file system</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Windows</th>
+                            <td>FAT32, NTFS, ...</td>
+                        </tr>
+                        <tr>
+                            <th>Mac OS</th>
+                            <td>HFS, HFS+, ...</td>
+                        </tr>
+                        <tr>
+                            <th>Linux</th>
+                            <td>ext2, ext3, reiserFS, ...</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="backslashwarning" class="step alert alert-warning" role="alert" data-x="1500" data-y="-3000" data-z="-10" data-rotate-x="180">
+                <header> <span class="fa-stack fa-3x pull-right">
+                  <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+                  <i class="fa fa-warning fa-stack-1x text0"></i>
+                </span> Warning!</header>
+                <p>
+                    backslash (<code>\</code>) is an <em>escaping character</em> in the bash, i.e. <code>touch ..\one\file1.txt</code> will result in a (hidden) file <code>..onefile1.txt</code>
+                </p>
+
+            </div>
+
+            <div id="linuxfiles1" class="step slide" data-x="2400" data-y="-3000" data-z="-500" data-rotate-y="45">
+                <header>file types</header>
+                <table class="table left text-center">
+                    <thead>
+                        <tr>
+                            <th>type</th>
+                            <th>display</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>regular file</td>
+                            <td class="akzent2">-</td>
+                        </tr>
+                        <tr>
+                            <td>directory</td>
+                            <td class="akzent1">d</td>
+                        </tr>
+                        <tr>
+                            <td>symbolic links</td>
+                            <td class="akzent3">l</td>
+                        </tr>
+                        <tr>
+                            <td class="text5">block oriented</td>
+                            <td class="akzent5">b</td>
+                        </tr>
+                        <tr>
+                            <td class="text5">character oriented</td>
+                            <td class="akzent5">c</td>
+                        </tr>
+                        <tr>
+                            <td class="text5">named pipe</td>
+                            <td class="akzent5">p</td>
+                        </tr>
+                        <tr>
+                            <td class="text5">socket</td>
+                            <td class="akzent5">s</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre><code><mark class="akzent1">d</mark>rwxr-xr-x  <small>...</small>  <em>.</em>
+<mark class="akzent1">d</mark>rwxr-xr-x  <small>...</small>  <em>..</em>
+<mark class="akzent1">d</mark>rwxr-xr-x  <small>...</small>  <em>.git</em>
+<mark class="akzent2">-</mark>rw-r--r--  <small>...</small>  index.html
+...
+<mark class="akzent2">-</mark>rw-r--r--  <small>...</small>  LICENSE
+<mark class="akzent1">d</mark>rwxr-xr-x  <small>...</small>  linux
+...
+<mark class="akzent3">l</mark>rwxrwxrwx  <small>...</small>  orientdb <em>-></em> orientdb-community-1.6.1/</code></pre>
+<p class="text-right">see <a href="#/explore"><kbd>ls</kbd></a></p>
+                <footer></footer>
+            </div>
+            <div id="folderstructure" class="step slide" data-x="3000">
+                <header>Structure</header>
+                <div class="left hidden-print">
+                  <ul class="fa-ul">
+                    <li>
+                        <i class="fa fa-li fa-folder-open"></i>
+                         <span>/</span>
+                        <ul class="fa-ul">
+
+                            <li><i class="fa fa-li fa-folder"></i> etc</li>
+                            <li class="text3">
+                                <i class="fa fa-li fa-folder-open"></i> home
+                                <ul class="fa-ul">
+                                    <li><i class="fa fa-li fa-folder"></i> pgrund</li>
+                                </ul>
+                            </li>
+                            <li class="text5"><i class="fa fa-li fa-folder"></i> tmp</li>
+                            <li class="text2">
+                                <i class="fa fa-li fa-folder-open"></i> usr
+                                 <ul class="fa-ul">
+                                    <li><i class="fa fa-li fa-folder"></i> bin</li>
+                                    <li class="text1">
+                                        <i class="fa fa-li fa-folder-open"></i> local
+                                         <ul class="fa-ul">
+                                            <li><i class="fa fa-li fa-folder"></i> bin</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="text4">
+                                <i class="fa fa-li fa-folder-open"></i> var
+                                 <ul class="fa-ul">
+                                    <li><i class="fa fa-li fa-folder"></i> log</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <i class="fa fa-li fa-folder-open"></i> dev
+                                <ul class="fa-ul">
+                                    <li><i class="fa fa-li fa-folder"></i>null</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="right">
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                      <li class="active">
+                        <a href="#structRoot" role="tab" data-toggle="tab">/</a>
+                      </li>
+                      <li>
+                        <a href="#structBin" role="tab" data-toggle="tab">/bin</a>
+                      </li>
+                      <li>
+                        <a href="#structEtc" role="tab" data-toggle="tab">/etc</a>
+                      </li>
+                      <li class="text3">
+                        <a href="#structHome" role="tab" data-toggle="tab">/home</a>
+                      </li>
+                      <li class="text5">
+                        <a href="#structTmp" role="tab" data-toggle="tab">/tmp</a>
+                      </li>
+                      <li class="text2">
+                        <a href="#structUsrBin" role="tab" data-toggle="tab">/usr/bin</a>
+                      </li>
+                      <li class="text1">
+                        <a href="#structUsrLocalBin" role="tab" data-toggle="tab">/usr/local/bin</a>
+                      </li>
+                      <li class="text4">
+                        <a href="#structVarLog" role="tab" data-toggle="tab">/var/log</a>
+                      </li>
+                      <li>
+                        <a href="#structDevNull" role="tab" data-toggle="tab">/dev/null</a>
+                      </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="structRoot">
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/</kbd> (root)</span>
+                        <ul>
+                            <li>root of operating system</li>
+                            <li>directories only, except <em>ONE</em> file: <em>kernel</em></li>
+                            <li>all <em>partitions</em> may be <em>mounted</em> anywhere ...</li>
+                        </ul>
+                      </div>
+                      <div class="tab-pane" id="structBin">
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/bin</kbd></span>
+                        <ul>
+                            <li>binary programs (critical for system)</li>
+                            <li>all users may read</li>
+                        </ul>
+                      </div>
+                      <div class="tab-pane" id="structEtc">
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/etc</kbd></span>
+                        <ul>
+                            <li>global configuration files (network, boot, startup, user management, ...)</li>
+                            <li>all users may read</li>
+                        </ul>
+                      </div>
+                      <div class="tab-pane" id="structHome">
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/home</kbd></span>
+                        <ul>
+                            <li>each user known to the system has its own <em>home directory</em> - same name as user</li>
+                            <li>after login, home directory is selected</li>
+                            <li>inside his home directory, a user has all rights (create, read, update, execute, delete, ... )</li>
+                        </ul>
+                      </div>
+                      <div class="tab-pane" id="structTmp">
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/tmp</kbd></span>
+                          <ul>
+                              <li>temporary files</li>
+                              <li>may be deleted after sytstem restart by system</li>
+                              <li>all users have read/write access</li>
+                          </ul>
+                      </div>
+                      <div class="tab-pane" id="structUsrBin">
+                         <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/usr/bin</kbd></span>
+                          <ul>
+                              <li><em>U</em>nix <em>S</em>ystem <em>R</em>esources</li>
+                              <li>binaries, system offers</li>
+                              <li>executabale by all users</li>
+                          </ul>
+                      </div>
+                      <div class="tab-pane" id="structUsrLocalBin">
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/usr/local/bin</kbd></span>
+                          <ul>
+                              <li>binaries not part of distribution</li>
+                              <li>binaries by third-party vendors or installed manually</li>
+                              <li>compiled binaries of users</li>
+                          </ul>
+                      </div>
+                      <div class="tab-pane" id="structVarLog">
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/var/log</kbd></span>
+                        <ul>
+                            <li><em>var</em> hosts files often read and written by programs</li>
+                            <li>log files</li>
+                        </ul>
+                      </div>
+                      <div class="tab-pane" id="structDevNull">
+                        <span class="visible-print-block"><i class="fa fa-li fa-folder"></i> <kbd>/dev/null</kbd></span>
+                        <ul>
+                            <li><em>/dev</em> hosts all devices</li>
+                            <li><em>/dev/null</em> trash bin</li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+                <br class="clearfix"/>
+                <footer></footer>
+            </div>
+
+            <div id="chapbash" class="step slide chapter green" data-y="1000">
+                <header>Bash</header>
+                <footer></footer>
+            </div>
+            <div id="bash" class="step slide" data-x="1500" data-y="1000">
+                <header><em>B</em>ourne <em>A</em>gain <em>Sh</em>ell</header>
+                <p>tasks of a shell:</p>
+                <ul class="agenda item">
+                    <li><em>accept</em> commands and <a href="#/interpretation">interpret</a> them</li>
+                    <li><em>start processes</em> in the commandline</li>
+                    <li><em>return messages</em> of the process to the user</li>
+                </ul>
+                <br/>
+                <dl class="dl-horizontal">
+                    <dt>shell</dt>
+                    <dd><em>user interface</em> to the system, hand over commands to operating system (process start, process stop, ...)</dd>
+                    <dd>works on textual base, all interactive commands can be <em>scripted</em></dd>
+                    <dt>bash</dt>
+                    <dd>successor of the <em>bourne shell</em></dd>
+                    <dd><em>de-facto standard</em> of all linux distribution</dd>
+                    <dt>other shells</dt>
+                    <dd>here are different shells available: Korn shell <a>ksh</a>, c shell <a>csh</a>, bourne shell <a>sh</a>, ...</dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="bashtipps" class="step" data-x="1500" data-y="2000" data-z="0" data-rotate-z="90">
+                <header class="akzent6">Tipps</header>
+                <dl class="dl-horizontal item">
+                    <dt>copy/paste</dt>
+                    <dd>modern terminal emulator are capable of <em>copy &amp; paste</em> using the mouse:
+                    </dd>
+                    <dd>left button <i class="fa fa-arrow-right"></i> mark,</dd>
+                    <dd>right button <i class="fa fa-arrow-right"></i> content menu(insert, copy, ...)</dd>
+                    <dt>history</dt>
+                    <dd>bash saves all commands in a <em>history list</em></dd>
+                    <dd>arrow up <i class="fa fa-arrow-circle-o-up"></i> and arrow down <i class="fa fa-arrow-circle-o-down"></i> navigate through the list</dd>
+                    <dd><em>recursive search</em> is available via <kbd>ctrl+shift+r</kbd></dd>
+                    <dt>completion</dt>
+                    <dd>start typing a command and hit <kbd>tab</kbd>, the bash will try to expand the input until no unique solution is present</dd>
+                    <dd>then hit <kbd>tab</kbd> <em>twice</em> to get a list of all available completions</dd>
+                    <dt>display</dt>
+                    <dd><kbd>echo</kbd> prints to standard out, very usefull for variables, pipes, ...</dd>
+                    <dd><kbd>cat</kbd> prints content of file to standard out ...</dd>
+                </dl>
+            </div>
+            <div id="help" class="step slide" data-x="10500" data-y="1000">
+                <header>I need Help !!</header>
+                <dl class="dl-horizontal">
+                    <dt>man</dt>
+                    <dd><em>manuals</em> - also called <em>manpages</em> - documentation about nearly every command (can be localized: e.g. <code>manpages-de</code>)</dd>
+                    <dd><kbd>man &lt;command&gt;</kbd></dd>
+                    <dt>info</dt>
+                    <dd>similar to <code>man</code> ... just type <kbd>info</kbd> to get a list of commands and navigate through them.</dd>
+                    <dd><kbd>info &lt;command&gt;</kbd></dd>
+                    <dt>help</dt>
+                    <dd>a little bit more simpler than the other two ...</dd>
+                    <dd>less commands available, purpose more to <em>remind</em> rather than <em>teach</em></dd>
+                    <dd><kbd>help &lt;command&gt;</kbd></dd>
+                </dl>
+                <pre><code class="shell">user1@server1:~$ man ls
+user1@server1:~$ info cd
+user1@server1:~$ help echo</code></pre>
+                <footer></footer>
+            </div>
+
+            <div id="explore" class="step slide" data-x="3000" data-y="1000">
+                <header>explore the system</header>
+                <dl class="dl-horizontal">
+                    <dt>pwd</dt>
+                    <dd>
+                        <em>print working directory</em>, tell me the current project
+                    </dd>
+                    <dd>
+                        after login, <code>user1@server1:<em>~</em>$</code> tilde refers to <em>home directory</em> of the user
+                    </dd>
+                    <dt>ls</dt>
+                    <dd>
+                        <em>list</em> content of directory: <kbd>ls [-option] &lt;directory&gt;</kbd>
+                    </dd>
+                    <dd>list a longer, detailed format: <kbd>ls -l</kbd></dd>
+                    <dd>list all directory contents (recursive): <kbd>ls *</kbd></dd>
+                    <dt>cd</dt>
+                    <dd>
+                        <em>change directory</em>: <kbd>cd &lt;directory&gt;</kbd>
+                    </dd>
+                    <dd>go one directory up: <kbd>cd ..</kbd></dd>
+                    <dd>
+                        other common shortcuts: <kbd>cd /</kbd>, <kbd>cd -</kbd>, <kbd>cd ~</kbd>, ...
+                    </dd>
+                    <dt>find</dt>
+                    <dd>
+                        <em>find</em> files: <kbd>find &lt;directory&gt; -name &lt;filename&gt;</kbd>
+                    </dd>
+                    <dt>whoami</dt>
+                    <dd>
+                        <em>current user</em>, tell me my username ...
+                    </dd>
+                    <dt>who</dt>
+                    <dd>which <em>other user</em> are currently on the system ?</dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="assignmentUser" class="step assignment" data-x="3000" data-y="2000" data-rotate-z="90" data-rotate-y="180">
+                <header class="akzent1"><i class="fa fa-cog fa-spin fa-lg solve" data-assignment="1"></i> Assignment #1</header>
+                <p class="lead">... get to know yourself ...</p>
+                <ol>
+                    <li>
+                        login - via <em>putty</em> and credentials mailed ...
+                    </li>
+                    <li>
+                        change password - <kbd>passwd</kbd>
+                    </li>
+                    <li>
+                        about myself - <kbd>whoami</kbd>, <kbd>who am i</kbd>, <kbd>groups</kbd>, <kbd>id</kbd>... about others - <kbd>who</kbd>
+                    </li>
+                    <li data-jmpress="zoom">
+                        <span class="text1">
+                            Which groups are you member of <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>
+                </ol>
+            </div>
+
+            <div id="files" class="step slide" data-x="4500" data-y="1000">
+                <header>File manipulation</header>
+                <dl class="dl-horizontal">
+                    <dt>touch</dt>
+                    <dd>
+                        <em>create</em> empty files: <kbd>touch &lt;filename&gt;</kbd>
+                    </dd>
+                    <dt>mkdir</dt>
+                    <dd>
+                        <em>create</em> new directory: <kbd>mkdir &lt;directory name&gt;</kbd>
+                    </dd>
+                    <dt>cp</dt>
+                    <dd>
+                        <em>copy</em> files: <kbd>cp &lt;source&gt; &lt;target&gt;</kbd>
+                    </dd>
+                    <dd>
+                        multiple options available: <kbd>cp -i ...</kbd>, <kbd>cp -R ...</kbd>
+                    </dd>
+                    <dt>mv</dt>
+                    <dd>
+                        <em>move</em> and <em>rename</em> files and directories: <kbd>mv &lt;source&gt; &lt;target&gt;</kbd>
+                    </dd>
+                    <dt>rm, rmdir</dt>
+                    <dd>
+                        <em>delete</em> files and directories: <kbd>rm [-options] &lt;filename&gt;</kbd>, <kbd>rmdir &lt;diretory name&gt;</kbd>
+                    </dd>
+                    <dd>
+                        delete recursive, force deletion of non-empty directory: <kbd>rm -rf</kbd>
+                    </dd>
+                    <dt>ln</dt>
+                    <dd>
+                        <em>create (symbolic) links</em>, nake files and directoories available in a different location: <kbd>ln -s &lt;target&gt; &lt;link name&gt;</kbd>
+                    </dd>
+                    <dd>
+                        calling <code>ln</code> without <code>-s</code> option, creates <em>hard links</em>.
+                    </dd>
+                    <dt>cat</dt>
+                    <dd>
+                       <em>concatenate</em> files and <em>print</em> to standard out: <kbd>cat [-options] &lt;files&gt;</kbd>
+                    </dd>
+                    <dd>
+                        using <code>-</code> instead of <code>&lt;filenames&gt;</code> reads from standard input
+                    </dd>
+                    <dt>less</dt>
+                    <dd><a href="#/moreless">see text viewers</a>: <kbd>less &lt;filename&gt;</kbd></dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="assignmentFiles" class="step assignment" data-x="4500" data-y="2000" data-rotate-z="90" data-rotate-y="180">
+                <header class="akzent2"><i class="fa fa-cog fa-spin fa-lg solve" data-assignment="2"></i> Assignment #2</header>
+                <p class="lead">... creating files and directories ...</p>
+                <ol>
+                    <li>create a new directory <code>one</code> and within this directory a file <code>file1.txt</code></li>
+                    <li>change to directory <code>one</code> and create a file named <code>.caution</code></li>
+                    <li data-jmpress="zoom">
+                        <span class="text1">
+                            Who is owner of those new created files <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                        <span class="text2">What are their timestamps <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>
+                    <li data-jmpress="appear after 3s prev">
+                        create (without changing directory) a new directory <code>two</code> as sibling to <code>one</code>
+                    </li>
+                    <li data-jmpress="appear after 1s prev">
+                        copy <code>file1.txt</code> in the new directory <code>two</code>
+                    </li>
+                    <li data-jmpress="appear after 1s prev">
+                        copy <code>file1.txt</code> with new name <code>copied.csv</code> to the new directory <code>two</code>.
+                    </li>
+                    <li data-jmpress="zoom">
+                        <span class="text3">
+                            How can you display the content of <code>.caution</code> <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>
+                </ol>
+            </div>
+            <div id="rights" class="step slide" data-x="6000" data-y="1000">
+                <header>Accessing files</header>
+                <p>
+                    Each file (and directory) has an <em>owner</em> and <em>access rights</em> (<em><mark>r</mark>ead</em>, <em><mark>w</mark>rite</em> and <em>e<mark>x</mark>ecute</em>).
+                </p>
+                <pre><code><em>drwxr-xr-x+ 1 pgrund users     0 22. Aug 13:57 css</em>
+drwxr-xr-x+ 1 pgrund users     0 25. Aug 15:54 img
+-rwxr-xr-x  1 pgrund users 47394 26. Aug 10:20 index.html</code></pre>
+                <div class="container">
+                    <div class="row">
+                        <span class="col-md-1"></span>
+                        <span class="col-md-3 text-center"><em>access rights</em></span>
+                        <span class="col-md-5"></span>
+                    </div>
+                    <div class="row">
+                        <span class="col-md-1"><a href="#/linuxfiles1">type</a></span>
+                        <span class="col-md-1"><em>owner</em></span>
+                        <span class="col-md-1"><em>group</em></span>
+                        <span class="col-md-1"><em>others</em></span>
+                        <span class="col-md-1">...</span>
+                        <span class="col-md-1">user</span>
+                        <span class="col-md-1">group</span>
+                        <span class="col-md-1">...</span>
+                        <span class="col-md-1">name</span>
+                    </div>
+                    <div class="row">
+                        <span class="col-md-1"><code>d</code></span>
+                        <span class="col-md-1"><code>rwx</code></span>
+                        <span class="col-md-1"><code>r-x</code></span>
+                        <span class="col-md-1"><code>r-x</code></span>
+                        <span class="col-md-1"><code>...</code></span>
+                        <span class="col-md-1"><code>pgrund</code></span>
+                        <span class="col-md-1"><code>users</code></span>
+                        <span class="col-md-1"><code>...</code></span>
+                        <span class="col-md-1"><code>css</code></span>
+                    </div>
+                </div>
+                <br/>
+                <dl>
+                    <dt>chown, chgrp</dt>
+                    <dd>change owner and group: <kbd>chown &lt;owner&gt; &lt;filename&gt;</kbd>, <kbd>chgrp &lt;group&gt; &lt;filename&gt;</kbd></dd>
+                    <dd><code>chown</code> can also change group along with user: <kbd>chown &lt;user&gt;:&lt;group&gt; &lt;filename&gt;</kbd></dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="chmod" class="step slide" data-x="6000" data-y="2000">
+                <header>change access rights</header>
+                <p>
+                    <kbd>chmod &lt;mode&gt; &lt;filename&gt;</kbd>
+                </p>
+                <div class="left">
+                    <table class="table">
+                        <caption>ugoa</caption>
+                        <thead>
+                            <tr>
+                                <th>abbreviation</th>
+                                <th>description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>u</th>
+                                <td>user</td>
+                            </tr>
+                            <tr>
+                                <th>g</th>
+                                <td>group</td>
+                            </tr>
+                            <tr>
+                                <th>o</th>
+                                <td>others</td>
+                            </tr>
+                            <tr>
+                                <th>a</th>
+                                <td>all</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pre><code>... ~$ chmod go-x,u+w alt.txt</code></pre>
+                </div>
+                <div class="right">
+                    <table class="table">
+                        <caption>numeric</caption>
+                        <thead>
+                            <tr>
+                                <th>number</th>
+                                <th>description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>execute</td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td>write</td>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <td>read</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pre><code>... ~$ chmod 644 alt.txt</code></pre>
+                </div>
+                <p class="clearfix">
+                        How would <code>chmod 644 alt.txt</code> look like in <em>ugoa</em> ?
+                        <span data-jmpress="zoom">
+                            <i class="fa fa-lg fa-long-arrow-right text2"></i>
+                            <kbd>chmod a+r,u+w alt.txt</kbd>
+                        </span>
+                </p>
+                <footer></footer>
+            </div>
+            <div id="assignmentRights" class="step assignment" data-x="6000" data-y="3000" data-rotate-z="90" data-rotate-y="180">
+                <header class="akzent3"><i class="fa fa-cog fa-spin fa-lg solve" data-assignment="3"></i> Assignment #3</header>
+
+                <p class="lead">... play around with access rights ...</p>
+                <ol>
+                    <li>copy <code>/home/grund/asterix</code> into your home directory</li>
+                    <li>create a new directory <code>training</code> in your home directory</li>
+                    <li>grant <em>read</em>, <em>write</em> and <em>execute</em> access for this new directory to all participants</li>
+                    <li>copy file <code>~/one/file1.txt</code> to the <code>training</code> directory of your left neighbor</li>
+                    <li data-jmpress="zoom">
+                        <span class="text1">
+                            How does the access rights (<code>ls -l</code>) of the copied file look like <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                    </li>
+                    <li data-jmpress="appear after 3s prev">grant all participant of the course <em>read</em> and <em>execute</em> access to your <code>~/two</code> directory</li>
+                </ol>
+            </div>
+            <div id="variables" class="step slide" data-x="7500" data-y="1000">
+                <header>Variables</header>
+                <blockquote>
+                    ... defined as <em>key</em> and <em>value</em>. Valid characters for <code>key</code> are <code>0-9a-zA-Z_</code>. Assign a value to a new variable, use <code>year=2014</code>. If you want to access variable value, use <code>$year</code>.
+                </blockquote>
+                <table class="table">
+                    <caption>predefined variables</caption>
+                    <thead>
+                        <th class="col-md-1">variable</th>
+                        <th class="col-md-4">description</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><code>HOME</code></th>
+                            <td>absolut path of home directory (same as <code>~</code>)</td>
+                        </tr>
+                        <tr>
+                            <th><code>PATH</code></th>
+                            <td>list of directories searched for commands (separator: <code>:</code>)</td>
+                        </tr>
+                        <tr>
+                            <th><code>USER</code></th>
+                            <td>name of current user</td>
+                        </tr>
+                        <tr>
+                            <th><code>PWD</code></th>
+                            <td>absolut path of current directory</td>
+                        </tr>
+                        <tr>
+                            <th><code>?</code></th>
+                            <td>
+                                exit status of last command:
+                                <span class="text-success"><em>0</em> success</span>,
+                                <span class="text-danger"><em>!=0</em> failure</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><code>$</code></th>
+                            <td>process ID of current shell</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="variablesexpansion1" class="step slide" data-x="7500" data-y="0" data-z="500" data-rotate-y="90">
+                <header>variables expansion</header>
+                <dl>
+                    <dt><code>${!PARAMETER}</code></dt>
+                    <dd><em>indirection</em>, use the <em>value</em> as <em>name of parameter</em></dd>
+                    <dt><code>${#PARAMETER}</code></dt>
+                    <dd>length of parameters value</dd>
+                </dl>
+                <pre class="left"><code class="bash">$ TEST=JAVA_HOME
+$ echo $TEST
+JAVA_HOME
+$ echo $JAVA_HOME
+/opt/java/default</code></pre>
+                <pre class="right"><code class="bash">$ echo <em>${!TEST}</em>
+/opt/java/default
+$ echo <em>${#JAVA_HOME}</em>
+17
+                </code></pre>
+                <footer></footer>
+            </div>
+            <div id="variablesexpansion2" class="step slide" data-x="7500" data-y="0" data-z="-1000" data-rotate-y="90">
+                <header>Case modification</header>
+                <dl>
+                    <dt><code>${PARAMETER^}</code>, <code>${PARAMETER^^}</code></dt>
+                    <dd>modifies characters of parameter to <em>uppercase</em></dd>
+                    <dt><code>${PARAMETER,}</code>, <code>${PARAMETER,,}</code></dt>
+                    <dd>modifies characters of parameter to <em>lowercase</em></dd>
+                    <dt><code>${PARAMETER~}</code>, <code>${PARAMETER~~}</code></dt>
+                    <dd><em>reversing</em> the current case of parameter characters</dd>
+                </dl>
+                <p>Using double-form (<code>^^</code>, <code>,,</code>, <code>~~</code>) causes replacement of <em>all</em> characters, single-form (<code>^</code>, <code>,</code>, <code>~</code>) only <em>first</em> character</p>
+                <pre class="left"><code class="bash">$ echo $USER
+grund</code></pre>
+                <pre class="right"><code class="bash">$ echo <em>${USER^^}</em>
+<em>GRUND</em>
+$ echo <em>${USER^}</em>
+<em>G</em>rund</code></pre>
+                <footer></footer>
+            </div>
+            <div id="variablesexpansion3" class="step slide" data-x="7500" data-y="0" data-z="-2500" data-rotate-y="90">
+                <header>Substring removal</header>
+                <dl>
+                    <dt><code>${PARAMETER#PATTERN}</code>, <code>${PARAMETER##PATTERN}</code></dt>
+                    <dd>removes specified pattern (see <a href="#/regex">matching</a>) from the <em>beginning</em></dd>
+                    <dt><code>${PARAMETER%PATTERN}</code>, <code>${PARAMETER%%PATTERN}</code></dt>
+                    <dd>removes specified pattern (see <a href="#/regex">matching</a>) from the <em>end</em></dd>
+                </dl>
+                <p> single form (<code>#</code>, <code>%</code>) removes <em>shortest</em> text matching, double form (<code>##</code>, <code>%%</code>) removes <em>longest matching</em></p>
+                <pre><code class="bash">$ MYSTRING="Be liberal in what you accept, and conservative in what you send"
+$ echo <em>${MYSTRING#* }</em>
+liberal in what you accept, and conservative in what you send
+$ echo <em>${MYSTRING##* }</em>
+send</code></pre>
+                <footer></footer>
+            </div>
+            <div id="variablesexpansion4" class="step slide" data-x="7510" data-y="0" data-z="-4000" data-rotate-y="90">
+                <header>Substring offset</header>
+                <dl>
+                    <dt><code>${PARAMETER:OFFSET}</code>, <code>${PARAMETER:OFFSET:LENGTH}</code></dt>
+                    <dd>expand only <em>part</em> of parameter's value, given a position to <em>start</em> and an optional <em>length</em>
+                    </dd>
+                    <dd>If <code>LENGTH</code> is omitted, the parameter will be <em>expanded up to the end of the string</em></dd>
+                    <dd>If <code>LENGTH</code> is negative, it's taken as a second offset into the string, <em>counting from the end of the string</em></dd>
+                    <dd><code>OFFSET</code> and <code>LENGTH</code> can be arithmetic expression</dd>
+                </dl>
+                <pre class="left"><code class="bash">$ echo ${MYSTRING<em>:34</em>}
+conservative in what you send
+$ echo ${MYSTRING<em>:34:13</em>}
+conservative</code></pre>
+                <pre class="right"><code class="bash">$ echo ${MYSTRING<em>: -13:5</em>}
+what
+$ echo ${MYSTRING<em>:(7/2):7</em>}
+liberal</code></pre>
+                <footer></footer>
+            </div>
+            <div id="offsetwarning" class="step alert alert-warning" role="alert" data-x="7500" data-y="0" data-z="-4000" data-rotate-y="270">
+                  <header>
+                   <span class="fa-stack fa-3x pull-right">
+                        <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+                        <i class="fa fa-warning fa-stack-1x text0"></i>
+                    </span>Warning!
+                  </header>
+                  <p>
+                    The <code>OFFSET</code> starts at index <em>0</em>, not at <em>1</em>!<br/>
+                    When using a <em>negative offset</em> you need to separate the (negative) number from the colon: <code>${MYSTRING:<em> -10</em>:5}</code>, <code>${MYSTRING:<em>(-10)</em>:5}</code>.
+                  </p>
+                </div>
+            <div id="variablesexpansion5" class="step slide" data-x="7500" data-y="0" data-z="-5500" data-rotate-y="90">
+                <header>Search and replace</header>
+                <dl>
+                  <dt><code>${PARAMETER/PATTERN/STRING}</code>, <code>${PARAMETER//PATTERN/STRING}</code></dt>
+                  <dd>replace a substring <a href="#/regex">matched by pattern</a></dd>
+                  <dd>single-form (<code>/</code>) replace <em>first occurrence</em>, double-form (<code>//</code>) replace <em>all occurrences</em>.</dd>
+                  <dd>if <code>STRING</code> is ommitted, matched pattern will be <em>removed</em></dd>
+                </dl>
+                <pre><code class="bash">$ echo ${MYSTRING<em>/in/by</em>}
+Be liberal <em>by</em> what you accept, and conservative <em>in</em> what you send
+$ echo ${MYSTRING<em>//you</em>}
+Be liberal in what accept, and conservative in what send</code></pre>
+                <pre class="left"><code class="bash">$ FILE=test.xml.xml
+$ echo ${FILE<em>//.xml/.korr</em>}
+test<em>.korr.korr</em></code></pre>
+                <pre class="right"><code class="bash">$ echo ${FILE<em>/%.xml/.korr</em>}
+test.xml<em>.korr</em></code></pre>
+                <footer></footer>
+            </div>
+            <div id="variablesexpansion6" class="step slide" data-x="7500" data-y="0" data-z="-7000" data-rotate-y="90">
+                <header>Default / Alternate values</header>
+                <div class="clearfix">
+                <dl class="left">
+                    <dt><code>${PARAMETER:-WORD}</code></dt>
+                    <dd><em>use</em> a default value, if <em>not set</em> or <em>null</em></dd>
+                    <dt><code>${PARAMETER:=WORD}</code></dt>
+                    <dd><em>assign</em> a default value, if <em>not set</em> or <em>null</em></dd>
+                </dl>
+                <dl class="right">
+                    <dt><code>${PARAMETER:+WORD}</code></dt>
+                    <dd>if <em>set</em> or <em>not empty</em>, displays an <em>alternate text</em></dd>
+                </dl>
+                </div>
+
+                <p>ommitting the colon <code>:</code>, default value will only be set if <code>PARAMETER</code> was <em>unset</em></p>
+                <pre><code class="bash">$ read -p "enter gender: " GENDER;\
+ echo "Your gender is <em>${GENDER:-a secret}</em>"
+enter gender:
+Your gender is <em>a secret</em>
+...
+$ echo $GENDER
+<em>&nbsp;</em>
+</code></pre>
+                <footer></footer>
+            </div>
+             <div id="variablesexpansion7" class="step slide" data-x="7500" data-y="0" data-z="-8500" data-rotate-y="90">
+                <header>Display errors</header>
+                <dl>
+                    <dt><code>${PARAMETER:?WORD}</code>, <code>${PARAMETER?WORD}</code></dt>
+                    <dd>If the parameter <code>PARAMETER</code> is set/non-null, this form will simply expand it</dd>
+                    <dd>Otherwise, the expansion of <code>WORD</code> will be used as appendix for an error message</dd>
+                </dl>
+                <pre><code class="bash">$ echo "The unset parameter is: <em>${p_unset?not set}</em>"
+<em>bash: p_unset: not set</em>
+...
+$ export p_unset=true
+$ echo "The unset parameter is: <em>${p_unset?not set}</em>"
+The unset parameter is: <em>true</em></code></pre>
+                <footer></footer>
+            </div>
+            <div id="wildcards" class="step slide" data-x="7500" data-y="1000" data-z="-1000" data-rotate-y="90">
+                <header>Wildcards</header>
+                <blockquote>... placeholders for <em>characters</em>. All files matching wildcard will be used as list input for command.</blockquote>
+                <table class="table">
+                    <caption>wildcards</caption>
+                    <thead>
+                        <tr>
+                            <th class="col-md-1">wildcard</th>
+                            <th class="col-md-3">description</th>
+                            <th class="col-md-2">example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><code>*</code></th>
+                            <td>any list of characters</td>
+                            <td><kbd>cp * ../save</kbd></td>
+                        </tr>
+                        <tr>
+                            <th><code>?</code></th>
+                            <td>any single character</td>
+                            <td><kbd>cp ??? ../save</kbd></td>
+                        </tr>
+                        <tr>
+                            <th><code>[...]</code>,<code>{..,..}</code></th>
+                            <td>any single character of list</td>
+                            <td><kbd>cp text[1234] ../save</kbd></td>
+                        </tr>
+                        <tr>
+                            <th><code>[!...]</code></th>
+                            <td>any single character NOT in list</td>
+                            <td><kbd>cp text[!5-9] ../save</kbd>
+                        </tr>
+                        <tr>
+                            <th><code>~</code></th>
+                            <td>absolute path of home directory</td>
+                            <td><kbd>cp ~/file1.txt ../save</kbd></td>
+                        </tr>
+                        <tr>
+                            <th><code>~&lt;user&gt;</code></th>
+                            <td>home directory of &lt;user&gt;</td>
+                            <td><kbd>cd ~grund</kbd></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="assignmentWildcards" class="step assignment" data-x="9000" data-y="1000">
+                <header class="akzent4"><i class="fa fa-cog fa-spin solve" data-assignment="4"></i> Assignment #4</header>
+                <p class="lead">... get to know the wildcard handling of bash ...</p>
+                <ol>
+                    <li>list all files containing the letter <code>e</code> in your home directory <code>~</code> and all its subdirectories.</li>
+                    <!-- ls *e* displays only files and complete content of subdirectories containing 'e'-->
+                    <!--   ls -1R . | grep ".*e.*[^:]$" -->
+                    <!-- find : find . -type f -name "*e*"" -->
+                    <li>change to your <code>~/one</code> directory</li>
+                    <li>create new empty files named <code>test_a</code>, <code>test_b</code>, ... <code>test_z</code>.</li>
+                    <li>create new empty files named <code>test_a1</code>, <code>test_a2</code>, ... <code>test_z9</code>.</li>
+                    <li>delete all files starting with <em>test_p</em>.</li>
+                    <li>delete all files ending with <em>3</em>.</li>
+                    <li>copy file <code>test_a9</code> to <code>training</code> directory of <em>all participants containing an <code>e</code></em> in their username as well as <em>rename the file <code>test_a9_&lt;my username&gt;</code></em>, so that we do not get in conflict with other users.</li>
+                    <!--  t=$(echo /home/*e*/training); cat test_a9 | tee ${t//training/training/test_a9_$USER} > /dev/null -->
+                    <!-- scripting needed: for DEST in /home/*/training; do cp -T test_a9 $DEST/test_a9_$USER ;done -->
+                    <li>concat all the contents of <code>~/two/copied.csv</code> of <em>all participants</em> and display to standard out</li>
+                    <!-- be aware, copied.csv might be empty: cat /home/*/two/copied.csv -->
+                </ol>
+            </div>
+            <div id="interpretation" class="step slide" data-x="7500" data-y="2000">
+                <header>Command Interpretation</header>
+                <blockquote>As stated at the <a href="#/bash">beginning</a>, a command gets <em>not executed directly</em> by the shell, it <em>interprets</em> the command first according to the following order ...</blockquote>
+
+                <ol class="agenda item fa-ul">
+                    <li><i class="fa-li bi-badge"></i><em>seperate</em> command line to words</li>
+                    <li class="select"><i class="fa-li bi-badge"></i><em>substitute</em> command line</li>
+                    <li><i class="fa-li bi-badge"></i><em>redirection</em> of input and output streams</li>
+                    <li><i class="fa-li bi-badge"></i><em>search</em> for command  (type and place)</li>
+                    <li><i class="fa-li bi-badge"></i><em>execute</em> the command</li>
+                </ol>
+                <p>
+                    Substituion can change a commandline tremendously.<br/>
+                    It is important to understand how this change happens (error messages, side effects, ...).
+                </p>
+                <footer></footer>
+            </div>
+            <div id="substitution1" class="step slide" data-x="9000" data-y="2000">
+                <header>Substitution (Part I)</header>
+                <dl class="item">
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">1</span>
+                        </span>
+                        bracket substition
+                    </dt>
+                    <dd>e.g. create a systematic series of filenames</dd>
+                    <dd>
+                        <pre><code>$ echo /home/{maier,{b,c,f}huber}
+<i class="fa fa-lg fa-long-arrow-right text2"></i>  /home/maier  /home/bhuber  /home/chuber  /home/fhuber</code></pre>
+                    </dd>
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">2</span>
+                        </span>
+                        tilde substitution
+                    </dt>
+                    <dd>tilde (<mark>~</mark>) gets replaced by <code>home directory</code></dd>
+                    <dd>
+                        <pre><code>$ cp foo ~
+$ cp foo ~bhuber</code></pre>
+                    </dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="substitution2" class="step slide" data-x="9000" data-y="2750" data-z="-300" data-rotate-x="-45">
+                <header>Substitution (Part II)</header>
+                <dl class="item">
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">3</span>
+                        </span>
+                        variable substitution
+                    </dt>
+                    <dd>replace variables/parameter by its value</dd>
+                    <dd>
+                        <pre><code>$ echo ${JAVA_HOME//\//.}</code></pre>
+                    </dd>
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">4</span>
+                        </span>
+                        command substitution
+                    </dt>
+                    <dd>using <em>output</em> of a command as <em>part</em> of another command line (insert)</dd>
+                    <dd>
+                        <pre><code>$ echo Following users have a home directory: `ls /home`
+Following users have a home directory: grund foo jack</code></pre>
+                    </dd>
+                    <dd>bash provides an another syntax, capable of <em>nesting</em> as well</dd>
+                    <dd><pre><code class="bash">$ echo Following users have a home directory: <em>$(</em>ls /home<em>)</em></code></pre></dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="substitution3" class="step slide" data-x="9000" data-y="3000" data-z="-1000" data-rotate-x="-90">
+                <header>Substitution (Part III)</header>
+                <dl class="item">
+                     <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">5</span>
+                        </span>
+                        arithmetic substitution
+                    </dt>
+                    <dd>bash allows an integer arithmetic</dd>
+                    <dd>
+                        <pre><code>$ echo one plus one: $[1+1]
+one plus one: 2</code></pre>
+                    </dd>
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">6</span>
+                        </span>
+                        seperate words (again)
+                    </dt>
+                    <dd>only if expression is not within single (<kbd>'...'</kbd>) or double (<kbd>"..."</kbd>) quotes</dd>
+                    <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">7</span>
+                        </span>
+                        wildcard substitution
+                    </dt>
+                    <dd>according to <a href="#/wildcards">wildcards</a> as stated above</dd>
+                    <dd>
+                        <pre><code>$ echo /home/*
+/home/maier  /home/bhuber ....</code></pre>
+                    </dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="substitution4" class="step slide" data-x="9000" data-y="2750" data-z="-1700" data-rotate-x="-135">
+                <header>Substitution (Part IV)</header>
+                <dl class="item">
+                     <dt>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">8</span>
+                        </span>
+                        demasking
+                    </dt>
+                    <dd>drop all masking characters - if not masked on their own (<code>/</code>, <code>'</code>, <code>"</code>)</dd>
+                </dl>
+                <br/>
+
+                <header>summary</header>
+                        <span class="fa-stack fa-lg text1">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">1</span>
+                        </span>
+                        bracket <code>{}</code>
+    <i class="fa fa-long-arrow-right"></i>
+                            <span class="fa-stack fa-lg text2">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">2</span>
+                        </span>
+                        tilde <code>~</code>
+                    <i class="fa fa-long-arrow-right"></i>
+
+                        <span class="fa-stack fa-lg text3">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">3</span>
+                        </span>
+                        variable <code>$</code>
+                    <br/>
+                    <i class="fa fa-long-arrow-right"></i>
+
+                        <span class="fa-stack fa-lg text4">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">4</span>
+                        </span>
+                        command <code>`..`</code> or <code>$(...)</code>
+                    <i class="fa fa-long-arrow-right"></i>
+                        <span class="fa-stack fa-lg text5">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">5</span>
+                        </span>
+                        arithmetic <code>$[]</code>
+                    <br/>
+                    <i class="fa fa-long-arrow-right"></i>
+                        <span class="fa-stack fa-lg text6">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">6</span>
+                        </span>
+                        words <code>'',""</code>
+                    <i class="fa fa-long-arrow-right"></i>
+                        <span class="fa-stack fa-lg text1">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">7</span>
+                        </span>
+                        wildcard <code>*</code>
+                    <i class="fa fa-long-arrow-right"></i>
+                        <span class="fa-stack fa-lg text2">
+                          <i class="fa fa-circle fa-stack-1x hidden-print"></i>
+                          <span class="fa-stack fa-stack-1x text0">8</span>
+                        </span>
+                        demasking <code>/,',"</code>
+
+                <footer></footer>
+            </div>
+
+			<div id="substitution-view" class="step alert alert-info"
+                data-x="9000" data-y="2500" data-z="-2400" data-rotate-x="-180">
+				<header>See command substitution at work!</header>
+					<p>The bash knows runtime options you can use if you issue one of the <code>set</code> commands</p>
+					<p>You can see the commandline <em>after substitution</em> but before execution if you issue the command</p>
+					<pre><code>$ set -x</code></pre>
+					<p>to unset it after checking use</p>
+					<pre><code>$ set +x</code></pre>
+				<footer></footer>
+			</div>
+
+            <div id="assignmentSubst" class="step assignment" data-x="9000" data-y="2000" data-z="-1000" data-rotate-x="90">
+                <header class="akzent5"><i class="fa fa-cog fa-spin fa-lg solve" data-assignment="5"></i> Assignment #5</header>
+                <p class="lead">... how does the bash substitute ?</p>
+                <ol>
+                    <li>print to standard out the string <code>$figure</code>:<pre><code>$ echo <em>...</em>
+$figure</code></pre><ul>
+                        <li data-jmpress="zoom after 5s step">
+                            <span class="text1">
+                            What is the difference between <code>"$figure"</code>, <code>`$figure`</code> and <code>'$figure'</code> if used as parameter
+                            <i class="fa fa-lg fa-question-circle"></i>
+                            </span>
+                        </li>
+                    </ul></li>
+                    <li>
+                        create an <code>echo</code> command line, which <em>welcomes you</em> on the command line as well as  the <em>current date</em>. Use variables, so that the command line <em>run on your neighbors shell</em> outputs the right username ...
+                        <pre><code>$ echo <em>...</em>
+Welcome mr/mrs <em>grund</em> to our training, today is <em>Do, 28. Aug 2014 10:02:46</em></code></pre>
+                    </li>
+                </ol>
+            </div>
+
+            <div id="inputoutput" class="step slide" data-x="7500" data-y="3000">
+                   <header>Input / Output Streams</header>
+                   <p>For each <em>command execution</em> there always <em>3 channels</em>:</p>
+                   <table class="iopic">
+                       <tbody>
+                           <tr>
+                               <td rowspan="2">
+                                   <span class="fa-stack fa-3x">
+                                    <i class="fa fa-stack fa-stack-1x fa-keyboard-o"></i>
+                                   </span>
+                               </td>
+                               <td rowspan="2">
+                                   <span class="fa-stack fa-lg">
+                                       <i class="fa fa-long-arrow-right fa-stack-2x text5  hidden-print"></i>
+                                       <span class="fa-stack fa-stack-1x text-info">stdin</span>
+                                   </span>
+                               </td>
+                               <td rowspan="2">
+                                   <span class="iocommand">command</span>
+                               </td>
+                               <td>
+                                    <span class="fa-stack fa-lg">
+                                       <i class="fa fa-long-arrow-right fa-stack-2x text5 hidden-print"></i>
+                                       <span class="fa-stack fa-stack-1x text-success">stdout</span>
+                                    </span>
+                                </td>
+                               <td rowspan="2">
+                                   <span class="fa-stack fa-2x">
+                                       <i class="fa fa-square fa-stack-2x text6 hidden-print"></i>
+                                       <i class="fa fa-square-o fa-stack-2x text6 visible-print"></i>
+                                       <i class="fa fa-stack fa-stack-1x fa-terminal text0"></i>
+                                    </span>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td>
+                                   <span class="fa-stack fa-lg">
+                                       <i class="fa fa-long-arrow-right fa-stack-2x text5 hidden-print"></i>
+                                       <span class="fa-stack fa-stack-1x text-danger">stderr</span>
+                                   </span>
+                               </td>
+                           </tr>
+                       </tbody>
+                   </table>
+
+                   <dl class="dl-horizontal">
+                       <dt class="text-info">stdin</dt>
+                       <dd><em>standard input</em> assigned per default to the keyboard<br/>
+                       <i class="fa fa-arrow-right text-info"></i> channel number <code>0</code></dd>
+                       <dt class="text-success">stdout</dt>
+                       <dd><em>standard output</em> assigned per default to the display <br/>
+                       <i class="fa fa-arrow-right text-success"></i> channel number <code>1</code></dd>
+                       <dt class="text-danger">stderr</dt>
+                       <dd><em>standard error</em> assigned per default to the display as well<br/>
+                       <i class="fa fa-arrow-right text-danger"></i> channel number <code>2</code></dd>
+                   </dl>
+                   <p>
+                    <em>Channel numbers</em> <code>0</code>, <code>1</code> and <code>2</code> are actually special <em>file descriptors</em> (allow programs to access opened files) since they are <em>available all the time</em>.
+                   </p>
+                   <footer></footer>
+               </div>
+
+            <div id="redirection1" class="step slide" data-x="7500" data-y="4000" data-rotate-y="90">
+                <header>Redirect to / from file</header>
+                <p>Input as well as output streams can be redirected to files.</p>
+                <table class="table auto">
+                    <thead>
+                        <tr>
+                            <th class="col-md-1">channel</th>
+                            <th class="col-md-2 text-center">syntax</th>
+                            <th class="col-md-2">description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="text-info">stdin</th>
+                            <td>
+                                command <i class="fa fa-chevron-left text-info"></i> file
+                            </td>
+                            <td>read from file</td>
+                        </tr>
+                        <tr>
+                            <th class="text-info">stdin</th>
+                            <td>
+                                command
+                                <i class="fa fa-chevron-left text-info"></i>
+                                <i class="fa fa-chevron-left text-info"></i>
+                                EOF
+                            </td>
+                            <td>
+                                read from stdin until <em>EOF</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text-success">stdout</th>
+                            <td>
+                                command
+                                <i class="fa fa-chevron-right text-success"></i>
+                                file<br/>
+                                command
+                                <i class="fa fa-chevron-right text-success"></i>
+                                <i class="fa fa-chevron-right text-success"></i>
+                                file
+                            </td>
+                            <td>
+                                write to file, <em>replace</em><br/>
+                                write to file, <em>append</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text-danger">stderr</th>
+                            <td>
+                                command
+                                <span class="text-danger">
+                                    2
+                                    <i class="fa fa-chevron-right"></i>
+                                </span>
+                                file<br/>
+                                command
+                                <span class="text-danger">
+                                    2
+                                    <i class="fa fa-chevron-right"></i>
+                                    <i class="fa fa-chevron-right"></i>
+                                </span>
+                                file
+                            </td>
+                            <td>
+                                write to file, <em>replace</em><br/>
+                                write to file, <em>append</em>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="redirection2" class="step" data-x="7500" data-y="4000" data-z="-1500" data-rotate-y="90">
+                <header>Examples file redirection</header>
+                 <pre class="pull-left"><code>$ cd ~/two
+$ ls <em>&gt;</em> two_files
+$ cat two_files
+file1.txt
+copied.csv
+$ ...</code></pre>
+ <pre><code>$ cat <em>&lt;&lt;</em> <em>EOF</em>
+&gt; some text typed by myself
+&gt; in multiple lines
+&gt; <em>EOF</em>
+some text typed by myself
+in multiple lines
+$ ...</code></pre>
+                <pre><code>$ echo "Hello, I am `whoami` !" <em>&gt;</em> thats_me.txt
+$ cat thats_me.txt
+Hello, I am grund !
+$ ...</code></pre>
+               <pre><code class="bash">$ eclipse <em>></em> output.txt <em>2>&amp;1</em></code></pre>
+            </div>
+            <div id="pipe" class="step slide" data-x="7500" data-y="4000" data-z="-3000" data-rotate-y="90">
+                <header>Pipe</header>
+                <p>The <em>pipe</em> symbol (<code>|</code>) <em>connects</em> commands:</p>
+                <ul>
+                    <li><em class="text-success">stdout</em> of first command gets connected to <em class="text-info">stdin</em> of second command.</li>
+                    <li>only works, if first command <em>writes to channel 1</em> and second command <em>reads from channel 0</em></li>
+                </ul>
+                <p>How many users are currently on the system ?</p>
+                <pre class="left"><code class="bash">$ who <em>></em> user.dat
+$ <mark>wc -l</mark> user.dat
+6 user.dat
+$ rm user.dat</code></pre>
+                <pre class="right"><code class="bash">$ who <em>|</em> wc -l
+6</code></pre>
+                <footer></footer>
+            </div>
+
+
+			<div id="jobcontrol" class="step slide" data-x="7500" data-y="7000" data-rotate-x="120">
+                   <header>Jobs running in background mode</header>
+
+					<ul>
+						<li>
+							Imagine you just started some long running job in your shell and after some 20s you get soooo bored watching it e.g.
+							<pre><code class="bash">$ find / -name '*e*' -type f</code></pre>
+						</li>
+
+						<li data-jmpress="zoom" class="will-zoom do-zoom">
+							What can you do? Just get on with your work while it runs in the background!
+						</li>
+						<li data-jmpress="zoom" class="will-zoom do-zoom">
+							Just type <kbd>[Ctrl]+[z]</kbd>
+							that should return
+							<code>[1]+  Angehalten              find ...</code>
+							then type
+							<pre><code>$ bg %1</code></pre>
+							where <code>%1</code> is the id of the job, that the [Ctrl]+[z] returned
+						</li>
+					</ul>
+
+                   <footer></footer>
+            </div>
+
+            <div id="jobcontrol2" class="step slide" data-x="10500" data-y="7000" data-rotate-x="120" data-rotate-y="30" data-z="1500">
+                   <header>Background jobs</header>
+
+					<ul>
+						<li>
+							But(!) now your job still writes to your terminal!!
+						</li>
+
+						<li data-jmpress="zoom" class="will-zoom do-zoom">
+							better to write it then like that
+							<pre><code>$ find / -name '*e*' -type f >/tmp/files-w-e.log 2>/dev/null</code></pre>
+						</li>
+						<li data-jmpress="zoom" class="will-zoom do-zoom">
+							then <kbd>[Ctrl]+[z]</kbd><pre><code>$ ...
+[2]+  Angehalten find / -name...
+$ bg %2
+</code></pre>
+						</li>
+						<li data-jmpress="zoom" class="will-zoom do-zoom">
+							and yet better: send it to the background when you start it by appending <code>&amp;</code> to the command
+							<pre><code>$ grep -Ri 'error' /var/log >/tmp/errors.txt 2>/dev/null &amp;</code></pre>
+						</li>
+					</ul>
+
+                   <footer></footer>
+            </div>
+
+            <div id="jobcontrol3" class="step slide" data-x="13500" data-y="7000" data-rotate-x="120" data-rotate-y="30" data-z="2500">
+                   <header>Background jobs: handling</header>
+
+					<ul>
+						<li>
+							which jobs are running in the background?
+							<pre><code>$ jobs
+[1]+  Läuft                  find / -name '*e*' 2> /dev/null > /tmp/files-w-e.txt &
+</code></pre>
+						</li>
+						<li data-jmpress="zoom" class="will-zoom do-zoom">
+							get a job to the foreground (e.g. to cancel it with <kbd>[Ctrl]+[c]</kbd>)
+							<pre><code>$ fg %2</code></pre>
+						</li>
+					</ul>
+
+					<br />
+
+					<p data-jmpress="zoom" class="will-zoom do-zoom">
+						you have a lot more possibilities to manage several jobs/processes in parallel
+						with <a href="#/tools-screen"> screen </a>
+					</p>
+
+					<footer></footer>
+			</div>
+
+            <div id="xargs" class="step slide" data-x="7500" data-y="4000" data-z="-4500" data-rotate-y="90">
+                <header>Pipe data stream as argument</header>
+                <pre><code class="bash">$ cd /etc/pam.d
+$ ls
+chfn   ftp    other   ppp    rlogin  samba   sshd  sudo  xlock
+chsh   login  passwd  rexec  rsh     squid   su    xdm   xscreensaver
+</code></pre>
+                <p class="text-center">Use <em>piped data stream</em> as <em>arguments</em> to another command:<br/>
+                <kbd>xargs <em>[options]</em> <em>[command]</em> <em>[command option]</em></kbd>
+                </p>
+<pre><code class="bash right">$ <em>ls | wc -l</em>
+18
+</code><code class="bash">$ <em>ls | xargs wc -l</em>         <span class="text3 hidden-print"><i class="fa fa-lg fa-arrow-left"></i><i class="fa fa-lg fa-arrow-right"></i></span>
+6 chfn
+6 chsh
+13 ftp
+...
+114 total</code></pre>
+                <br class="clearfix"/>
+                <footer></footer>
+            </div>
+            <div id="assignmentRedirect" class="step assignment" data-x="7500" data-y="4000" data-z="1500" data-rotate-x="90">
+                <header class="akzent6"><i class="fa fa-cog fa-spin solve" data-assignment="6"></i> Assignment #6</header>
+                <p class="lead">... redirect input/output streams ...</p>
+                <ol>
+                    <li>Write the <em>manual pages</em> for <kbd>cat</kbd> into the file <code>help.dat</code>.</li>
+                    <li>Extend <code>help.dat</code> by infos about <kbd>echo</kbd>.</li>
+                    <li>How many files are in <code>/bin</code> ? Display only the number of files ...</li>
+                    <!-- rm `find ~ -type f -name "*.bak" -print` -->
+                    <li>How do you <em>delete</em> all files ending <code>.bak</code> in <code>/home</code> and all subdirectories ?
+                    <ul>
+                        <!-- rm -i `find ~ -type f -name "*.bak" -print` -->
+                        <li>... how about confirming deletion of <em>each file</em> ?</li>
+                        <!-- rm -I `find ~ -type f -name "*.bak" -print` -->
+                        <li>... how about confirming deletion <em>only once</em> ?</li>
+                    </ul></li>
+                </ol>
+            </div>
+            <div id="config" class="step slide" data-x="7500" data-y="5000">
+                <header>My configuration</header>
+                <p>setting shell options during initialization time</p>
+                <dl class="item left">
+                    <dt>/etc/profile, /etc/bash.bashrc</dt>
+                    <dd>
+                        global files, read first for <a>bash</a> and <a>sh</a>
+                    </dd>
+                    <dd>for <em>all</em> users, managed by system administrator</dd>
+                    <dt>$HOME/.profile</dt>
+                    <dd>custom properties for <em>specific</em> user</dd>
+                    <dd>run on login shells, <em>NOT</em> on subshells</dd>
+                    <dt>$HOME/.bashrc</dt>
+                    <dd>custom properties for <em>specific</em> user</dd>
+                    <dd>run for all shells (including subshells)</dd>
+                </dl>
+                <dl class="item right">
+                    <dt class="text4">bash prompt variables</dt>
+                    <dd>variables defining look of bash prompt
+                        <dl class="dl-horizontal">
+                        <dt>PS1</dt>
+                        <dd>default interactive prompt</dd>
+                        <dt>PS2</dt>
+                        <dd>continuation interactive prompt</dd>
+                        <dt>PS3</dt>
+                        <dd>prompt of select loop inside script</dd>
+                        <dt>PS4</dt>
+                        <dd>prompt for script in debug mode</dd>
+                        </dl>
+                    </dd>
+                    <dd>additionally <code>PROMPT_COMMAND</code> is being executed right before PS1
+                    </dd>
+                    <dd class="lead"><a href="http://www.thegeekstuff.com/2008/09/bash-shell-ps1-10-examples-to-make-your-linux-prompt-like-angelina-jolie/" target="_blank">examples of playing with PS1</a></dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="alias" class="step slide" data-x="9000" data-y="5000">
+                <header>Alias</header>
+                <blockquote>... essentially nothing more than a <em>keyboard shortcut</em>, an abbreviation, a means of <em>avoiding typing</em> a long command sequence.</blockquote>
+                <dl class="dl-horizontal">
+                    <dt><kbd>alias <em>[name=command]</em></kbd></dt>
+                    <dd>sets <em>name</em> as abbreviation of <em>command</em></dd>
+                    <dd>without parameter, shows <em>all current aliases</em></dd>
+                    <dt><kbd>unalias <em>[name]</em></kbd></dt>
+                    <dd>unset alias for <em>name</em></dd>
+                </dl>
+                <pre><code>alias lm='ls -l | more'
+alias rm='rm -i'</code></pre>
+                <p>prepending <em>\</em> to a command ignores execution of alias</p>
+                <footer></footer>
+            </div>
+
+            <div id="assignmentConfig" class="step assignment" data-x="9000" data-y="3000" data-z="-5000" data-rotate-y="90">
+                <header class="akzent1"><i class="fa fa-cog fa-lg fa-spin solve" data-assignment="7"></i> Assignment #7</header>
+                <p class="lead">... configure your own bash ...</p>
+                <ol>
+                    <li>append <code>alias cp='cp -i'</code> and <code>alias rm='rm -i'</code> to end of <code>~/.bashrc</code>
+                     <ul>
+                       <li data-jmpress="zoom after 3s step">
+                        <span class="text1">
+                            What impact does this have on <code>cp</code> and <code>rm</code> in current shell <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                       </li>
+                       <li data-jmpress="zoom after 3s prev">
+                        <span class="text2">
+                            ... in the next login shell <i class="fa fa-lg fa-question-circle"></i> ... in the next subshell <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                       </li>
+                       <li data-jmpress="zoom after 3s prev">
+                        <span class="text3">
+                            Can you do it in a <em>single commandline</em> <i class="fa fa-lg fa-question-circle"></i>
+                        </span>
+                       </li>
+                       </ul>
+                    </li>
+                    <li>How to set a global variable <code>JAVA_HOME</code> to directory of <kbd>java</kbd> installation (<code>/usr/java/default</code>), for <em>all users</em> ?</li>
+                    <li>Set your bash prompt temporarily to <code>[<span class="text1">username@hostname</span>:<span class="text3">~/CurrentWorkingDirectory</span>]$ </code>
+<!--PS1="[\u@\h:\w]\$ --></li>
+                    <li>Set an alias for <kbd>ls</kbd> command, to display results in colors.</li>
+                </ol>
+            </div>
+            <div id="admin" class="step slide" data-x="10500" data-y="1000">
+                <header>Being super</header>
+                <p>
+                    As already mentioned in <a href="#/root">users section</a>, <code><i class="fa fa-user fa-lg"></i> root</code> usually does not logon directly. Only for tasks requiring <em>root privileges</em> , a regular <i class="fa fa-user fa-lg"></i> user <em>changes</em> temporarily to <code>root</code>.
+                </p>
+
+                <dl class="dl-horizontal">
+                    <dt>su</dt>
+                    <dd><em>s</em>ubstitute <em>u</em>ser identity: <em>switch</em> current user account</dd>
+                    <dt>sudo</dt>
+                    <dd>run programs with security <em>privileges</em> of another user</dd>
+                </dl>
+                <dl class="dl-horizontal left">
+                    <dt>SUID, SGID</dt>
+                    <dd>special <em>access rights</em> (bits) of a file</dd>
+                    <dd>grant <em>caller</em> of the program the rights of <em>owner (SUID)</em> or <em>group (SGID)</em> only <em>during program execution</em></dd>
+                    <dt>sticky bit</dt>
+                    <dd>file access rights <em>priority</em> over directory access rights</dd>
+                </dl>
+                   <pre class="right"><code>$ ls -l /usr/bin/passwd
+-rw<em>s</em>r-xr-x ... /usr/bin/passwd</code>
+                      <code>$ ls -l /
+drwxrwxrw<em>t</em> ... tmp
+</code></pre>
+
+                <footer></footer>
+            </div>
+
+            <div id="chapAdvanced" class="step slide chapter orange" data-y="2000">
+                <header>Filtering</header>
+                <footer></footer>
+            </div>
+
+            <div id="filtering" class="step slide" data-x="-1500" data-y="2000">
+                <header>Filter</header>
+                <i class="fa fa-filter fa-5x pull-right"></i>
+                <blockquote>A filter is a unix program, which <em>reads</em> data, <em>manipulates</em> and <em>outputs</em> it again.<br/>
+                That makes it a perfect fit for <em>pipe usage</em>.<br/>
+                If no input files are provided via parameters, the filter reads from <em class="text-info">stdin</em> and displays to <em class="text-success">stdout</em>.</blockquote>
+
+                <p>some examples of filters:</p>
+                <ul class="list-inline">
+                    <li><kbd>more</kbd></li>
+                    <li><kbd>grep</kbd></li>
+                    <li><kbd>sed</kbd></li>
+                    <li><kbd>tr</kbd></li>
+                    <li><kbd>cut</kbd></li>
+                    <li><kbd>awk</kbd></li>
+                    <li><kbd>sort</kbd></li>
+                    <li><kbd>wc</kbd></li>
+                    <li>...</li>
+                </ul>
+
+                <footer></footer>
+            </div>
+            <div id="moreless" class="step slide" data-x="-3000" data-y="2000" data-rotate-x="22">
+                <header>view content</header>
+                <table class="table table-condensed right">
+                    <caption>less key codes</caption>
+                    <thead>
+                        <tr>
+                            <th class="col-md-1">description</th>
+                            <th class="col-md-1">key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>next page</td>
+                            <th><kbd>&lt;space&gt;</kbd>, <kbd>page <i class="fa fa-arrow-down"></i></kbd></th>
+                        </tr>
+                        <tr>
+                            <td>previous page</td>
+                            <th><kbd>b</kbd>, <kbd>page <i class="fa fa-arrow-up"></i></kbd></th>
+                        </tr>
+                        <tr>
+                            <td>next/previous line</td>
+                            <th><kbd><i class="fa fa-arrow-down"></i></kbd> / <kbd><i class="fa fa-arrow-up"></i></kbd></th>
+                        </tr>
+                        <tr>
+                            <td>find next <em>text</em></td>
+                            <th><kbd>/<em>text</em></kbd></th>
+                        </tr>
+                        <tr>
+                           <td>find previous <em>text</em></td>
+                            <th><kbd>?<em>text</em></kbd></th>
+                        </tr>
+                        <tr>
+                            <td>find next/previous</td>
+                            <th><kbd>n</kbd> / <kbd>N</kbd></th>
+                        </tr>
+                        <tr>
+                            <td>quit</td>
+                            <th><kbd>q</kbd></th>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl>
+                    <dt>cat</dt>
+                    <dd>display content, <em>no navigation</em></dd>
+                    <dd class="text-center"><kbd>cat &lt;file&gt;</kbd></dd>
+                    <dt>more</dt>
+                    <dd>pagination of content per display height, only <em>forward navigation</em> possible</dd>
+                    <dd class="text-center"><kbd>more &lt;file&gt;</kbd></dd>
+                    <dt>less</dt>
+                    <dd>pagination of content per display height, navigation in <em>both direction</em></dd>
+                    <dd class="text-center"><kbd>less &lt;file&gt;</kbd></dd>
+                </dl>
+               <pre class="left"><code class="bash">$ <em>less</em> help.dat
+$ ls -al | <em>more</em></code></pre>
+                <footer></footer>
+            </div>
+            <div id="grep" class="step slide" data-x="-4500" data-y="2000" data-rotate-x="45">
+                <header>search for content</header>
+                <dl class="dl-horizontal">
+                    <dt>grep</dt>
+                    <dd>find <em>patterns</em> in content of <em>text</em> files</dd>
+                    <dd>most used command in unix world</dd>
+                    <dd><kbd>grep &lt; option ... &gt; regular expression &lt; file ... &gt;</kbd></dd>
+                </dl>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="col-md-1">option</th>
+                            <th class="col-md-3">description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><code>-r</code></th>
+                            <td>search recursively in files of sub directories</td>
+                        </tr>
+                        <tr>
+                            <th><code>-i</code></th>
+                            <td>ignore case during matching</td>
+                        </tr>
+                        <tr>
+                            <td><code>-c</code></td>
+                            <td>return only amount of matching lines (count)</td>
+                        </tr>
+                        <tr>
+                            <td><code>-l</code></td>
+                            <td>return only name of files (list)</td>
+                        </tr>
+                        <tr>
+                            <td><code>-v</code></td>
+                            <td>all lines <em>not</em> matching pattern (vice versa)</td>
+                        </tr>
+                        <tr>
+                            <td><code>-n</code></td>
+                            <td>display line including line number</td>
+                        </tr>
+                        <tr>
+                            <td><code>-e</code></td>
+                            <td>use POSIX-compliant regular expressions</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="grepexample1" class="step" data-x="-5200" data-y="2000" data-z="-500" data-rotate-y="-90" data-rotate-x="45">
+                <header class="text-uppercase">simple examples</header>
+                <p>Is user <code>grund</code> currently on the system ?</p>
+                <pre><code class="bash">$ who | grep grund
+grund    pts/0        2014-08-27 08:49 (...)</code></pre>
+                <p>get members of group <code>training1</code></p>
+                <pre><code class="bash">$ grep training1 /etc/group
+training1:!:1002:grund,jheydel,blaibach,wengel,mkappelar,rwoelflik,...</code></pre>
+                <footer></footer>
+            </div>
+            <div id="regex" class="step slide" data-x="-4500" data-y="2500" data-rotate-x="45" data-z="600">
+                <header>regular expression</header>
+                <p>Regular expressions are the <em>default language for pattern matching</em>, used not only by <kbd>grep</kbd>, but many other commands as well (<kbd>sed</kbd>, <kbd>awk</kbd>, ...).<br/>
+                A regular expression may contain <em>meta characters</em>, which broaden or narrow the search term.</p>
+                <table class="table table-condensed">
+                    <caption>basic meta characters</caption>
+                    <thead>
+                        <tr>
+                            <th class="col-md-1">character</th>
+                            <th class="col-md-5">description</th>
+                            <th class="col-md-2">example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><code>.</code></th>
+                            <td>any single character</td>
+                            <td><kbd>r.x</kbd></td>
+                        </tr>
+                        <tr>
+                            <th><code>[  ]</code></th>
+                            <td>exactly one character of group</td>
+                            <td><kbd>[0-9]</kbd>,<kbd>[0123456789]</kbd></td>
+                        </tr>
+                        <tr>
+                            <th><code>[^ ]</code></th>
+                            <td>any single character, <em>not</em> part of the group</td>
+                            <td><kbd>[^0-9]</kbd>,<kbd>[^A-Za-z]</kbd></td>
+                        </tr>
+                        <tr>
+                            <th><code>*</code></th>
+                            <td>any repetition of former character or pattern</td>
+                            <td><kbd>.*</kbd>, <kbd>a*</kbd>, <kbd>[0-9]*</kbd></td>
+                        </tr>
+                        <tr>
+                            <th><code>^</code></th>
+                            <td>at beginning of the pattern: pattern occurs at start of line</td>
+                            <td><kbd>^drwx</kbd></td>
+                        </tr>
+                        <tr>
+                            <th><code>$</code></th>
+                            <td>at the end of the patttern: pattern occurs at end of line</td>
+                            <td><kbd>ix$</kbd></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="regex2" class="step" data-x="-4500" data-y="3000" data-rotate-x="45" data-z="1300">
+            <table class="table">
+                <caption> regular expression</caption>
+                <thead>
+                    <tr>
+                        <th class="col-md-3">description</th>
+                        <th class="col-md-1">filter</th>
+                        <th class="col-md-1"><a href="http://en.wikipedia.org/wiki/POSIX" target="_blank">POSIX</a></th>
+                        <th class="col-md-3">example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>start of line</td>
+                        <td><code>^</code></td>
+                        <td><code>^</code></td>
+                        <td><kbd>^grund</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>end of line</td>
+                        <td><code>$</code></td>
+                        <td><code>$</code></td>
+                        <td><kbd>ix$</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>any character</td>
+                        <td><code>.</code></td>
+                        <td><code>.</code></td>
+                        <td><kbd>M.a</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>any series of characters</td>
+                        <td><code>.*</code></td>
+                        <td><code>.*</code></td>
+                        <td><kbd>M.*ix</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>one of <em>a</em>,<em>b</em>,<em>c</em></td>
+                        <td><code>[a-c]</code></td>
+                        <td><code>[a-c]</code></td>
+                        <td><kbd>training[1-9]</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>one character, <em>NOT</em> <em>a</em>, <em>b</em> or <em>c</em></td>
+                        <td><code>[^a-c]</code></td>
+                        <td><code>[^a-c]</code></td>
+                        <td><kbd>M[^aei]</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>any amount of <em>x</em> (incl. none)</td>
+                        <td><code>x*</code></td>
+                        <td><code>x*</code></td>
+                        <td><kbd>training[1-9]*</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>one or more of <em>x</em></td>
+                        <td><code>x\+</code></td>
+                        <td><code>x+</code></td>
+                        <td><kbd>training[1-9]+</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>none or one of <em>x</em></td>
+                        <td><code>x\?</code></td>
+                        <td><code>x?</code></td>
+                        <td><kbd>test_?a</kbd></td>
+                    </tr>
+                    <tr>
+                        <td><em>x</em> exactly <em>n</em> times</td>
+                        <td><code>x\{n\}</code></td>
+                        <td><code>x{n}</code></td>
+                        <td><kbd>test_[0-9]{2}</kbd></td>
+                    </tr>
+                    <tr>
+                        <td><em>x</em> at least <em>n</em> times</td>
+                        <td><code>x\{n,\}</code></td>
+                        <td><code>x{n,}</code></td>
+                        <td><kbd>test_[0-9]{2,}</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <em>x</em> at least <em>n</em> times,<br/>
+                            at most <em>m</em> times
+                        </td>
+                        <td><code>x\{n,m\}</code></td>
+                        <td><code>x{n,m}</code></td>
+                        <td><kbd>test_[0-9]{2,3}</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>grouping characters</td>
+                        <td><code>\(...\)</code></td>
+                        <td><code>(...)</code></td>
+                        <td><kbd>test_([a-z][0-9])</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>reuse group <em>n</em> (0-9)</td>
+                        <td><code>\n</code></td>
+                        <td><code>\n</code></td>
+                        <td><kbd>&lt;([a-Z])&gt;.*&lt;/\1&gt;</kbd></td>
+                    </tr>
+                    <tr>
+                        <td><em>OR</em></td>
+                        <td><code>...\|...</code></td>
+                        <td><code>...|...</code></td>
+                        <td><kbd>(GPL|GNU Public License)</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            masking (escaping) character <em>\</em>
+                        </td>
+                        <td><code>\\</code></td>
+                        <td><code>\\</code></td>
+                        <td><kbd>test_a\\7</kbd></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div id="grepexample2" class="step" data-x="-5200" data-y="2500" data-rotate-y="-90" data-rotate-x="45">
+                    <header class="text-uppercase">more examples</header>
+                    <p>find <code>passwd</code> entry for user <code>grund</code>:</p>
+                    <pre><code class="bash">$ grep '^grund:' /etc/passwd
+grund:x:1003:100:grund:/home/grund:/bin/bash</code></pre>
+                    <p>search for all names within <code>character_list</code> <em>starting</em> with <code>M</code> and <em>ending</em> with <code>ix</code>:<p>
+                    <pre><code class="bash">$ grep '<em>^M</em>.*<em>ix</em>$' asterix/character_list
+Machtnix
+Magnix
+Majestix
+Methusalix
+Middlesix
+Miraculix</code></pre>
+            </div>
+            <div id="assignmentGrep" class="step assignment" data-x="-4500" data-y="2000" data-z="-750" data-rotate-y="90">
+                <header class="akzent2"><i class="fa fa-cog fa-spin solve" data-assignment="8"></i> Assignment #8</header>
+                <p class="lead">... find with regular expressions ...</p>
+                <ol>
+                    <li>Provide a regular expression matching all <em>valid times of a 24h clock</em> (00:00:00 - 23:59:59).</li>
+                    <li>Find all <em>double typed</em> words in <code>~/asterix/asterix_text.html</code>.</li>
+                    <!-- grep -E "\b(\w+) \1\b" asterix_text.html -->
+                    <li>How many <em>empty lines</em> are in <code>~/asterix/asterix_text.html</code> ?</li>
+                    <!--grep -c "^$" asterix_text.html-->
+                    <li>Find all <em>external links</em> in <code>~/asterix/asterix_text.html</code>.</li>
+                    <!-- sed -n 's/.*href="\(http:[^"]*\)".*$/\1/p' asterix_text.html -->
+                </ol>
+            </div>
+
+            <div id="sed" class="step slide under-construction" data-x="-6000" data-y="2000" data-rotate-x="67">
+                <header>search and replace</header>
+                <!--
+                    http://www.grymoire.com/Unix/Sed.html
+                -->
+                <dl class="dl-horizontal">
+                    <dt>sed </dt>
+                    <dd>batch oriented <em>s</em>tream <em>ed</em>itor usable as filter (without a <em>file</em> parameter it processes standard input and outputs to standard out)</dd>
+                    <dd>syntax common to <a href="#/grep">grep</a> or <a href="#/vi">vi</a></dd>
+                    <dd>sed uses several commands, most important and useful for search and replace: <em><code>s</code> - substitute</em>
+                    </dd>
+                </dl>
+
+                <p>examples for search and replace:</p>
+                <dl>
+                    <dt><kbd>sed 's/abc/def/g' alle_gallier</kbd></dt>
+                    <dd><em>all occurrences</em> of string <em>abc</em> gets replaced by <em>def</em> in file <em>alle_gallier</em></dd>
+                    <dt><kbd>ls -l | sed 's/xr/XR/'</kbd></dt>
+                    <dd><em>first occurrence</em> of string <em>xr</em> gets replaced by <em>XR</em> in long listing of current directory</dd>
+                </dl>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="col-sm-2">command</th>
+                            <th class="col-sm-4">example</th>
+                            <th class="col-sm-6">description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><em>s</em>ubstitute</td>
+                            <td>
+                                <kbd>sed 's/abc/def/g' file</kbd>
+                            </td>
+                            <td class="linebreak"><em>all occurrences</em> of string <em>abc</em> gets replaced by <em>def</em> in file <em>file</em></td>
+                        </tr>
+                        <tr>
+                            <td><code>i</code>nsert line before</td>
+                            <td></td>
+                            <td class="linebreak"></td>
+                        </tr>
+                        <tr>
+                            <td><code>a</code>dd line after</td>
+                            <td></td>
+                            <td class="linebreak"></td>
+                        </tr>
+                        <tr>
+                            <td><code>c</code>hange line</td>
+                            <td></td>
+                            <td class="linebreak"></td>
+                        </tr>
+                        <tr>
+                            <td><code>d</code>elete line</td>
+                            <td></td>
+                            <td class="linebreak"></td>
+                        </tr>
+                        <tr>
+                            <td><code>y</code> transform</td>
+                            <td></td>
+                            <td class="linebreak"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer></footer>
+            </div>
+            <div id="tr" class="step slide under-construction" data-x="-7500" data-y="2000" data-rotate-x="90">
+                <header>transform text</header>
+                <kbd>tr</kbd>
+                <footer></footer>
+            </div>
+            <div id="cut" class="step slide under-construction" data-x="-9000" data-y="2000" data-rotate-x="112">
+                <header>cut by columns</header>
+                <kbd>cut</kbd>
+                <footer></footer>
+            </div>
+            <div id="awk" class="step slide under-construction" data-x="-10500" data-y="2000" data-rotate-x="135">
+                <header>complex matching</header>
+                <kbd>awk</kbd>
+                <footer></footer>
+            </div>
+            <div id="wc" class="step slide under-construction" data-x="-12000" data-y="2000" data-rotate-x="157">
+                <header>counting</header>
+                <kbd>wc</kbd>
+                <footer></footer>
+            </div>
+            <div id="otherFilter" class="step slide under-construction" data-x="-13500" data-y="2000" data-rotate-x="180">
+                <header>more filter</header>
+                <dl class="dl-horizontal">
+                    <dt>sort</dt>
+                    <dd><kbd>sort &lt;file&gt;</kbd></dd>
+                    <dt>unique</dt>
+                    <dd>removes duplicate lines <kbd>unique &lt;file&gt;</kbd></dd>
+                    <dd><i class="fa fa-warning text-danger"></i> make sure lines are <em>sort</em>ed ... </dd>
+                    <dt></dt>
+                    <dd></dd>
+                </dl>
+                <footer></footer>
+            </div>
+
+			<div id="chapTools" class="step slide chapter blue" data-y="3000">
+                <header>Useful Tools</header>
+                <footer></footer>
+            </div>
+
+            <div id="tools-find" class="step slide" data-x="4400" data-y="-2000" data-z="-1000" data-rotate-y="45">
+				<header>find files</header>
+				<p>
+					Finding files is important.<br/>
+                    On the linux shell you can do this with the	<kbd>find</kbd> command which behaves a little different than lot of others and that has a plethora of parameters
+				</p>
+				<pre><code>$ find <em>[StartDirectory]</em> -name <em>[pattern]</em></code></pre>
+				<p>example</p>
+				<pre><code>$ find /etc -name passwd
+/etc/passwd
+/etc/pam.d/passwd
+find: "/etc/ssl/private": Keine Berechtigung
+$
+</code></pre>
+				<footer></footer>
+			</div>
+
+			<div id="find-warning" class="step alert alert-warning" role="alert"  data-x="4400" data-y="-2050" data-z="-1050" data-rotate-y="-135">
+                <header> <span class="fa-stack fa-3x pull-right">
+                  <i class="fa fa-circle fa-stack-2x text-danger hidden-print"></i>
+                  <i class="fa fa-warning fa-stack-1x text0"></i>
+                </span>WARNING</header>
+                <p>
+                    The find command uses <code>long!</code> parameter names but prepends them with a <code>single -</code>
+                </p>
+
+            </div>
+
+			<div id="tools-find2" class="step slide" data-x="7400" data-y="-2000" data-z="-1500" data-rotate-y="90">
+				<header>find by patterns</header>
+
+				<p>If you search for part of a name, be sure to <em>quote the pattern</em> you give to <kbd>find</kbd></p>
+
+				<pre><code>$ find / -name <em>"*e*"</em></code></pre>
+
+                <header>Why ?</header>
+				<p>
+                    Let's try it out ... assuming current directory with some files ...
+                </p>
+
+                <pre><code>$ ls
+folder1/    folder2/   file1  file2  file3  test/  ...</code></pre>
+				<p>
+                    Use debug mode (<a href="/#substitution-view"><code>set -x</code></a>) while running the <em>unquoted</em> command ...
+                </p>
+                <pre><code>$ set -x
+$ find / -name <em>*e*</em></code></pre>
+
+                    <small class="pull-right">see <a href="#/interpretation"> command substitution</a> for more details</small>
+
+				<footer></footer>
+			</div>
+
+			<div id="tools-screen" class="step slide" data-x="9400" data-y="-20000" data-z="500">
+				<header>screen</header>
+
+					<h2>What screen is</h2>
+
+					<p>Did you ever wish to log onto a server with ssh and ...</p>
+
+				<ul>
+					<li data-jmpress="zoom" class="will-zoom do-zoom">
+						 ... let some process run for hours<br />
+						 and do something else in the same terminal
+					</li>
+					<li data-jmpress="zoom" class="will-zoom do-zoom">
+						... let some process run for hours while<br />
+						you log off and come back tomorrow, to see the result of this process
+					</li>
+					<li data-jmpress="zoom" class="will-zoom do-zoom">
+						... share a terminal with someone else somewhere<br />
+						in romania/ukraine/usa?
+					</li>
+				</ul>
+
+				<p data-jmpress="zoom" class="will-zoom do-zoom">
+                    <strong><em>then screen might be useful for you!</em></strong>
+				</p>
+
+				<footer></footer>
+			</div>
+
+			<div id="tools-screen2" class="step slide" data-x="10400" data-y="-20000" data-z="1000">
+				<header>screen 2</header>
+
+				<p>
+					screen &quot;feels&quot; like a <em>window manager</em> <strong>in the shell</strong>
+				</p>
+
+				<ul>
+					<li data-jmpress="zoom" class="will-zoom do-zoom">
+						as soon as you start screen, you are in the first "window"<br />
+						each window runs another shell<br />
+						you can switch back and forth between your shells that are completely
+						seperate running processes and you can even log off and leave the process to check on it later
+					</li>
+
+					<li data-jmpress="zoom" class="will-zoom do-zoom">
+						edit, zip, query in different shells within the same session, without the need to login again and again
+					</li>
+				</ul>
+
+				<footer></footer>
+			</div>
+
+			<div id="tools-screen3" class="step slide" data-x="11400" data-y="-20000" data-z="1500">
+				<header>screen 3</header>
+
+				<p>start <em>screen</em> with</p>
+				<pre><cmd>screen</cmd></pre>
+
+				<p data-jmpress="zoom" class="will-zoom do-zoom"><br />
+					the first time you start it, you should see a notice that you exit with<br />
+					<kbd>&nbsp;&crarr; </kbd> &nbsp; or <kbd>space</kbd>
+				</p>
+
+				<p data-jmpress="zoom" class="will-zoom do-zoom"><br />
+					afterwards you are in a <strong>new shell</strong> within a screen session, so to speak you are
+					in the <strong>first window</strong>
+				</p>
+
+				<p data-jmpress="zoom" class="will-zoom do-zoom">
+					to interact with screen in one of your screen sessions you type<br />
+					<kbd> [Ctrl]+[a] </kbd> or the same in the typical Screen notation you find in the man
+					page and on the internet <kbd> C-a </kbd>
+				</p>
+
+				<footer></footer>
+			</div>
+            
+            <div id="tools-screen4" class="step slide" data-x="13400" data-y="-20000" data-z="2500">
+                <header>screen 4 - important shortcuts</header>
+                
+                <p>
+                    <b>Screen - create</b><br />
+                    new screen &quot;window&quot;<br />
+                    <code>C-a C-c</code>
+                </p>
+                
+                <p>
+                    <b>Screen - next</b><br />
+                    jump to next screen &quot;window&quot;<br />
+                    <code>C-a C-n</code>
+                </p>
+                
+                <p>
+                    <b>Screen - previous</b><br />
+                    jump to prev screen &quot;window&quot;<b>Screen - previous</b><br />
+                    <code>C-a C-p</code>
+                </p>
+                
+                <p>
+                    <b>Screen - detach</b><br />
+                    detach from screen, but leave the windows running<br />
+                    <code>C-a C-d</code>
+                </p>
+                
+            </div>
+
+            <div id="tools-screen5" class="step slide" data-x="14400" data-y="-20000" data-z="3000">
+                <header>screen 5 - screen options</header>
+                
+                <p>
+                    see if&VerticalSeparator;which screen is running<br />
+                    <code> screen -ls </code>
+                </p>
+                
+                <p>
+                    reattach to a running screen session<br />
+                    <code> screen -r </code>
+                </p>
+                
+                <p>
+                    attach to a screen session and share it with somone else<br />
+                    <code> screen -x </code>
+                </p>
+
+            </div>
+            
+            <div id="assignmentScreen-01" class="step assignment" data-x="-14500" data-y="-2000" data-z="750" data-rotate-y="160">
+                <header class="akzent2"><i class="fa fa-cog fa-spin solve" data-assignment="9"></i> Assignment #9</header>
+                <p class="lead">first steps with screen</p>
+                <ol>
+                    <li>Start a screen session</li>
+
+                    <li>execute a <code> ls </code> within the first &quot;window&quot;</li>
+
+                    <li>start a second &quot;window&quot;</li>
+
+                    <li>execute a <code> pwd </code> within</li>
+                    
+                    <li>switch between the two &quot;windows&quot;</li>
+                    
+                    <li>detach</li>
+                    
+                    <li>see if the screen session is still running</li>
+                    
+                    <li>reattach to the session</li>
+                    
+                    <li>exit all running screen &quot;windows&quot;</li>
+
+                </ol>
+            </div>
+            
+            
+            
+            <div id="chapEditors" class="step slide chapter blue" data-y="3000">
+                <header>Editors</header>
+                <footer></footer>
+            </div>
+            <div id="editors" class="step slide under-construction" data-x="1500" data-y="3000">
+                <header>textual editors</header>
+                <footer></footer>
+            </div>
+            <div id="vi" class="step slide under-construction" data-x="3000" data-y="3000">
+                <header>vi</header>
+                <footer></footer>
+            </div>
+            <div id="emacs" class="step slide under-construction" data-x="4500" data-y="3000">
+                <header>emacs</header>
+                <footer></footer>
+            </div>
+            <div id="otherEditor" class="step slide under-construction" data-x="4500" data-y="4000" data-rotate-z="90">
+                <header>others ...</header>
+                <dl class="dl-horizontal">
+                    <dt>nano</dt>
+                    <dd></dd>
+                    <dd></dd>
+                    <dt>pico</dt>
+                    <dd></dd>
+                    <dd></dd>
+                </dl>
+                <footer></footer>
+            </div>
+            <div id="chapScripting" class="step slide chapter lightgray" data-y="4000">
+                <header>Bash Scripting</header>
+                <!-- http://www.tldp.org/LDP/abs/html/index.html -->
+                <footer></footer>
+            </div>
+            <div id="scriptintro" class="step slide" data-y="4000" data-x="1500">
+                <header>Definition</header>
+                <blockquote>
+                    <p>A shell program, called a <em>script</em>, is an easy-to-use tool for building applications by <em>"gluing together"</em> system calls, tools, utilities, and compiled binaries. Virtually the entire repertoire of <em>UNIX commands, utilities, and tools</em> is available for invocation by a shell script.</p>
+                    <small class="right"><a href="http://www.tldp.org/LDP/abs/html/" target="_blank">Advanced Bash-Scripting Guide</a></small>
+                </blockquote>
+                <br/>
+                <p>Additionally, bash provides for usage within scripts:</p>
+                <ul>
+                    <li>internal shell commands</li>
+                    <li>tests</li>
+                    <li>loops</li>
+                </ul>
+                <footer></footer>
+            </div>
+            <div id="scriptdontuse" class="step alert alert-info" data-y="4000" data-x="2500" data-rotate-y="90">
+                <header>When <em>NOT TO USE</em> shell scripts:</header>
+                <ul id="dontuselist">
+                    <li><em>Resource-intensive</em> tasks, especially where speed is a factor (sorting, hashing, recursion ...)</li>
+                    <li>Procedures involving <em>heavy-duty math</em> operations, especially floating point arithmetic, arbitrary precision calculations, or complex numbers</li>
+                    <li><em>Cross-platform</em> portability required</li>
+                    <li>Complex applications, where <em>structured programming</em> is a necessity (type-checking of variables, function prototypes, etc.)</li>
+                    <li><em>Mission-critical</em> applications upon which you are betting the future of the company</li>
+                    <li>Situations where <em>security</em> is important, where you need to guarantee the integrity of your system and protect against intrusion, cracking, and vandalism</li>
+                    <li>Project consists of subcomponents with <em>interlocking</em> dependencies</li>
+                    <li>Extensive <em>file operations</em> required (Bash is limited to serial file access, and that only in a particularly clumsy and inefficient line-by-line fashion.)</li>
+                    <li>Need native support for <em>multi-dimensional arrays</em></li>
+                    <li>Need <em>data structures</em>, such as linked lists or trees</li>
+                    <li>Need to generate / manipulate <em>graphics or GUIs</em></li>
+                    <li>Need direct access to <em>system hardware</em> or external peripherals</li>
+                    <li>Need <em>port or socket I/O</em></li>
+                    <li>Need to use libraries or interface with legacy code</li>
+                    <li>Proprietary, closed-source applications (Shell scripts put the source code right out in the open for all the world to see.)</li>
+                </ul>
+            </div>
+            <div id="scriptloops" class="step slide" data-y="4000" data-x="6000">
+                <header><em>For</em> Loop</header>
+
+                <p>
+                    a <em>for loop</em> iterates over a list of words.
+                    e.g. you run the <code>useradd</code> command against a list of names
+                </p>
+
+                <pre><code class="bash">for <em title="continuous variable for each user">user</em> in <em title="a list of names">joe jane jack janet</em>#loop head
+do                              # start the loop
+    useradd -m <em>$user</em>           # loop body -&gt; runs n times
+done                            # end the loop
+</code></pre>
+
+                <p>or you want to do more complex tasks with a list of files</p>
+                
+                <pre><code class="bash">for <em title="continuous variable for each file">file</em> in <em title="a list of files created by the bash">.*rc</em> # list expanded by the shell
+do
+    echo "--> <em>$file</em> <--"
+    head -n2 <em>$file</em>
+done
+</code></pre>
+                <footer></footer>
+            </div>
+
+            <div id="scriptloops2" class="step slide" data-y="4000" data-x="6000">
+                <header><em>While</em> Loop</header>
+                
+                <p>
+                    a <em>while loop</em> runs as long, as the <a href="#/script-test"> test </a> returns <em>false</em>
+                </p>
+                
+                <pre><code class="bash">c=0 # initialize
+while <em title="testing $c greater or equal 12">[ "$c" -le 12 ]</em> # test
+do
+    echo "running round no $c"
+    c=$[$c+1]
+done
+</code></pre>
+                <footer></footer>
+            </div>
+
+            <div id="final" class="step" data-x="3000" data-z="10000"></div>
+        </div>
+
+<script type="text/javascript">
+          var textCSS = ["text1", "text2", "text3", "text4", "text5", "text6"];
+
+          // Load the IFrame Player API code asynchronously.
+          var tag = document.createElement('script');
+          tag.src = "https://www.youtube.com/player_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // Replace the 'ytplayer' element with an <iframe> and
+          // YouTube player after the API code downloads.
+          var player;
+          function onYouTubePlayerAPIReady() {
+            player = new YT.Player('ytplayer', {
+              height: '720',
+              width: '960',
+              videoId: 'YqqkdgE8RpM'
+            });
+          }
+
+        $.jmpress('register', 'linux', function() {
+
+            var jmpress = this;
+            // our main configuration
+            var config = {
+                viewPort: {
+                    height: 1024,
+                    maxScale: 4,
+                    initalScale: 1,
+                    zoomable: false
+
+                },
+                /*presentationMode: {
+                  use: false,
+                  url: "./presentation-screen.html",
+                  notesUrl: "./index.notes.html"
+                },*/
+                presentations: {
+                    print: {
+                        button: "print"
+                    }
+                }
+            };
+
+            // enable ESC to toggle jmpress
+            $(this).jmpress('toggle', 27, config, true);
+            // enable break button
+            $(this).jmpress('break', config);
+            // enable print button
+            $(this).jmpress('print', config);
+            // enable footer date appending
+            $(this).jmpress('footerHandling');
+
+            // enable highlight.js
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+
+
+            // assignment scriptreplay
+
+            $('#solution').on('hidden.bs.modal', stop);
+
+            $("#play").on("click", play);
+            $("#stop").on("click", function(){
+                $("#solution").modal('hide');
+            });
+
+            vt = new jsvt.Terminal();
+            vt.Resize(91, 40);
+            vt.showCursor = false;
+            $("#term").append(vt.display);
+
+
+            // dynamically add assignemnt pages to list
+            $(this).find('.assignment').each(function(idx){
+              var newEntry = "<li><a id='assignment"+(idx+1)+"' "+
+                        "href='#/"+$(this).attr('id')+"'>"+
+                        $(this).children("header").text() +
+                        "</a></li>";
+               $("#assignmentList").append(newEntry);
+            });
+            $(this).find('.solve').on("click", function(){
+                var i = $(this).data('assignment');
+                console.log("requesting solution for assignment #" + i + " ...");
+                $("#solution").modal("show");
+                $("#currentlySolving").text($(this).parent().text()).addClass("text" + (i>6?i-6:i));
+                play_file("./assignments/assignment"+i);
+            });
+
+        });
+
+   // start the presentation!
+        $('#impress').jmpress('linux');
+        </script>
+</body>
+</html>

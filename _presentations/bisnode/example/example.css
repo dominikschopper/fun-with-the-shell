@@ -1,0 +1,398 @@
+
+@import url(../default.css);
+/*@import url(http://fonts.googleapis.com/css?family=Lora:400,700|Inconsolata:400,700);*/
+
+
+#playdiv {
+	position:absolute;
+	top: 10px;
+	left: 10px;
+	width: 40px;
+	height: 40px;	
+	z-index: 9999;
+}
+#playdiv .fa {
+	cursor: pointer;
+}
+#start {
+	background-image: url("./img/skyscraper.jpg");	
+	background-position: center;
+
+	transition: background-size 2s ease-in;
+    -moz-transition: background-size 2s ease-in;
+    -web-kit-transition: background-size 2s ease-in
+}
+#start.active {
+	background-size: 150% 150%;	
+}
+#start header {
+	padding-top: 10px;
+}
+
+#questions {
+	background-image: url("./img/Meeting.png");		
+}
+#questions header {
+	width: 75%;   
+}
+
+#link {
+	background-image: url("./img/woods.jpg");	
+}
+#link>header {	
+	width: 100%;
+}
+
+#reality {
+	background-image: url("./img/marketplace.jpg");
+}
+
+#answers {
+	background-image: url("./img/pedestrians.jpg");
+	
+}
+
+#expertise {
+	background-image: url("./img/hands.jpg");
+}
+
+#solution {
+	background-image: url("./img/crossroad.jpg");
+}
+
+#facts {
+	background-image: url("./img/notes.jpg");
+}
+
+#bisnoderegions {
+	position:absolute;
+	top: -60px;
+	right: 90px;
+	width: 500px;
+	height: 500px;
+}
+#provider {
+	background-image: url("./img/meeting2.jpg");
+}
+
+#germanyff {
+	background-image: url("./img/stairs.jpg");
+}
+
+#germany {
+	background-image: url("./img/umbrella.jpg");
+}
+#germany1 p {
+	text-transform: uppercase;	
+	font-weight: bold;
+	color: rgb(57,187,236);
+}
+#germany1 p.leading {
+	font-size: smaller;
+}
+#germany1 .big {
+	font-size:200px;
+	float: left;
+	
+}
+#germany1 .large {
+	font-size:150px;
+	float: left;
+}
+
+#usplist {
+	padding: 10px;
+	color: black;
+}
+#germany3 header {
+	text-transform: none;	
+}
+.white {
+	color: white;
+}
+#laptops {
+	width: 640px;	
+	line-height:0.5em;
+	position:relative;
+	left: 230px;
+}
+#laptops span {
+	font-size:7px;
+}
+#percentages svg {
+	position:relative;
+	left: 230px;
+	width:640px;
+	height:500px;
+}
+#welist {	
+	width: 400px;
+	color: whitesmoke;
+
+	font-weight: bold;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 2px #000;
+}
+#welist>li {	
+	width: 350px;
+	border-radius: 60px 20px 20px 60px ;
+	margin-top: 40px;	
+}
+#welist>li span{	
+	display: inline-block;
+	vertical-align: middle;
+}
+#welist>li:nth-child(1) {
+	background-color: darkgray;
+}
+#welist>li:nth-child(2) {
+	background-color: lightgray;
+}
+#welist>li:nth-child(3) {
+	background-color: rgba(57,187,236,0.3);
+}
+#welist>li:nth-child(4) {
+	background-color: rgba(57,187,236,0.6);
+}
+#welist>li:nth-child(5) {
+	background-color: rgb(57,187,236);	
+}
+
+#graphSmart {
+	position:absolute;
+	top:50px;
+}
+#smarttext {	
+	position: absolute;
+	left: 550px;
+	top: 200px;
+	width: 300px;		
+}
+#smarttext>span {
+	line-height: 0.9em;	
+	font-size:10;
+	font-weight: bolder;
+	color: whitesmoke;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 2px #000;	
+}
+
+#sectors svg .fa {
+	fill: whitesmoke;
+	font-size: 144;
+}
+
+#sectors li, #sectors text {
+	color: darkgray;
+	fill: darkgray;
+}
+.bold {
+	font-weight: bolder;	
+}
+#sectors text.bold {
+	font-size: 42px;
+}
+#sectorslist {
+	position: absolute;
+	bottom: 150px;
+	width: 550px;
+	line-height: .8em;
+}
+#sectorslist li {
+	font-size: 20px;	
+}
+#action text {
+	font-size: 44px;
+	fill: whitesmoke;
+}
+
+#action text.action {
+	font-size:28px;
+}
+#action text.start {
+	font-size:16px;
+	font-weight: bolder;
+	fill:darkgray;
+}
+#action text.finish {
+	font-size:16px;
+	fill:lightgray;
+}
+#percentages .bigtext {	
+	font-size: 10px;
+	width: 220px;
+	height: 600px;
+	background-color: white;
+	position:absolute;
+	top: 20px;
+}
+#lefttext {
+	height: 100%;
+}
+
+#front, #side {
+	position:relative;
+	width: 300px;
+	height: 500px;
+	background-color: rgb(245,245,245);
+	-moz-box-shadow:    inset 0 0 25px lightgray;
+    -webkit-box-shadow: inset 0 0 25px lightgray;
+    box-shadow:         inset 0 0 25px lightgray;	
+    border: solid thin darkgray;
+}
+
+#decisionBG {
+	position: relative;	
+	top: -120px;	
+	font-family: 'Lora', serif;
+	font-weight: 700;
+	font-size: 510px;
+	color: lightgray;
+}
+.decisionText {	
+	position:relative;
+	width: 100%;
+	height: 110px;
+	color:white;
+	text-transform: uppercase;
+	font-weight: bolder;
+	font-size:larger;
+	line-height: 1em;
+}
+
+#front {
+	left: 300px;
+	 -webkit-transform: rotateY(-30deg); 
+	transform: rotateY(-30deg);
+}
+#front .decisionText {	
+	top:-530px;
+}
+#side {	
+	top:-520px;
+	left:569px;
+	width:100px;	
+	height:518px;
+	 -webkit-transform: rotateY(45deg); 
+	transform: rotateY(45deg);	
+}
+#side>.decisionText {		
+	top:205px;
+	height:113px;
+}
+#box {	
+	position:relative;
+	top:250px;
+	text-shadow: 1px 1px 2px #000;	
+	 -webkit-perspective: 1200px;
+	perspective: 1200px;	
+}
+
+.decisionText>em {
+	font-family: serif;
+	font-style: italic;
+	font-weight: normal;
+	text-decoration: none;	
+	text-transform: none;
+	color: whitesmoke;
+	border:none;
+}
+#facttext1 {	
+	width:20%;
+	height:100%;
+	padding-right:30px;
+}
+#facttext1 span {
+	line-height: 0.95em;
+	text-transform: uppercase;
+}
+
+#facttext1>div.bigtext-exempt>em {
+	position:relative;
+	font-size: 52px;
+	margin-top:-80px;
+	
+}
+#exemptText {
+	position:relative;
+	left:40%;
+	margin-top: -60px;
+	font-size:8px;
+	width:200px;
+	
+}
+#people {
+	padding-left: 50px;
+	width:105%;
+}
+#regionMap{
+	width:200px;
+	height:200px;
+}
+
+#employee {
+	width: 80%;
+	margin-left: -40px;
+}
+#employeeOrga {
+	position: absolute;
+	top:15px;
+	left: 20px;
+	width: 1024px;
+	height: 600px;
+}
+#numberstable, #regionstable {
+	border:none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	width: 100%;
+	font-size: 16px;
+	position: relative;
+}
+#numberstable>thead, #regionstable>thead
+#numberstable>tbody, #regionstable>tbody{
+	border-top: solid black;
+	border-bottom: solid black;
+	color: black;
+}
+#numberstable>thead>tr,
+#numberstable>thead>tr>th,
+#regionstable>thead>tr,
+#regionstable>thead>tr>th  {
+	background: none;
+	color: black;
+}
+#germany3>div:first-child, 
+#germany2>div:first-child {
+	height:70%;
+}
+
+#germany2 div.left,
+#germany3 div.left{
+  width: 35%;
+}
+
+#germany2 div.right ,
+#germany3 div.right {	
+	padding-left:10px;
+	width:62%;		
+}
+
+#usplist dd, #usplist dt {
+	font-size: 20px;
+	line-height: 28px;
+}
+#brandlist img {
+    width: auto;
+    max-height: 50px;
+}
+.slide {
+	-webkit-box-shadow: 10px 10px 5px darkgray;
+	-moz-box-shadow: 10px 10px 5px darkgray;
+	box-shadow: 10px 10px 5px darkgrey;
+}
+
+em {
+	border-bottom: none;
+}

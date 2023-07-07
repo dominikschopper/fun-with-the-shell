@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>reveal.js - Barebones</title>
+  <link rel="stylesheet" href="./css/reveal.css">
+
+  <!-- cofinpro styling -->
+  <link rel="stylesheet" href="./css/cofinpro.css" id="theme">
+  <!-- code highlighting -->
+  <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+
+  <link rel="shortcut icon" type="image/png" href="./favicon-32x32.png">
+  <style>
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    .reveal section {
+        font-size: 0.75em;
+    }
+    .reveal section p {
+        font-size: 0.666em;
+    }
+    .reveal section .aleft {
+        text-align: left;
+        padding: 0 2ch;
+    }
+    .reveal section .aright {
+        text-align: right;
+        padding: 0 2ch;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="bg-lightblue brown">
+        <hgroup>
+            <h1>Fun with the Shell</h1>
+            <p>How to switch directories and more ...</p>
+        </hgroup>
+      </section>
+
+      <section>
+
+        <section>
+          <hgroup>
+            <h2>Session 1</h2>
+            <p>Geschichte, Einstieg, Prozesse und Bewegen im Dateibaum</p>
+          </hgroup>
+        </section>
+
+        <section data-markdown="session-01/01_history-of-linux.md"></section>
+        <section data-markdown="session-01/02_processes.md"></section>
+        <section data-markdown="session-01/03_showing-processes.md"></section>
+        <section data-markdown="session-01/04_process_commands.md"></section>
+
+      </section>
+
+      <section data-background-image="images/clouds-are-linux-servers.jpg" data-background-size="70%">
+        <h4 class="pink" style="text-align: right;margin-top:2em">...Linux hält die Welt am Laufen</h4>
+      </section>
+      <section class="bg-blue"></section>
+
+      <section>
+        <section class="bg-lightblue orange" data-markdown>
+            ## Session 2
+            Manual, Startup, Variablen, Interpreter, Suchen
+        </section>
+
+        <section>
+          <h2>Lorem Ipsum</h2>
+          <p>... dolor sit amet</p>
+          <ul>
+            <li class="">eingeblendet 1</li>
+            <li class="fragment">später eingeblendet 2</li>
+            <li class="fragment">später eingeblendet 3</li>
+          </ul>
+        </section>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="./js/reveal.js"></script>
+  <!-- used plugins -->
+  <script src="../plugin/notes/notes.js"></script>
+  <script src="../plugin/markdown/markdown.js"></script>
+  <script src="../plugin/highlight/highlight.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      showSlideNumber: 'all',// 'speaker',
+      hash: true,
+      loop: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+  </script>
+
+</body>
+
+</html>
