@@ -1,4 +1,4 @@
-# Presentation Cofinrpo Styling in Reveal.js
+# Presentation Cofinpro Styling in Reveal.js
 
 ## Starting the Presentation
 
