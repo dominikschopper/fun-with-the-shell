@@ -2,16 +2,19 @@
 
 ## Starting the Presentation
 
-```bash
-# 0. make sure youn are in the presentations directory
-
-# 1. optionally install http-server locally
-# npm install
-
-# 2. start the http-server to serve the presentation
-# and enjoy speakers notes and more
-npm start
-```
+1. make sure youn are in the presentations directory
+  ```bash
+  
+  cd presentation
+  ```
+1. install needed dep.s (moentarily just `live-server`)
+  ```bash
+  npm install
+  ```
+1. start the http-server to serve the presentation
+  ```bash
+  npm start
+  ```
 
 then open in chrome-based browsers
 
