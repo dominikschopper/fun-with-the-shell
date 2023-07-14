@@ -2,7 +2,7 @@
 
 ## Starting the Presentation
 
-1. make sure youn are in the presentations directory
+0. make sure youn are in the presentations directory
   ```bash
   
   cd presentation
@@ -11,7 +11,7 @@
   ```bash
   npm install
   ```
-1. start the http-server to serve the presentation
+2. start the http-server to serve the presentation
   ```bash
   npm start
   ```
