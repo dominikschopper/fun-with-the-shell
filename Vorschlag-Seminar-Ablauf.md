@@ -51,9 +51,9 @@ done
 
 - Besprechung der Aufgaben
 - Manpages
-- Starten der Shell (globale und lokale `bash_profile`, `bashrc`) Wiederaufnahme von Variablen
 - Aliases
 - Globale Variablen `PATH`, `HOME`
+- Starten der Shell (globale und lokale `bash_profile`, `bashrc`) Wiederaufnahme von Variablen
 - Prozess-Umgebung (`set`, `env`)
 - Wie interpretiert die bash die Cmd-Line
 - Kurzer Ausflug ins Filesystem
