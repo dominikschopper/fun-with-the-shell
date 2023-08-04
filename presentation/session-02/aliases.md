@@ -1,8 +1,8 @@
 ### Abkürzungen
 
 <p class="aleft">
-    Aliasse sind Abkürzungen für sonst häufig wiederkehrende oder sehr lange Befehle. Sie werden individuell vergeben,
-    daher nicht standardisiert und müssen beim Bezug eines neuen Systems neu definiert werden.
+    Aliasse sind Abkürzungen für häufig wiederkehrende oder sehr lange Befehle. Sie werden individuell vergeben,
+    sind daher nicht standardisiert und müssen beim Bezug eines neuen Systems neu definiert werden.
 </p>
 
 ```bash
