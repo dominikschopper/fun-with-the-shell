@@ -8,6 +8,6 @@
 - <!-- .element class="fragment" -->
     `htop` &rarr; schönere interaktive Ansicht
 - <!-- .element class="fragment" -->
-    `/proc` &rarr; die Dateisystem-Darstellung aller Prozesse
+    `ls /proc` &rarr; die Dateisystem-Darstellung aller Prozesse
 
 Bitte versucht alle Befehle in eurem Terminal <!-- .element class="fragment" -->
