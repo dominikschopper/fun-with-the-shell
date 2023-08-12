@@ -4,7 +4,7 @@
 
 0. make sure youn are in the presentations directory
   ```bash
-  
+
   cd presentation
   ```
 1. install needed dep.s (moentarily just `live-server`)
@@ -27,4 +27,4 @@ For the basics (Slides, vertical Slides, using Markdown as Slide content, Speake
 
 ## COFINPRO style elements
 
- see the content of the [cofinpro-example.html file](./cofinpro-example.html) for the source code of our examples and watch it in parallel [in the browser](http://localhost:8808/cofinpro-example.html)
+ see the content of the [cofinpro-example.html file](./presentation/cofinpro-example.html) for the source code of our examples and watch it in parallel [in the browser](http://localhost:8808/cofinpro-example.html)
