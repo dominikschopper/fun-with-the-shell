@@ -1,11 +1,8 @@
-## Wie wir arbeiten werden
+## Wer sitzt vor Euch?
 
-Jede/r benötigt einen `ssh` client zB `putty` unter Windows oder im Terminal von MacOS
+## Wer sitzt hier?
 
-mit diesem Kommando solltet ihr euch anmelden können:
+- Was bringt ihr an Terminal/Shell Kenntnissen mit?
+- Was wollt ihr hier lernen?
+- Was darf hier auf keinen Fall passieren?
 
-```bash
-ssh training@NN.MM.OO.PP
-```
-
-unter putty `training@NN.MM.OO.PP` als Hostname eingeben
