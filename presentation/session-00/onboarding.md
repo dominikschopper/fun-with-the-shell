@@ -1,19 +1,25 @@
-## Wie wir arbeiten werden
+## Ein Terminal mit shell?
 
-Jede/r benötigt einen `ssh` client zB `putty` unter Windows oder im Terminal von MacOS
+Jede/r benötigt einen `ssh` client zB `putty` unter Windows [https://putty.org/](https://putty.org/)<!-- .element target="_blank" -->
 
-mit diesem Kommando solltet ihr euch anmelden können:
+-----
+MacOS Terminal <!-- .element class="ta-left" -->
 
-### MacOS
-
-```bash
-ssh training@NN.MM.OO.PP
+```
+ssh shell-training@NN.MM.OO.PP
 ```
 
-### Windows
+-----
 
-putty Hostname
+Windows putty Hostname <!-- .element class="ta-left" -->
 
 ```bash
-training@NN.MM.OO.PP
+shell-training@NN.MM.OO.PP
 ```
+
+#### Fallback <!-- .element class="ta-left" -->
+
+```bash
+ssh shell-training-NN@82.165.69.95
+```
+

@@ -31,6 +31,60 @@
   - Rechercheaufgabe: "Unterschied symbolic/hard links"
   - Anlegen und Löschen einer Datei `*` und einer Datei `-i`
 
+### 2. Sitzung
+
+- Besprechung der Aufgaben
+- Manpages
+- Aliases
+- Globale Variablen `PATH`, `HOME`
+- Starten der Shell (globale und lokale `bash_profile`, `bashrc`) Wiederaufnahme von Variablen
+- Prozess-Umgebung (`set`, `env`)
+- Wie interpretiert die bash die Cmd-Line
+- Kurzer Ausflug ins Filesystem
+- Suchen nach Dateien und deren Inhalten (`find`, `grep`)
+- Mehrbenutzerkonzept (Gruppen und User)
+  - whoami
+  - id
+  - useradd
+  - groupadd
+  - /etc/passwd, /etc/shadow, /etc/groups
+  - sudo
+- Verzeichnisse und Dateien und deren Berechtigungen (`rwx`, `chmod`, `chown`, `umask`, `chgrp`) - ggf. auch Attributsystem `lsattr`, `chattr`
+- Ausführen von Shell-Skripten (`source`, `bash ...`, `chmod 700 + #!`)
+#### Aufgaben:
+  - setzen von aliases, manuell und in `bashrc`
+  - Setzen von lokalen und globalen Variablen und Skriptausführung
+
+
+### 3. Sitzung
+
+- Besprechung der Aufgaben
+- Dateienden mit `head` und `tail` anschauen
+- Terminal Editoren
+- VIM Editor
+  - die drei Modi des VIM
+  - Editieren, Speichern (Verlassen)
+  - Konfiguration `vimrc`
+- Nano Editor
+- Dateien öffnen mit `less`
+  - Navigieren
+  - Suchen
+  - "Follow"-Modus
+- Packen und Entpacken
+#### Aufgaben
+  - Idee: eigenen Service auf virtueller Maschine aufsetzen (Jenkins, Gitlab?, ...)
+
+
+### 4. Sitzung
+
+- Besprechung der Aufgaben
+- Was ist eine Linux-Distribution?
+  - RHEL: RockyLinux, AlmaLinux (RHEL Clones)
+- Connecting to Remote `ssh` und `scp`
+
+
+-----
+
 
 ```bash
 #!/bin/bash
@@ -96,61 +150,3 @@ do
 done
 
 ```
-
-
-```bash
-# suchen und finden mit find/grep kann auf diesen Textdateien erfolgen
-
-
-```
-
-### 2. Sitzung
-
-- Besprechung der Aufgaben
-- Manpages
-- Aliases
-- Globale Variablen `PATH`, `HOME`
-- Starten der Shell (globale und lokale `bash_profile`, `bashrc`) Wiederaufnahme von Variablen
-- Prozess-Umgebung (`set`, `env`)
-- Wie interpretiert die bash die Cmd-Line
-- Kurzer Ausflug ins Filesystem
-- Suchen nach Dateien und deren Inhalten (`find`, `grep`)
-- Mehrbenutzerkonzept (Gruppen und User)
-  - whoami
-  - id
-  - useradd
-  - groupadd
-  - /etc/passwd, /etc/shadow, /etc/groups
-  - sudo
-- Verzeichnisse und Dateien und deren Berechtigungen (`rwx`, `chmod`, `chown`, `umask`, `chgrp`) - ggf. auch Attributsystem `lsattr`, `chattr`
-- Ausführen von Shell-Skripten (`source`, `bash ...`, `chmod 700 + #!`)
-#### Aufgaben:
-  - setzen von aliases, manuell und in `bashrc`
-  - Setzen von lokalen und globalen Variablen und Skriptausführung
-
-
-### 3. Sitzung
-
-- Besprechung der Aufgaben
-- Dateienden mit `head` und `tail` anschauen
-- Terminal Editoren
-- VIM Editor
-  - die drei Modi des VIM
-  - Editieren, Speichern (Verlassen)
-  - Konfiguration `vimrc`
-- Nano Editor
-- Dateien öffnen mit `less`
-  - Navigieren
-  - Suchen
-  - "Follow"-Modus
-- Packen und Entpacken
-#### Aufgaben
-  - Idee: eigenen Service auf virtueller Maschine aufsetzen (Jenkins, Gitlab?, ...)
-
-
-### 4. Sitzung
-
-- Besprechung der Aufgaben
-- Was ist eine Linux-Distribution?
-  - RHEL: RockyLinux, AlmaLinux (RHEL Clones)
-- Connecting to Remote `ssh` und `scp`
