@@ -2,32 +2,32 @@ FROM almalinux:8
 
 COPY create-dirs-script.sh /scripts/create-dirs-script.sh
 
-RUN echo "Setup Start! -----" \
-    && chmod 755 /scripts/create-dirs-script.sh \
-    && dnf check-update; dnf update -y \
-    && echo "Install SSHD!" \
-    && dnf install -y openssh-server openssh-clients \
-    && echo "Install tools and basics!" \
-    && dnf install -y epel-release \
-    && dnf install -y passwd shadow-utils man less vim procps-ng psmisc htop \
-    && useradd -m -s /bin/bash shell-training \
-    && echo "fun with the shell" | passwd --stdin shell-training \
-    && echo "Setup Done! -----"
+ENV TRAINING_USER="shell-training"
+ENV INITITAL_PW="fun with the shell!"
 
-# creating host files and such
-RUN echo "SSH Setup start! -----"; \
-    echo "Generating Host Keys"; \
-    ssh-keygen -b 4096 -f /etc/ssh/ssh_host_rsa_key -t rsa -N ""; \
+# initializing
+RUN chmod 755 /scripts/create-dirs-script.sh \
+    # add repo and packages like htop
+    && dnf install -y epel-release \
+    # updating packages
+    && dnf check-update; dnf update -y \
+    # install ssh server
+    && dnf install -y openssh-server openssh-clients \
+    # install base tools (passwd man pstree )
+    && dnf install -y passwd shadow-utils man less vim procps-ng psmisc htop \
+    # add user and set password
+    && useradd -m -s /bin/bash $TRAINING_USER \
+    && echo "$INITITAL_PW" | passwd --stdin shell-training
+
+# creating host key files
+RUN ssh-keygen -b 4096 -f /etc/ssh/ssh_host_rsa_key -t rsa -N ""; \
     ssh-keygen -b 1024 -f /etc/ssh/ssh_host_dsa_key -t dsa -N ""; \
     ssh-keygen -b  521 -f /etc/ssh/ssh_host_ecdsa_key -t ecdsa -N ""; \
     ssh-keygen -b 4096 -f /etc/ssh/ssh_host_ed25519_key -t ed25519 -N ""; \
-    echo "chmod 600 on keys"; \
-    chmod 600 /etc/ssh/*key; \
-    echo "SSH Setup Done! -----";
+    chmod 600 /etc/ssh/*key  2>&1
 
 USER shell-training
 RUN /scripts/create-dirs-script.sh
 
 USER root
-
 CMD ["/usr/sbin/sshd", "-D"]
