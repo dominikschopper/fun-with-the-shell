@@ -1,6 +1,6 @@
 ### Pfadangaben: WTF ist ein **"vollständiger Pfad"**?
 
-<pre class="fragment"><code class="bash">
+<pre><code class="xml">
    [/]
     |
     +-[bin]
@@ -10,11 +10,10 @@
     |   +-pwd
     +-[home]
     |   |
-    |   +--[dschopper] # we are here
+    |   +--[shell-training] # we are here
     |         |
     |         +--ps
     +-[usr]
-        |
         +-[bin]
             |
             +-htop
