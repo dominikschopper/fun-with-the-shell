@@ -4,7 +4,6 @@
 
 0. make sure youn are in the presentations directory
   ```bash
-
   cd presentation
   ```
 1. install needed dep.s (moentarily just `live-server`)
@@ -16,7 +15,7 @@
   npm start
   ```
 
-then open in chrome-based browsers
+then open in chrome-based(!) browsers
 
 - [the presentation in the index.html](http://localhost:8088/) or
 - [the example page for all elements](http://localhost:8088/cofinpro-example.html)
