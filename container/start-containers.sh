@@ -7,7 +7,7 @@ set -n
 # comment in see parsed command before executed
 # set -x
 
-echo -e "Script >>$0<< starts\n\n"
+echo -e "Script >>$0<< starts\n.....\n"
 
 while [[ "$COUNT" -lt "$MAX" ]]
 do
@@ -26,4 +26,4 @@ do
 
 done
 
-echo -e "\n\nScript >>$0<< is done"
+echo -e "\n.....\nScript >>$0<< is done"
