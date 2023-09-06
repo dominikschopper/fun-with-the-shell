@@ -4,7 +4,7 @@
 - <!-- .element class="fragment" -->
     `pstree` &rarr; Baumansicht der Prozesse
 - <!-- .element class="fragment" -->
-    `top` &rarr; interaktive Ansicht (wir task manager)
+    `top` &rarr; interaktive Ansicht (wie task manager)
 - <!-- .element class="fragment" -->
     `htop` &rarr; schönere interaktive Ansicht
 - <!-- .element class="fragment" -->
