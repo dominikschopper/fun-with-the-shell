@@ -2,19 +2,19 @@ FROM almalinux:8
 
 COPY create-dirs-script.sh /scripts/create-dirs-script.sh
 
-ENV TRAINING_USER="shell-training"
-ENV INITITAL_PW="fun with the shell!"
+ENV TRAINING_USER="________"
+ENV INITITAL_PW="________"
 
 # initializing
-RUN chmod 755 /scripts/create-dirs-script.sh \
+RUN chmod 755 /scripts/create-dirs-script.sh; \
     # add repo and packages like htop
-    && dnf install -y epel-release \
+    dnf install -y epel-release \
     # updating packages
-    && dnf check-update; dnf update -y \
+    && dnf check-update; dnf update -y; dnf install -y coreutils-common \
     # install ssh server
-    && dnf install -y openssh-server openssh-clients \
+    && dnf install -y openssh-server openssh-clients; \
     # install base tools (passwd man pstree )
-    && dnf install -y passwd shadow-utils glibc-langpack-en man less vim fortune-mod cowsay sudo procps-ng psmisc htop \
+    dnf install -y passwd shadow-utils glibc-langpack-en man less vim fortune-mod cowsay sudo procps-ng psmisc htop \
     # add user and set password
     && useradd -m -s /bin/bash $TRAINING_USER \
     && echo "$INITITAL_PW" | passwd --stdin shell-training \
