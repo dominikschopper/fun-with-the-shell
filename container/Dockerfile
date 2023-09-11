@@ -1,6 +1,6 @@
 FROM almalinux:8
 
-COPY create-dirs-script.sh /scripts/create-dirs-script.sh
+COPY --chmod=755 *.sh *.pl /scripts/
 
 ENV TRAINING_USER="________"
 ENV INITITAL_PW="________"
@@ -27,6 +27,9 @@ RUN ssh-keygen -b 4096 -f /etc/ssh/ssh_host_rsa_key -t rsa -N ""; \
     ssh-keygen -b  521 -f /etc/ssh/ssh_host_ecdsa_key -t ecdsa -N ""; \
     ssh-keygen -b 4096 -f /etc/ssh/ssh_host_ed25519_key -t ed25519 -N ""; \
     chmod 600 /etc/ssh/*key 2>&1
+
+# add /scripts to PATH for all users
+RUN echo "PATH=/scripts:$PATH" >> /etc/bashrc
 
 USER shell-training
 RUN /scripts/create-dirs-script.sh
