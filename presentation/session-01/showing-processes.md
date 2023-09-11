@@ -12,6 +12,7 @@
 46511 ttys003 0:00.15 /opt/homebrew/bin/fish -l
 94441 ttys005 0:00.34 npm start
 </code></pre>
+
 <pre><code class="language-bash">dschopper&gt; ps -ef
 UID PID PPID   C  STIME  TTY      TIME  CMD
   0   1    0   0  8May23 ??  126:16.73  /sbin/launchd
