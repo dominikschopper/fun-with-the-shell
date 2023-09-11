@@ -21,16 +21,11 @@
     .reveal section {
         font-size: 0.75em;
     }
-    .reveal section p {
-        font-size: 0.666em;
+    .reveal section code {
+        font-size: 1.25rem;
     }
-    .reveal section .aleft {
-        text-align: left;
-        padding: 0 2ch;
-    }
-    .reveal section .aright {
-        text-align: right;
-        padding: 0 2ch;
+    .reveal section pre code {
+        font-size: 1rem;
     }
   </style>
   <style>
@@ -58,8 +53,10 @@
       </section>
 
       <section>
-          <section data-markdown="session-00/vorstellungsrunde.md"></section>
-          <section data-markdown="session-00/onboarding.md"></section>
+          <section id="vorstellungsrunde" data-markdown="session-00/vorstellungsrunde.md"></section>
+          <section id="onboarding" data-markdown="session-00/onboarding.md"></section>
+          <section id="first-login" data-markdown="session-00/first-login.md"></section>
+          <section id="first-steps" data-markdown="session-00/first-steps.md"></section>
       </section>
 
     <section data-background-image="images/clouds-are-linux-servers.jpg" data-background-size="70%">
@@ -76,16 +73,56 @@
           </hgroup>
         </section>
 
-        <section data-markdown="session-01/history-of-linux.md"></section>
-        <section data-markdown="session-01/processes.md"></section>
-        <section data-markdown="session-01/showing-processes.md"></section>
-        <section data-markdown="session-01/process_commands.md"></section>
-        <section data-markdown="session-01/end_processes.md"></section>
-        <section data-markdown="session-01/exercises-process.md"></section>
-        <section data-markdown="session-01/interjection_run_a_command.md"></section>
-        <section data-markdown="session-01/pfade_so_viele_pfade.md"></section>
-        <section data-markdown="session-01/bewegen_im_verzeichnisbaum.md"></section>
-        <section data-markdown="session-01/exercises-file-movement.md"></section>
+        <section
+            id="history-of-linux"
+            data-markdown="session-01/history-of-linux.md"
+        >
+        </section>
+        <section
+            id="processes"
+            data-markdown="session-01/processes.md"
+        >
+        </section>
+        <section
+            id="showing-processes"
+            data-markdown="session-01/showing-processes.md"
+        >
+        </section>
+        <section
+            id="process_commands"
+            data-markdown="session-01/process_commands.md"
+        >
+        </section>
+        <section
+            id="end_processes"
+            data-markdown="session-01/end_processes.md"
+        >
+        </section>
+        <section
+            id="exercises-process"
+            data-markdown="session-01/exercises-process.md"
+        >
+        </section>
+        <section
+            id="interjection_run_a_command"
+            data-markdown="session-01/interjection_run_a_command.md"
+        >
+        </section>
+        <section
+            id="pfade_so_viele_pfade"
+            data-markdown="session-01/pfade_so_viele_pfade.md"
+        >
+        </section>
+        <section
+            id="bewegen_im_verzeichnisbaum"
+            data-markdown="session-01/bewegen_im_verzeichnisbaum.md"
+        >
+        </section>
+        <section
+            id="exercises-file-movement"
+            data-markdown="session-01/exercises-file-movement.md"
+        >
+        </section>
 
       </section> <!--End of Session 1 -->
 
