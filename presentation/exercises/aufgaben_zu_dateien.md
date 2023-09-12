@@ -1,7 +1,5 @@
 ## Aufgaben zum Bewegen/Anlegen/Löschen
 
-<div style="font-size:0.8em">
-
 Es ist nicht erlaubt, bestehende Pfade/Dateinamen zu tippen. Gib immer nur den/die nächsten benötigten Buchstaben ein!
 
 
@@ -19,5 +17,3 @@ Es ist nicht erlaubt, bestehende Pfade/Dateinamen zu tippen. Gib immer nur den/d
 - was gibt Dir `ls -a` aus?
 - lösche `methusalix` und Unterverzeichnisse mit `rmdir`
 - lege eine Kopie mit folgendem Befehl an `sudo cp ./miraculix/miraculix.haus ./miraculix/2miraculix.haus`. Was fällt Dir an den angelegten Dateien auf? Was passiert, wenn Du sie mit `rm -r` löschen willst? Warum?
-
-</div>

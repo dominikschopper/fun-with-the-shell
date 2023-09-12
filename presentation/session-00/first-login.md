@@ -4,16 +4,15 @@ Bitte ändert Euer Passwort auf ein sinnvolles neues Passwort
 
 - gut zu merken und
 - mit hoher Entropie
-- speichert das in Eurem Password-Safe/-Manager
-- dann kopiert es Euch und verwendet es hier
+- speichert es in Eurem Password-Manager
 
-**Achtung! Passwort vergessen = neue Installation! D.h. gespeicherte Dinge sind weg!**
 
 ```bash
-
+# abbrechen [Ctrl]+[c]
 passwd
  
 ```
+**Achtung! Passwort vergessen = neue Installation! D.h. gespeicherte Dinge sind weg!**
 
 
 <div class="fragment">
@@ -29,14 +28,12 @@ der Parameter **`--help`** lässt Euch zu (fast jedem!) Kommando eine Kurzhilfe 
 
 <div class="fragment">
 
+die aller grundlegensten Kommandos
+
 ```bash
 pwd     # shows directory you are in
 cd      # change directory
 ls      # list current dir
 ```
-
-- Was kann ich alles mit `ls` tun?
-- Was ist der Unterschied zwischen &nbsp; `ls` &nbsp; und &nbsp; `ls -a`
-
 
 </div>

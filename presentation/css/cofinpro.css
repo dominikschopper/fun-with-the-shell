@@ -13,8 +13,13 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   color: #ef7d00;
 }
 
+
 .reveal .slides .bg-orange {
-  background-color: #ef7d00;
+    background-color: #ef7d00;
+}
+
+.reveal .slides .bg-orange-25 {
+    background-color: rgba(239, 125, 0, 0.25);
 }
 
 .reveal .slides .brown {
@@ -39,6 +44,10 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 .reveal .slides .bg-lightblue {
   background-color: #cddcf3;
+}
+
+.reveal .slides .bg-lightblue-50 {
+    background-color: rgba(205, 220, 243, 0.5);
 }
 
 .reveal .slides .lightyellow {

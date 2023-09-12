@@ -1,14 +1,17 @@
-## Wer steht vor Euch?
+## Wer steht vor Euch?<!-- .element class="bg-lightblue pad-sm" -->
 
-- Marcus Osdoba-Ott - 8 Jahre Cofinpro, Manager **&amp; Unix Cmdline Wizard**<!-- .element class="fragment" -->
-- Dominik Schopper - 4 Jahre Cofinpro, Architekt **&amp; Linux Terminal Enthusiast**<!-- .element class="fragment" -->
+- Marcus Osdoba-Ott -<br/>
+  8 Jahre Cofinpro, Manager<br/>
+  **&amp; Unix Cmdline Wizard**<!-- .element class="fragment" -->
+- Dominik Schopper -<br/>
+  4 Jahre Cofinpro, Architekt<br/>
+  **&amp; Linux Terminal Enthusiast**<!-- .element class="fragment" -->
 
 &nbsp;
 
-
 <div class="fragment">
 
-## Wer sitzt mit uns hier?
+## Wer sitzt mit uns hier?<!-- .element class="bg-lightblue pad-sm" -->
 Kurze Vorstellungsrunde
 
 - Was bringt ihr an Terminal/Shell Kenntnissen mit?

@@ -3,18 +3,16 @@
 die drei wichtigsten Kommandos für alles!
 
 ```bash
-cd     # change dir
-ls     # list dir
-pwd    # print working dir
+cd                          # change dir
+ls                          # list dir
+pwd                         # print working dir
+mkdir ./neues-dir           # erstellt ein neues Verzeichnis
+mv ./src.txt ./dest.txt     # bewegt/benennt um
+cp ./src.txt ./dest2.txt    # kopiert
+rm ./dest2.txt              # löscht
+rm -r ./a-dir/              # löscht ein Verzeichnis, samt Dateien
+rmdir ./another-dir/        # löscht ein leeres(!) Verzeichnis
+cat ./some-file.txt         # gibt Inhalt auf Terminal aus
+reset                       # resettet das Terminal
 ```
 
-Sehr wichtig!!!
-
-```bash
-ls -l
-ls -a
-ls -la
-ls --help # für alles weitere ;)
-```
-
-`--help` funktioniert bei den allermeisten Kommandos und ist eine gute erste Hilfe!

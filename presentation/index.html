@@ -45,15 +45,24 @@
   <div class="reveal">
     <div class="slides">
 
-      <section class="bg-lightblue brown">
-        <hgroup>
+      <section
+        class="bg-lightblue-50 pad-x l"
+        data-background-image="/images/baby-can-u-hack.jpg"
+        data-background-position="bottom left"
+        data-background-size="35%"
+      >
+        <hgroup class="">
           <h1>Fun with the Shell</h1>
           <p>How to switch directories and more ...</p>
         </hgroup>
       </section>
 
       <section>
-          <section id="vorstellungsrunde" data-markdown="session-00/vorstellungsrunde.md"></section>
+        <section
+          id="vorstellungsrunde"
+          data-markdown="session-00/vorstellungsrunde.md"
+        >
+        </section>
           <section id="onboarding" data-markdown="session-00/onboarding.md"></section>
           <section id="first-login" data-markdown="session-00/first-login.md"></section>
           <section id="first-steps" data-markdown="session-00/first-steps.md"></section>
@@ -66,7 +75,9 @@
 
       <section>
 
-        <section>
+        <section data-background-image="/images/unix-bearded-guy.jpg"
+        data-background-position="bottom right"
+        data-background-size="48%">
           <hgroup>
             <h2>Session 1</h2>
             <p>Geschichte, Einstieg, Prozesse und Bewegen im Dateibaum</p>
@@ -76,53 +87,41 @@
         <section
             id="history-of-linux"
             data-markdown="session-01/history-of-linux.md"
-        >
-        </section>
+        ></section>
         <section
             id="processes"
             data-markdown="session-01/processes.md"
-        >
-        </section>
+        ></section>
         <section
             id="showing-processes"
             data-markdown="session-01/showing-processes.md"
-        >
-        </section>
+        ></section>
         <section
             id="process_commands"
             data-markdown="session-01/process_commands.md"
-        >
-        </section>
+        ></section>
         <section
             id="end_processes"
             data-markdown="session-01/end_processes.md"
-        >
-        </section>
+        ></section>
+        <section
+            id="interjection_run_a_command"
+            data-markdown="session-01/interjection_run_a_command.md"></section>
+        <section
+            id="pfade_so_viele_pfade"
+            data-markdown="session-01/pfade_so_viele_pfade.md"></section>
         <section
             id="exercises-process"
             data-markdown="session-01/exercises-process.md"
-        >
-        </section>
-        <section
-            id="interjection_run_a_command"
-            data-markdown="session-01/interjection_run_a_command.md"
-        >
-        </section>
-        <section
-            id="pfade_so_viele_pfade"
-            data-markdown="session-01/pfade_so_viele_pfade.md"
-        >
-        </section>
+        ></section>
         <section
             id="bewegen_im_verzeichnisbaum"
             data-markdown="session-01/bewegen_im_verzeichnisbaum.md"
-        >
-        </section>
+        ></section>
         <section
             id="exercises-file-movement"
             data-markdown="session-01/exercises-file-movement.md"
-        >
-        </section>
+        ></section>
 
       </section> <!--End of Session 1 -->
 
@@ -182,7 +181,7 @@
       slideNumber: true,
       showSlideNumber: 'all',// 'speaker',
       hash: true,
-      loop: true,
+      loop: false,
       plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
     });
   </script>
