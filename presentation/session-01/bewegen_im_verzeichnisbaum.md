@@ -1,6 +1,6 @@
 ### Immer in Bewegung bleiben
 
-die drei wichtigsten Kommandos für alles!
+die wichtigsten Kommandos für das Dateisystem!
 
 ```bash
 cd                          # change dir
