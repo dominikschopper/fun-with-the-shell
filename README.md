@@ -1,11 +1,11 @@
 # Presentation Cofinpro Styling in Reveal.js
 
-## Starting the Presentation
+## Viewing the presentation on Github Pages
 
-0. make sure youn are in the presentations directory
-  ```bash
-  cd presentation
-  ```
+[dominikschopper.github.io/indexhtml](https://dominikschopper.github.io/fun-with-the-shell/index.html)
+
+## Starting the Presentation locally
+
 1. install needed dep.s (moentarily just `live-server`)
   ```bash
   npm install
