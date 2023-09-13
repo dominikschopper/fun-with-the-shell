@@ -2,7 +2,7 @@
 
 ## Viewing the presentation on Github Pages
 
-[dominikschopper.github.io/indexhtml](https://dominikschopper.github.io/fun-with-the-shell/index.html)
+[dominikschopper.github.io/index.html](https://dominikschopper.github.io/fun-with-the-shell/index.html)
 
 ## Starting the Presentation locally
 
