@@ -1,15 +1,27 @@
+<style>.flexline { display:flex; gap: 1.5rem; align-items: center; }</style>
+
 ## Wer steht vor Euch?<!-- .element class="bg-lightblue pad-sm" -->
 
-- Marcus Osdoba-Ott -<br/>
-  8 Jahre Cofinpro, Manager<br/>
-  **&amp; Unix Cmdline Wizard**<!-- .element class="fragment" -->
-- Dominik Schopper -<br/>
-  4 Jahre Cofinpro, Architekt<br/>
-  **&amp; Linux Terminal Enthusiast**<!-- .element class="fragment" -->
+<ul>
+<li class="flexline">
+    <img src="images/marcus.jpg" style="width:80px" />
+    <div>
+        Marcus Osdoba-Ott -<br/>
+        seit 2015 bei der  Cofinpro
+    </div>
+    <strong class="fragment">schon immer<br/>Unix Cmdline Wizard</strong>
+</li>
+<li class="flexline">
+    <img src="images/dominik.jpg" style="width:80px" />
+    <div>
+        Dominik Schopper -<br/>
+        seit 2019 bei der Cofinpro
+    </div>
+    <strong class="fragment">schon immer<br/>Linux Enthusiast</strong>
+</li>
+</ul>
 
-&nbsp;
-
-<div class="fragment">
+<div class="fragment" style="width:100%">
 
 ## Wer sitzt mit uns hier?<!-- .element class="bg-lightblue pad-sm" -->
 Kurze Vorstellungsrunde
