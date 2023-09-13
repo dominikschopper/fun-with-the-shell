@@ -5,6 +5,20 @@
  * themeing by dominik.schopper@cofinpro.de
  */
 
+.reveal .slides h1,
+.reveal .slides h2,
+.reveal .slides h3,
+.reveal .slides h4 {
+    margin-top: 1.125em;
+    margin-bottom: .5em;
+}
+
+.reveal .slides h1 { font-size: 1.75rem; }
+.reveal .slides h2 { font-size: 1.5rem; }
+.reveal .slides h3 { font-size: 1.333rem; }
+.reveal .slides h4 { font-size: 1.25rem; }
+.reveal .slides p, .reveal .slides li { font-size: 1.25rem; }
+
 section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
   color: #fff;
 }
