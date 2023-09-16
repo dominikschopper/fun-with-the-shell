@@ -1,8 +1,0 @@
-- who
-- whoami
-- id
-- sudo
-- useradd
-- groupadd
-- /etc/passwd, /etc/shadow, /etc/groups
-- Verzeichnisse und Dateien und deren Berechtigungen (`rwx`, `chmod`, `chown`, `umask`, `chgrp`)
