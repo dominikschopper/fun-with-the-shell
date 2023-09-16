@@ -1,21 +1,19 @@
 ## comparing regex dialects
 
-<style>
-    html .reveal table td, html .reveal table th,
-    html .reveal table tbody tr:last-child th,
-    html .reveal table tbody tr:last-child td { border: 1px solid black; }
-</style>
+Es gibt unterschiedliche RegExp Parser, die leicht unterschiedliche Dialekte haben.
 
-| Beschr.     |   ed    |   vi      |  sed    |  gawk    |  grep   | egrep    |
-| ----------- | ------- | --------- | ------- | -------- | ------- | -------- |
-| char.class  | `[ae]`  | `[ae]`    | `[ae]`  | `[ae]`   | `[ae]`  | `[ae]`   |
-| quantif.    | `\{3\}` | `\{3\}`   | `\{3\}` | `{3}`    | `\{3\}` | `{3}`    |
-| quant   ?   |         |           |         |    `?`   |    `?`  |    `?`   |
-| quant   +   |         |           |         |    `+`   |    `+`  |    `+`   |
-| capt.group  | `\(a\)` | `\(a\)`   | `\(a\)` | `(a)`    |         | `(a)`    |
-| reuse capt. |  `\1`   |  `\1`     |  `\1`   |          |         |          |
-| grouping    |         |           |         | `(a\|b)` |         | `(a\|b)` |
-| grouping    |         |           |         | `(a\|b)` |         | `(a\|b)` |
-| word border |         | `\<` `\>` |         |          |         |          |
+Ich schaue mir hier (aus meinem Buch "Linux in a Nutshell" mühsam abgetippt) folgende Programme an:
+`vi`, `sed`, `gawk` (gnu awk), `grep`, `egrep` (aka `grep -E`)
 
+in allen Dialekten einheitlich: `.`, `*`, `^`, `$`, `\` (als escape char), `[aei]`
+
+| Beschr.     |   vi      |   sed     |  gawk    |  grep   | egrep     |
+| ----------- | --------- | --------- | -------- | ------- | --------- |
+| quantif.    | `\{3\}`   |  `\{3\}`  | `{3}`    | `\{3\}` |   `{3}`   |
+| quant  `?`  |           |           |    `?`   |    `?`  |    `?`    |
+| quant  `+`  |           |           |   `\+`   |    `+`  |    `+`    |
+| capt.group  | `\(a\)`   |  `\(a\)`  | `(a)`    |         |   `(a)`   |
+| reuse capt. |  `\1`     |   `\1`    |          |         |   `\1`    |
+| grouping    |           |           | `(a|b)`  |         | `(a|b)`   |
+| word border | `\<` `\>` | `\<` `\>` |          |         | `\<` `\>` |
 

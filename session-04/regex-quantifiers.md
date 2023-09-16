@@ -1,4 +1,4 @@
-### Regex Quantifiers
+### Regex: B Quantifiers
 
 in extended Syntax
 
