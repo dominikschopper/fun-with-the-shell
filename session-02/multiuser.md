@@ -8,8 +8,10 @@ Ein Multiuser-System ist ein Betriebssystem, dass Arbeitsumgebungen für verschi
 ```bash
 shell-training> who
 shell-training pts/0        Sep 16 20:14 (84.157.82.51)
+
 shell-training> whoami
 shell-training
+
 shell-training> id
 uid=1000(shell-training) gid=1000(shell-training) groups=1000(shell-training)
 ```
@@ -44,10 +46,34 @@ tester:!!:19616:0:99999:7:::
 ```
 
 #### Identitäten wechseln
-+ sudo -i
-+ su -
+
+<p class="aleft">
+sudo erlaubt dem gewöhnlichen Anwender vom Admin definierte Befehle mit root-Rechten auszuführen. Es erlaubt starke Einschränkungen bis "du-darfst-alles". Das Passwort des root-Nutzers muss dafür nicht bekannt sein.
+</p>
+
+```bash
+shell-training> #sudo -i startet eine root-shell
+shell-training> sudo -i
+root>
+```
+
+<p class="aleft">
+su ändert die Identität des eingeloggten Anwenders und fragt dafür auch das Passwort des Zielusers ab.
+</p>
+
+```bash
+shell-training> #su - ändert den user und zieht dessen definierte Umgebung (ähnlich Login-Prozess)
+shell-training> su -
+Password:
+root>
+```
 
 ### Dateisystemberechtigungen
+```bash
+
+```
+
+
 - Verzeichnisse und Dateien und deren Berechtigungen (`rwx`, `chmod`, `chown`, `umask`, `chgrp`)
 
 
