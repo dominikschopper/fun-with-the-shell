@@ -34,8 +34,7 @@ bash not found
 
 </div>
 
-<div class="fragment" style="width:100%">
-
+---
 ### Sourcen von Fragmenten
 ```bash
 mosdoba> echo "MYVAR_IN_A_FILE='Led Zeppelin'" > rocknroll.rc
@@ -43,8 +42,6 @@ mosdoba> . ./rocknroll.rc
 mosdoba> echo $MYVAR_IN_A_FILE
 Led Zeppelin
 ```
-
-</div>
 
 <div class="fragment" style="width:100%">
 
