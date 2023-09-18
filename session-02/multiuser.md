@@ -1,7 +1,7 @@
 ## Mehrbenutzersystem
 
 <p class="aleft">
-Ein Multiuser-System ist ein Betriebssystem, dass Arbeitsumgebungen für verschiedene Benutzer bereitstellt und diese voneinander abgrenzt. Die Mehrbenutzerfähigkeit wird unter anderem durch umfassendes Zugriffsrechte-Management sichergestellt. 
+Ein Multiuser-System ist ein Betriebssystem, dass Arbeitsumgebungen für verschiedene Benutzer bereitstellt und diese voneinander abgrenzt. Die Mehrbenutzerfähigkeit wird unter anderem durch umfassendes Zugriffsrechte-Management sichergestellt.
 </p>
 
 ### Wer bin ich und wenn ja, wieviele?
@@ -58,7 +58,7 @@ shell-training> sudo -i
 root>
 ```
 
-<p class="aleft">
+<p class="ta-left">
 su ändert die Identität des eingeloggten Anwenders und fragt dafür auch das Passwort des Zielusers ab.
 </p>
 
