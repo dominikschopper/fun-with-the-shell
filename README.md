@@ -9,6 +9,7 @@
 1. install needed dep.s (moentarily just `live-server`)
   ```bash
   npm install
+  npm install live-server # I had to call this separatly
   ```
 2. start the http-server to serve the presentation
   ```bash
