@@ -1,10 +1,18 @@
-### Abkürzungen
+## Abkürzungen
 
 <p class="aleft">
     Aliasse sind Abkürzungen für häufig wiederkehrende oder sehr lange Befehle. Sie werden individuell vergeben,
     sind daher nicht standardisiert und müssen beim Bezug eines neuen Systems neu definiert werden.
 </p>
 
+<p class="aright">
+    Aussprache notiert in IPA: [<span class="ipa" style="padding: 0 1px; text-decoration: none;">ˈaːli̯as</span>]
+<a href="https://de.wiktionary.org/wiki/Alias">Wiktionary:Alias(Deutsch)</a>
+</p>
+
+<div class="fragment" style="width:100%">
+
+### Beispiele für Aliasse
 ```bash
 mosdoba> alias gs="git status"
 mosdoba> gs
@@ -26,7 +34,4 @@ drwxr-xr-x@ 12 mosdoba  staff     384  4 Aug 11:47 .git
 [..]
 ```
 
-<p class="aleft">
-    Aussprache notiert in IPA: [<span class="ipa" style="padding: 0 1px; text-decoration: none;">ˈaːli̯as</span>]
-<a href="https://de.wiktionary.org/wiki/Alias">Wiktionary:Alias(Deutsch)</a>
-</p>
+</div>
