@@ -1,7 +1,7 @@
 ## Mehrbenutzersystem
 
 <p class="aleft">
-Ein Multiuser-System ist ein Betriebssystem, dass Arbeitsumgebungen für verschiedene Benutzer bereitstellt und diese voneinander abgrenzt. Die Mehrbenutzerfähigkeit wird unter anderem durch umfassendes Zugriffsrechte-Management sichergestellt. 
+Ein Multiuser-System ist ein Betriebssystem, dass Arbeitsumgebungen für verschiedene Benutzer bereitstellt und diese voneinander abgrenzt. Die Mehrbenutzerfähigkeit wird unter anderem durch umfassendes Zugriffsrechte-Management sichergestellt.
 </p>
 
 <div class="fragment" style="width:100%">
@@ -38,7 +38,11 @@ root> tail -3 /etc/passwd
 systemd-resolve:x:193:193:systemd Resolver:/:/sbin/nologin
 sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
 shell-training:x:1000:1000::/home/shell-training:/bin/bash
+```
 
+---
+
+```bash
 root> useradd -G test tester
 
 root> tail -3 /etc/passwd
@@ -51,10 +55,11 @@ sshd:!!:19611::::::
 shell-training:$6$x4yaca8epvXC8Vw7$7dn006Vua8aM4huvJ6ZfTOPwHtOkocmVh21Me4xiZzTVghH19XKyzKJLmAWP7qfwllnKFrtZGwwPigpO3T5m7.:19612:0:99999:7:::
 tester:!!:19616:0:99999:7:::
 ```
+
 ---
 ### Identitäten wechseln
 
-<p class="aleft">
+<p class="ta-left">
 sudo erlaubt dem gewöhnlichen Anwender vom Admin definierte Befehle mit root-Rechten auszuführen. Es erlaubt starke Einschränkungen bis "du-darfst-alles". Das Passwort des root-Nutzers muss dafür nicht bekannt sein.
 </p>
 
@@ -64,7 +69,7 @@ shell-training> sudo -i
 root>
 ```
 
-<p class="aleft">
+<p class="ta-left">
 su ändert die Identität des eingeloggten Anwenders und fragt dafür auch das Passwort des Zielusers ab.
 </p>
 
@@ -74,6 +79,7 @@ shell-training> su -
 Password:
 root>
 ```
+
 ---
 ## Dateisystemberechtigungen
 
@@ -92,7 +98,7 @@ total 4
 ---
 ```bash
 shell-training> # u=user, g=group, o=other erhalten Ausführungsberechtigung
-shell-training> chmod +x datei2 
+shell-training> chmod +x datei2
 shell-training> ls -l
 total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
@@ -108,8 +114,8 @@ shell-training> ls -l
 total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
 -rwxrwxr--. 1 shell-training shell-training 6 Sep 17 19:38 datei2
-shell-training> # die Gruppe bitte auch nicht 
-shell-training> chmod g-x datei2 
+shell-training> # die Gruppe bitte auch nicht
+shell-training> chmod g-x datei2
 shell-training> ls -l
 total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
@@ -207,12 +213,12 @@ root> ls -l
 total 4
 -rw-------. 1 shell-training shell-training 0 Sep 17 19:38 datei1
 -r--------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
-root> chown tester datei1 
+root> chown tester datei1
 root> ls -l
 total 4
 -rw-------. 1 tester         shell-training 0 Sep 17 19:38 datei1
 -r--------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
-root> chgrp test datei1 
+root> chgrp test datei1
 root> ls -l
 total 4
 -rw-------. 1 tester         test           0 Sep 17 19:38 datei1
@@ -257,11 +263,14 @@ total 0
 
 ---
 ## Weitere Berechtigungsmechanismen
+
 + chattr, lsattr
+
 ```bash
 mosdoba> ls -l
 rwxrwxrwx+  3 mosdoba  staff     96  4 Sep 15:46 temp
 ```
+
 + SELinux
 + sssd, Kerberos, Active Directory
 + ...

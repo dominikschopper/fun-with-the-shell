@@ -38,3 +38,7 @@ DESCRIPTION
 [..]
 </code></pre>
 
+Notes:
+
+- `man -k suchwort` für suche nach themen
+- `apropos suchwort` dto
