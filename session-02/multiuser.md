@@ -1,10 +1,10 @@
-### Mehrbenutzersystem
+## Mehrbenutzersystem
 
 <p class="aleft">
 Ein Multiuser-System ist ein Betriebssystem, dass Arbeitsumgebungen für verschiedene Benutzer bereitstellt und diese voneinander abgrenzt. Die Mehrbenutzerfähigkeit wird unter anderem durch umfassendes Zugriffsrechte-Management sichergestellt. 
 </p>
 
-
+### Wer bin ich und wenn ja, wieviele?
 ```bash
 shell-training> who
 shell-training pts/0        Sep 16 20:14 (84.157.82.51)
@@ -15,13 +15,14 @@ shell-training
 shell-training> id
 uid=1000(shell-training) gid=1000(shell-training) groups=1000(shell-training)
 ```
-
+### Lokale Nutzer hinzufügen
 ```bash
 root> tail -3 /etc/group
 ssh_keys:x:996:
 sshd:x:74:
 shell-training:x:1000:
 
+root> groupadd test
 root> tail -3 /etc/group
 sshd:x:74:
 shell-training:x:1000:
@@ -45,7 +46,7 @@ shell-training:$6$x4yaca8epvXC8Vw7$7dn006Vua8aM4huvJ6ZfTOPwHtOkocmVh21Me4xiZzTVg
 tester:!!:19616:0:99999:7:::
 ```
 
-#### Identitäten wechseln
+### Identitäten wechseln
 
 <p class="aleft">
 sudo erlaubt dem gewöhnlichen Anwender vom Admin definierte Befehle mit root-Rechten auszuführen. Es erlaubt starke Einschränkungen bis "du-darfst-alles". Das Passwort des root-Nutzers muss dafür nicht bekannt sein.
@@ -68,9 +69,9 @@ Password:
 root>
 ```
 
-### Dateisystemberechtigungen
+## Dateisystemberechtigungen
 
-#### chmod mit ugo
+### chmod mit ugo
 ```bash
 shell-training> touch datei1
 shell-training> echo Hallo > datei2
@@ -115,7 +116,7 @@ total 4
 -r--------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
 
-#### chmod mit 2 hoch x (oktal)
+### chmod mit 2 hoch x (oktal)
 
 ```bash
 shell-training> chmod 100 datei1
@@ -135,7 +136,7 @@ total 4
 -r--------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
 
-#### Verzeichnisse
+### Verzeichnisse
 chmod funktioniert genauso für Verzeichnisse. Jedoch haben die Berechtigungen leicht andere Effekte als auf gewöhnlichen Dateien.
 + Das read-Bit (r) erlaubt dem Anwender Dateien im jeweiligen Verzeichnis aufzulisten.
 + Das write-Bit (w) erlaubt dem Anwender Dateien im jeweiligen Verzeichnis zu erzeugen, umzubenennen oder zu löschen und die Verzeichnisattribute zu editieren.
@@ -163,7 +164,7 @@ shell-training> cat temp/datei2
 Hallo
 ```
 
-#### chown, chgrp
+### chown, chgrp
 
 ```bash
 root> ls -l
@@ -187,7 +188,7 @@ total 4
 -r--------. 1 tester test 6 Sep 17 19:38 datei2
 ```
 
-#### umask
+### umask
 umask setzt den initialen Modus für neuerzeugte Dateien oder Verzeichnisse. Die Oktalnotation ist sozusagen invers. Mit umask 000 haben neue Dateien volle Berechtigungen.
 
 ```bash
@@ -208,7 +209,7 @@ total 0
 ```
 
 
-### Weitere Berechtigungsmechanismen
+## Weitere Berechtigungsmechanismen
 + chattr, lsattr
 ```bash
 mosdoba> ls -l
