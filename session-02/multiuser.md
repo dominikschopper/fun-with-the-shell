@@ -15,7 +15,10 @@ shell-training
 shell-training> id
 uid=1000(shell-training) gid=1000(shell-training) groups=1000(shell-training)
 ```
-### Lokale Nutzer hinzufügen
+
+---
+
+### Lokale Nutzer hinzufügen 1/2
 ```bash
 root> tail -3 /etc/group
 ssh_keys:x:996:
@@ -32,7 +35,13 @@ root> tail -3 /etc/passwd
 systemd-resolve:x:193:193:systemd Resolver:/:/sbin/nologin
 sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
 shell-training:x:1000:1000::/home/shell-training:/bin/bash
+```
 
+---
+
+### Lokale Nutzer hinzufügen 2/2
+
+```bash
 root> useradd -G test tester
 
 root> tail -3 /etc/passwd
@@ -46,9 +55,11 @@ shell-training:$6$x4yaca8epvXC8Vw7$7dn006Vua8aM4huvJ6ZfTOPwHtOkocmVh21Me4xiZzTVg
 tester:!!:19616:0:99999:7:::
 ```
 
+---
+
 ### Identitäten wechseln
 
-<p class="aleft">
+<p class="ta-left">
 sudo erlaubt dem gewöhnlichen Anwender vom Admin definierte Befehle mit root-Rechten auszuführen. Es erlaubt starke Einschränkungen bis "du-darfst-alles". Das Passwort des root-Nutzers muss dafür nicht bekannt sein.
 </p>
 
@@ -69,6 +80,8 @@ Password:
 root>
 ```
 
+---
+
 ## Dateisystemberechtigungen
 
 ### chmod mit ugo
@@ -81,7 +94,7 @@ total 4
 -rw-rw-r--. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 
 shell-training> # u=user, g=group, o=other erhalten Ausführungsberechtigung
-shell-training> chmod +x datei2 
+shell-training> chmod +x datei2
 shell-training> ls -l
 total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
@@ -89,20 +102,20 @@ total 4
 
 
 shell-training> # eigentlich sollte die Welt keine Ausführungsberechtigungen haben
-shell-training> chmod o-x datei2 
+shell-training> chmod o-x datei2
 shell-training> ls -l
 total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
 -rwxrwxr--. 1 shell-training shell-training 6 Sep 17 19:38 datei2
-shell-training> # die Gruppe bitte auch nicht 
-shell-training> chmod g-x datei2 
+shell-training> # die Gruppe bitte auch nicht
+shell-training> chmod g-x datei2
 shell-training> ls -l
 total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
 -rwxrw-r--. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 
-shell-training> # es soll doch bitte niemand Leserechte (r), Schreibrechte (w) oder Ausführungsrechte (x) haben 
-shell-training> chmod -rwx datei2 
+shell-training> # es soll doch bitte niemand Leserechte (r), Schreibrechte (w) oder Ausführungsrechte (x) haben
+shell-training> chmod -rwx datei2
 shell-training> ls -l
 total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
@@ -115,6 +128,8 @@ total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
 -r--------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
+
+---
 
 ### chmod mit 2 hoch x (oktal)
 
@@ -135,6 +150,8 @@ total 4
 -r--------. 1 shell-training shell-training 0 Sep 17 19:38 datei1
 -r--------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
+
+---
 
 ### Verzeichnisse
 chmod funktioniert genauso für Verzeichnisse. Jedoch haben die Berechtigungen leicht andere Effekte als auf gewöhnlichen Dateien.
@@ -164,6 +181,8 @@ shell-training> cat temp/datei2
 Hallo
 ```
 
+---
+
 ### chown, chgrp
 
 ```bash
@@ -171,12 +190,12 @@ root> ls -l
 total 4
 -rw-------. 1 shell-training shell-training 0 Sep 17 19:38 datei1
 -r--------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
-root> chown tester datei1 
+root> chown tester datei1
 root> ls -l
 total 4
 -rw-------. 1 tester         shell-training 0 Sep 17 19:38 datei1
 -r--------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
-root> chgrp test datei1 
+root> chgrp test datei1
 root> ls -l
 total 4
 -rw-------. 1 tester         test           0 Sep 17 19:38 datei1
@@ -187,6 +206,8 @@ total 4
 -rw-------. 1 tester test 0 Sep 17 19:38 datei1
 -r--------. 1 tester test 6 Sep 17 19:38 datei2
 ```
+
+---
 
 ### umask
 umask setzt den initialen Modus für neuerzeugte Dateien oder Verzeichnisse. Die Oktalnotation ist sozusagen invers. Mit umask 000 haben neue Dateien volle Berechtigungen.
@@ -210,10 +231,13 @@ total 0
 
 
 ## Weitere Berechtigungsmechanismen
+
 + chattr, lsattr
+
 ```bash
 mosdoba> ls -l
 rwxrwxrwx+  3 mosdoba  staff     96  4 Sep 15:46 temp
 ```
+
 + SELinux
 + sssd, Kerberos, Active Directory
