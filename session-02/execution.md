@@ -1,56 +1,56 @@
-#### TODO
-SubShell, EXPORT
-
-#### Aufruf von Shell-Skripten
+### Aufruf von Shell-Skripten
+<p class="aleft">
+Sämtliche Befehle, die interaktiv an der Eingabeaufforderung verwendet werden, können auch in einem Shell-Skript zusammengefasst und nacheinander ausgeführt werden. Mehr dazu in einer der nächsten Sessions. Wie aber kann ich solche "Befehlssammlungen" starten?
+</p>
 
 <table>
     <tr>
-        <td>Aufruf</td>
-        <td>muss ich im PATH befinden</td>
-        <td>Ausführungsrecht notwendig</td>
-        <td>Sub-Shell wird gestartet</td>
-        <td>Rückkehr zur Ausgangsshell</td>
+        <td style="text-align: center">Aufruf in der Eingabeaufforderung</td>
+        <td style="text-align: center">muss sich im PATH befinden</td>
+        <td style="text-align: center">Ausführungsrecht notwendig</td>
+        <td style="text-align: center">Sub-Shell wird gestartet</td>
+        <td style="text-align: center">Rückkehr zur Ausgangsshell</td>
     </tr>
     <tr>
-        <td>cmd.sh</td>
-        <td>x</td>
-        <td>x</td>
-        <td>x</td>
-        <td>x</td>
+        <td style="text-align: center">cmd.sh</td>
+        <td style="text-align: center">x</td>
+        <td style="text-align: center">x</td>
+        <td style="text-align: center">x</td>
+        <td style="text-align: center">x</td>
     </tr>
     <tr>
-        <td>sh cmd.sh</td>
-        <td>-</td>
-        <td>-</td>
-        <td>x</td>
-        <td>x</td>
+        <td style="text-align: center">sh cmd.sh</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">x</td>
+        <td style="text-align: center">x</td>
     </tr>
     <tr>
-        <td>./cmd.sh</td>
-        <td>-</td>
-        <td>x</td>
-        <td>x</td>
-        <td>x</td>
+        <td style="text-align: center">./cmd.sh</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">x</td>
+        <td style="text-align: center">x</td>
+        <td style="text-align: center">x</td>
     </tr>
     <tr>
-        <td>. cmd.sh</td>
-        <td>x</td>
-        <td>-</td>
-        <td>-</td>
-        <td>x</td>
+        <td style="text-align: center">. cmd.sh</td>
+        <td style="text-align: center">x</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">x</td>
     </tr>
     <tr>
-        <td>. ./cmd.sh</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>x</td>
+        <td style="text-align: center">. ./cmd.sh</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">x</td>
     </tr>
     <tr>
-        <td>exec cmd.sh</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td style="text-align: center">exec cmd.sh</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">-</td>
+        <td style="text-align: center">-</td>
     </tr>
 </table>
