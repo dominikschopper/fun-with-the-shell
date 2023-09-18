@@ -268,8 +268,10 @@ total 0
 
 ```bash
 mosdoba> ls -l
-rwxrwxrwx+  3 mosdoba  staff     96  4 Sep 15:46 temp
+-rwxrwxrwx+  3 mosdoba  staff     96  4 Sep 15:46 temp
 ```
+
+<div class="fragment" style="width:100%">
 
 + SELinux
 + sssd, Kerberos, Active Directory
@@ -277,3 +279,5 @@ rwxrwxrwx+  3 mosdoba  staff     96  4 Sep 15:46 temp
 + pam-Authentifizierung
 + ...
 + ...
+
+</div>
