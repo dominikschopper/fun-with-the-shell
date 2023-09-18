@@ -1,56 +1,48 @@
-#### TODO
-SubShell, EXPORT
+#### SubShell, EXPORT
 
 #### Aufruf von Shell-Skripten
 
 <table>
     <tr>
         <td>Aufruf</td>
-        <td>muss ich im PATH befinden</td>
-        <td>Ausführungsrecht notwendig</td>
-        <td>Sub-Shell wird gestartet</td>
-        <td>Rückkehr zur Ausgangsshell</td>
+        <td>muss im<br/>PATH sein</td>
+        <td>Exec.Recht<br/>notwendig</td>
+        <td>in Sub-Shell<br/>ausgef.</td>
+        <td>Rückkehr<br/> z. parent</td>
     </tr>
     <tr>
-        <td>cmd.sh</td>
-        <td>x</td>
-        <td>x</td>
-        <td>x</td>
-        <td>x</td>
+        <td><code>cmd.sh</code></td>
+        <td align="center">x</td>
+        <td align="center">x</td>
+        <td align="center">x</td>
+        <td align="center">x</td>
     </tr>
     <tr>
-        <td>sh cmd.sh</td>
-        <td>-</td>
-        <td>-</td>
-        <td>x</td>
-        <td>x</td>
+        <td><code>sh cmd.sh</code><br/><code>bash cmd.sh</code></td>
+        <td align="center">-</td>
+        <td align="center">-</td>
+        <td align="center">x</td>
+        <td align="center">x</td>
     </tr>
     <tr>
-        <td>./cmd.sh</td>
-        <td>-</td>
-        <td>x</td>
-        <td>x</td>
-        <td>x</td>
+        <td><code>./cmd.sh</code></td>
+        <td align="center">-</td>
+        <td align="center">x</td>
+        <td align="center">x</td>
+        <td align="center">x</td>
     </tr>
     <tr>
-        <td>. cmd.sh</td>
-        <td>x</td>
-        <td>-</td>
-        <td>-</td>
-        <td>x</td>
+        <td><code>. ./cmd.sh</code></td>
+        <td align="center">-</td>
+        <td align="center">-</td>
+        <td align="center">-</td>
+        <td align="center">-/x</td>
     </tr>
     <tr>
-        <td>. ./cmd.sh</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>x</td>
-    </tr>
-    <tr>
-        <td>exec cmd.sh</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td><code>exec cmd.sh</code></td>
+        <td align="center">-</td>
+        <td align="center">-</td>
+        <td align="center">-</td>
+        <td align="center">-</td>
     </tr>
 </table>
