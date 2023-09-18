@@ -5,11 +5,15 @@
     Je nach Distribution greifen unterschiedliche Mechanismen. Üblich ist die systemweite /etc/profile ergänzt um persönliche Konfigurationsdateien wie .bashrc oder .bash_profile im HOME-Verzeichnis.
 </p>
 
+<div class="fragment" style="width:100%">
 
 ```bash
 mosdoba> grep "export PATH" /etc/profile
 export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
 ```
+</div>
+
+<div class="fragment" style="width:100%">
 
 ```bash
 mosdoba> cat .bashrc
@@ -25,3 +29,5 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 ```
+
+</div>

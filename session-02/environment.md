@@ -30,7 +30,6 @@ bash not found
 
 
 ---
-
 ### Sourcen von Fragmenten
 ```bash
 mosdoba> echo "MYVAR_IN_A_FILE='Led Zeppelin'" > rocknroll.rc
@@ -39,8 +38,7 @@ mosdoba> echo $MYVAR_IN_A_FILE
 Led Zeppelin
 ```
 
-
----
+<div class="fragment" style="width:100%">
 
 ### Exportieren für Subprozesse
 ```bash

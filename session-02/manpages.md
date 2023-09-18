@@ -4,7 +4,7 @@
      Wer die Werbung bei Stack-Overflow nicht mag oder eine schwache Internetverbindung hat,
      kann die lokal installierte Dokumentation nutzen.
      Besonders empfehlenswert sind die EXAMPLES.
-     Als Pager wir standardmäßig less verwendet. D.h. die Suche erfolgt mit "/". Verlassen mit "q".
+     Als Pager wird standardmäßig less verwendet. D.h. die Suche erfolgt mit "/". Verlassen mit "q".
 </p>
 
 ```bash
