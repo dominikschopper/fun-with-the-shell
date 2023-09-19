@@ -2,6 +2,8 @@
 
 http://www.compciv.org/topics/bash/text-values/
 
+<div class="fragment" style="width:100%; background-color: white">
+
 #### Token
 ```bash
 mosdoba> mkdir 42
