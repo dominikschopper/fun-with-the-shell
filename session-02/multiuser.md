@@ -109,7 +109,7 @@ total 4
 
 ```bash
 shell-training> # eigentlich sollten alle anderen keine Ausführungsberechtigungen haben
-shell-training> chmod o-x datei2 
+shell-training> chmod o-x datei2
 shell-training> ls -l
 total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
@@ -127,8 +127,8 @@ total 4
 ---
 
 ```bash
-shell-training> # es soll doch bitte niemand Leserechte (r), Schreibrechte (w) oder Ausführungsrechte (x) haben 
-shell-training> chmod -rwx datei2 
+shell-training> # es soll doch bitte niemand Leserechte (r), Schreibrechte (w) oder Ausführungsrechte (x) haben
+shell-training> chmod -rwx datei2
 shell-training> ls -l
 total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
@@ -171,10 +171,15 @@ total 4
 
 ---
 ### Verzeichnisse
+
+<div style="background-color:white">
+
 chmod funktioniert genauso für Verzeichnisse. Jedoch haben die Berechtigungen leicht andere Effekte als auf gewöhnlichen Dateien.
 + Das read-Bit (r) erlaubt dem Anwender Dateien im jeweiligen Verzeichnis aufzulisten.
 + Das write-Bit (w) erlaubt dem Anwender Dateien im jeweiligen Verzeichnis zu erzeugen, umzubenennen oder zu löschen und die Verzeichnisattribute zu editieren.
 + Das execute-Bit (x) erlaubt dem Anwender das Verzeichnis zu betreten und auf Dateien und andere Verzeichnisse darin zuzugreifen.
+
+</div>
 
 ---
 ```bash
