@@ -1,6 +1,6 @@
 ### Woher kam Unix/Linux?
 
-![Unix Timeline](/images/unix_timeline.png)<!-- .element style="height: 500px; aspect-ratio: auto; width: auto; margin: 0 auto;" -->
+![Unix Timeline](images/unix_timeline.png)<!-- .element style="height: 500px; aspect-ratio: auto; width: auto; margin: 0 auto;" -->
 
 
 an even <!-- .element style="font-size: 0.4em" -->
