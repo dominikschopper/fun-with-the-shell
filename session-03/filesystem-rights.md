@@ -191,13 +191,43 @@ total 0
 + chattr, lsattr
 
 ```bash
-mosdoba> ls -l
-rwxrwxrwx+  3 mosdoba  staff     96  4 Sep 15:46 temp
+mosdoba> lsattr
+-------------------- ./school-of-rock
+-------------------- ./deep-purple.md
 ```
 
-+ SELinux
-+ sssd, Kerberos, Active Directory
-+ ...
-+ pam-Authentifizierung
-+ ...
-+ ...
+<div class="flex-row">
+
+- (a) - append only file.
+- (A) - don't update atime.
+- (c) - compress file.
+- (C) - no copy-on-write.
+- (d) - will not be used by dump.
+- (D) - all entries written synchr.
+- (e) - file uses extents for block mapping.
+- (E) - encrypted on disk.
+- (F) - in dir all is not case sensitive
+- (h) - file is/was &gt; 2TB.
+
+&nbsp;
+
+- (i) - file won't be modified.
+- (I) - dir. indexed w. hashed trees.
+- (j) - journal file- &amp; metadata.
+- (N) - data stored in inode
+- (P) - project ids must match
+- (s) - securely delete.
+- (S) - changes are written synchr.
+- (t) - disable tail merging.
+- (T) - top level hierarchy dir.
+- (u) - keep file for undeletion.
+- (V) - verify read cryptographically.
+
+</div>
+
+notes:
+
+- good idea
+- never used it
+- never intend to
+- grown linux admins stumble on these

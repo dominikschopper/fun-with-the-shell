@@ -28,12 +28,14 @@ less /var/log/fake-service.log
         <li>abwärts suchen mit <code>/suchterm</code> aufwärts suchen mit
             <code>?suchterm</code>
         </li>
-        <li>follow Mode mit <code>[f]<code> (Beenden mit
-            <code>[Strg]+[c]<code>)
+        <li>follow Mode mit <code>[f]</code> (Beenden mit
+            <code>[Strg]+[c]</code>)
         </li>
     </ul>
 </li>
 </ul>
+
+<div class="fragment">
 
 #### so much less
 
@@ -42,3 +44,4 @@ less /var/log/fake-service.log
 - `zless` zum direkten Öffnen von gnuzip Dateien `zless ./syslog_05.gz`
 - `xzless` zum direkten Öffnen von gnuzip Dateien `xzless ./Documentation.adoc.xz`
 
+</div>
