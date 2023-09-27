@@ -6,11 +6,11 @@ Bitte mitmachen, im Verzeichnis `~/gallisches-dorf`
 
 ```bash
 vi asterix/asterix.haus
-# - in den insert mode gehen
-# - vi verlassen
+# - in den insert mode gehen, etwas schreiben
+# - vi verlassen (ohne speichern)
 
 # - asterix/asterix.haus nochmal editieren
-# - fügt eine vorletzte Zeile hinzu
+# - fügt eine neue vorletzte Zeile hinzu
 # - vi speichern und verlassen
 
 # - asterix/asterix.haus nochmal editieren

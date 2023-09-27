@@ -88,6 +88,10 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   background-color: #fadceb;
 }
 
+.reveal .slides .  {
+    background-color: rgb(250 220 235 / 0.5);
+}
+
 .reveal .slides .grey {
   color: #f2edee;
 }

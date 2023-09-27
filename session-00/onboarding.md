@@ -14,7 +14,7 @@ ec2-3-123-21-106.eu-central-1.compute.amazonaws.com
 # Port 22XY s.u.
 
 # MacOS: open a Terminal and type
-ssh --p 22XY shell-training@ec2-3-123-21-106.eu-central-1.compute.amazonaws.com
+ssh -p 22XY shell-training@ec2-3-123-21-106.eu-central-1.compute.amazonaws.com
 # or
 ssh -p 22XY shell-training@3.123.21.106
 ```
