@@ -14,6 +14,6 @@ in allen Dialekten einheitlich: `.`, `*`, `^`, `$`, `\` (als escape char), `[aei
 | quant  `+`  |           |           |   `\+`   |    `+`  |    `+`    |
 | capt.group  | `\(a\)`   |  `\(a\)`  | `(a)`    |         |   `(a)`   |
 | reuse capt. |  `\1`     |   `\1`    |          |         |   `\1`    |
-| grouping    |           |           | `(a|b)`  |         | `(a|b)`   |
+| grouping    |           |           | `(a\|b)`  |         | `(a\|b)`   |
 | word border | `\<` `\>` | `\<` `\>` |          |         | `\<` `\>` |
 

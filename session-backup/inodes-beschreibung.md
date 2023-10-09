@@ -1,12 +1,11 @@
 ### Wie funktionieren Dateien?
 
-- Filesystems sind **inode-basiert**
-- <!-- .element class="fragment" -->Inodes enthalten für jeden Eintrag im FS z.B.
+- Filesystems sind **inode-basiert**, inodes enthalten Metadaten aller Einträge: `stat filename`
+- <!-- .element class="fragment" -->zB enthalten sie für jeden Eintrag im FS
     - Zeitstempel (atime, mtime, ctime)
     - Berechtigungen (Besitzer, Gruppen, Rechte, ...)
     - die IDs der Datenblöcke und den
     - Link Count
-    - `stat filename` zeigt Inode Infos
 - <!-- .element class="fragment" -->Verzeichnisse enthalten den Verweis auf die Inode und
     **den Namen der Datei** (ein "Link")
 - <!-- .element class="fragment" -->Inodes mit Link-Count 0 sind frei
