@@ -2,7 +2,7 @@
 
 #### Kommazahlen finden
 
-Finde in einer Eingabe alle amerikanischen Kommazahlen heraus. Beispiele, doie gefunden werden sollen
+Finde in einer Eingabe alle amerikanischen Kommazahlen heraus. Beispiele, die gefunden werden sollen
 
 ```plain
 123.5678
