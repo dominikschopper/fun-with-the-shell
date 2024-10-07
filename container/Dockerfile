@@ -17,9 +17,10 @@ RUN chmod 755 /scripts/* ; \
 RUN dnf install -y passwd shadow-utils glibc-langpack-en man less vim fortune-mod cowsay sudo procps-ng psmisc htop; \
     # add user and set password
     useradd -m -s /bin/bash $TRAINING_USER \
-    && echo "$INITITAL_PW" | passwd --stdin shell-training; \
-    # adding user to sudoers (no passwd needed)
-    echo "shell-training ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+    && echo "$INITITAL_PW" | passwd --stdin $TRAINING_USER
+
+# adding user to sudoers (no passwd needed)
+RUN echo "$TRAINING_USER ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # creating host key files
 RUN ssh-keygen -b 4096 -f /etc/ssh/ssh_host_rsa_key -t rsa -N ""; \
