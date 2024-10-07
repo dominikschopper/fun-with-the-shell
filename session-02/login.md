@@ -1,9 +1,14 @@
 ### Anmeldung
 
-<p class="aleft">
-    Die Umgebung nach dem Login in ein System ist teils vom Administrator vorgegeben, kann aber auch individuell festgeschrieben werden.
-    Je nach Distribution greifen unterschiedliche Mechanismen. Üblich ist die systemweite /etc/profile ergänzt um persönliche Konfigurationsdateien wie .bashrc oder .bash_profile im HOME-Verzeichnis.
-</p>
+
+
+Die Umgebung nach dem Login in ein System ist teils vom Administrator <!-- .element class="ta-left" -->
+vorgegeben, kann aber auch individuell festgeschrieben werden. Je nach Distribution greifen
+unterschiedliche Mechanismen.
+
+Üblich ist die systemweite <!-- .element class="ta-left" -->
+`/etc/profile` ergänzt um persönliche Konfigurationsdateien wie<br/>
+`.bashrc` oder `.bash_profile` im `HOME`-Verzeichnis.
 
 <div class="fragment" style="width:100%">
 
