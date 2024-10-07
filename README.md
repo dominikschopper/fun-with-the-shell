@@ -2,7 +2,7 @@
 
 ## Our Training Presentation
 
-1. install needed dep.s (moentarily just `live-server`)
+1. install needed dep.s (momentarily just `live-server`)
   ```bash
   npm install
   ```
@@ -12,9 +12,9 @@
   npm start
   ```
 
-then open in chrome-based(!) browsers
+then open in **chrome-based(!)** browsers
 
-- [the presentation in the index.html](http://localhost:8088/)
+- [the presentations index.html](http://localhost:8088/)
 
 ## creating docker containers for each trainee
 
