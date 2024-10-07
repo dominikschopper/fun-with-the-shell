@@ -1,5 +1,9 @@
 # Shell Training
 
+## View on Github Pages
+
+[github.io/fun-with-the-shell](https://dominikschopper.github.io/fun-with-the-shell/index.html)
+
 ## Our Training Presentation
 
 1. install needed dep.s (momentarily just `live-server`)
