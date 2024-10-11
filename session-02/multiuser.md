@@ -1,8 +1,9 @@
 ## Mehrbenutzersystem
 
-<p class="aleft">
-Ein Multiuser-System ist ein Betriebssystem, dass Arbeitsumgebungen für verschiedene Benutzer bereitstellt und diese voneinander abgrenzt. Die Mehrbenutzerfähigkeit wird unter anderem durch umfassendes Zugriffsrechte-Management sichergestellt.
-</p>
+Ein Multiuser-System ist ein Betriebssystem, dass Arbeitsumgebungen <!--.element class="ta-left" -->
+für verschiedene Benutzer bereitstellt und diese voneinander abgrenzt.
+Die Mehrbenutzerfähigkeit wird unter anderem durch umfassendes
+Zugriffsrechte-Management sichergestellt.
 
 <div class="fragment" style="width:100%">
 

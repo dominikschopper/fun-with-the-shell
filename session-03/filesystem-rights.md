@@ -70,7 +70,7 @@ total 4
 
 statt `u=rwx,g=rx,o-rwx` kann man auch einfach `750` schreiben
 
-<img src="/images/rights-string-octal.jpg" />
+<img src="./images/rights-string-octal.jpg" />
 
 ---
 ### chmod mit 2 hoch rwx (oktal)
