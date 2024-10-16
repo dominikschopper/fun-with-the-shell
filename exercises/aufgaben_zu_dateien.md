@@ -11,7 +11,7 @@ Es ist nicht erlaubt, bestehende Pfade/Dateinamen zu tippen. Gib immer nur den/d
 - gehe mit absolutem Pfad in dein Home-Verzeichnis.
 - kopiere die Datei `asterix.haus` ins Verzeichnis `obelix` unter dem Namen `asterix-ferienhaus`
 - lösche die Datei `asterix-ferienhaus` unter Verwendung des **absoluten** Pfads!
-- kopiere das Verzeichnis `miraculix` samt Inhalt im Ordner `gallisches-dorf` das Zielverzeichnis soll `zweiter-druide` heißen. Bennene auch die neue Hausdatei in `zweiter-druide.haus` um
+- kopiere das Verzeichnis `miraculix` samt Inhalt im Ordner `gallisches-dorf` das Zielverzeichnis soll `zweiter-druide` heißen. Benenne auch die neue Hausdatei in `zweiter-druide.haus` um
 - lösche das eben angelegte Verzeichnis
 - findest Du einen Weg, das Verzeichnis `methusalix`und das Unterverzeichnis `methusalix/scheune` mit einem Kommando anzulegen?
 - was gibt Dir `ls -a` aus?

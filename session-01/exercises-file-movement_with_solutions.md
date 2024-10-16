@@ -37,7 +37,7 @@ Es ist nicht erlaubt, bestehende Pfade/Dateinamen zu tippen. Gib immer nur den/d
     rm /h<tab>/s<tab>/g<tab>/o<tab>/a<tab>
     # checken mit [↑] [pos1] rm durch ls austauschen
     ```
-- kopiere das Verzeichnis `miraculix` samt Inhalt im Ordner `gallisches-dorf` das Zielverzeichnis soll `zweiter-druide` heißen. Bennene auch die neue Hausdatei in `zweiter-druide.haus` um
+- kopiere das Verzeichnis `miraculix` samt Inhalt im Ordner `gallisches-dorf` das Zielverzeichnis soll `zweiter-druide` heißen. Benenne auch die neue Hausdatei in `zweiter-druide.haus` um
     ```
     cp -r g<tab>/m<tab> g<tab>/zweiter-druide
     mv g<tab>/z<tab>/<tab> g<tab>/z<tab>/zweiter-druide.haus
