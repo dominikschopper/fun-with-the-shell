@@ -1,3 +1,4 @@
+
 ### Wie funktionieren Dateien?
 
 - Filesystems sind **inode-basiert**, inodes enthalten Metadaten aller Einträge: `stat filename`

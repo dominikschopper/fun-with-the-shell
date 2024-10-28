@@ -26,7 +26,7 @@
             background:white; width:100%; height: 72%;position:absolute;top: 28%
         }
     </style>
-    <img src="images/hd-chart.png" style="height:600px; width:auto; aspect-ratio:1;margin-inline:auto"/>
+    <img src="../images/hd-chart.png" style="height:600px; width:auto; aspect-ratio:1;margin-inline:auto"/>
     <code data-fragment-index="1" class="fragment hd-tag" id="tag-1">/dev/sda</code>
     <code data-fragment-index="1" class="fragment hd-tag" id="tag-2">/dev/sdb</code>
     <div  data-fragment-index="2" class="fragment fade-out hide-chart"></div>

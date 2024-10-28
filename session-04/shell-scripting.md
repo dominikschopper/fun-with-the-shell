@@ -1,16 +1,21 @@
 ## Shell Scripting
 
+<div style="text-align: left;">
+
 ein Shell Script ist eine (meist ausführbare Datei), die shell Kommandos
 enthält und üblicherweise auf `.sh` endet.
 
 Gut für kurze, kleine, repetitive Aufgaben, die man sonst auch gut auf der cmdline
 ausführen kann.
 
-Es gibt aber schon länger Stimmen, die zB **python** als Nachfolger von Bash Skripten für Admins bevorzugen!
+**python** gilt als Nachfolger von Bash Skripten für Admins!
 
-Trotzdem können Shell-Skripte das Leben vereinfachen.
+Aber! Shell-Skripte das Leben vereinfachen.
+
+</div>
 
 ---
+
 ## Wann sind Shell-Scripte keine gute Idee?
 
 Projekte mit
@@ -41,6 +46,8 @@ Projekte mit
 
 ## Syntax 1: SheBang
 
+<div style="text-align: left;">
+
 ein Shell Script beginnt in der ersten Zeile mit der Shebang Zeile
 ```bash
 #!/bin/bash
@@ -58,9 +65,13 @@ meist den "kleinsten gemeinsamen Nenner"
 Das ist die Bourne Shell, der Vorgänger der `bash`, die einige
 Funktionalitäten nicht enthält
 
+</div>
+
 ---
 
 ## Syntax 2: Variables
+
+<div style="text-align: left;">
 
 Variablen werden üblicherweise groß geschrieben und sind case-sensitive.
 
@@ -71,21 +82,29 @@ L-Values der Variablen müssen
 - mit einem Buchstaben beginnen
 - dürfen nur `A-Za-z`, `0-9` und `_` enthalten
 
-R-Values der Variablen werden meist ge-quotet, wenn keine Sonderzeichen enthalten sind, ist das aber nicht zwingend notwendig.
+R-Values werden meist ge-quotet, selbst wenn keine Sonderzeichen enthalten sind,
+das ist das aber nicht zwingend notwendig.
 
 Beispiele
 
 ```bash
 SSH_CMD="ssh"
+SSH_CMD=ssh
 AdminUser="root"
-another_user="moo"
+AdminUser=root
+phrase="moo and foo have both two o."
 ```
+
+</div>
 
 ---
 
 ## Syntax 3: if/then/else
 
 ### IF
+
+<div style="text-align: left;">
+
 
 ```bash
 if _command_ # return status 0 -> then
@@ -119,6 +138,8 @@ else
 fi
 ```
 
+</div>
+
 ---
 ## Syntax 4: Schleifen
 
@@ -136,19 +157,22 @@ For-Schleifen
 ```bash
 for LETTER in A B C D E F G
 do
-    echo "$LETTER "
+    echo -n "$LETTER "
 done
-echo
+echo "" # to create a newline
 ```
 
 ```bash
 for DIR_ENTRY in *
 do
     echo "Found '$DIR_ENTRY' in $PWD"
+done
 ```
 
 ---
 ## Syntax 5: Zugriff auf Argumente
+
+<div style="text-align: left;">
 
 ```bash
 ./myscript.sh one two three
@@ -169,10 +193,16 @@ shift
 
 komplexere Aktionen mit `getopts`
 
+</div>
+
 ---
 ## Test Command
 
+<div style="text-align: left;">
+
 das `test` Kommando kann zB Vergleiche ausführen
+
+es hat den return 0 wenn die abgefregte Bedingung "wahr" ist
 
 - `test "$x" = "hallo"` enthält $x "hallo"?
 - `test $x -lt 9` ist $x kleiner als 9?
@@ -195,6 +225,7 @@ neue Schreibweise
 - `[[ $x -eq 11 ]]` ist $x die Zahl 11?
 - `[[ -f $x ]]` ist $x eine Datei?
 
+</div>
 
 ---
 ## Syntax 6: functions / subroutinen
@@ -236,4 +267,34 @@ Kleine Helfer
 - `set -x` zeige Kommando an, bevor es ausgeführt wird
 - schalte Anzeige wieder aus `set +x`
 - `set -e` exit wenn Kommando nicht statuscode 0 hat
+
+---
+
+## Aufgabe
+
+Die Aufgaben sind ALternativen
+
+1. Schreibt ein Script **`add_users.sh`**, das eine Reihe von Usernamen als Argumente übernimmt
+  es soll alle user anlegen, sicherstellen, dass es ein Home-Verzeichnis gibt und
+  ihnen ein Standard-Passwort vergeben (Trick: `echo "$DEFAULT_PW" | passwd --stdin`).
+    - Erweitert das Skript, dass es sich beendet, wenn es nicht vom user `root` ausgeführt
+      wird
+    - Erweitert das Skript, dass es am Ende alle User ausgibt, bei denen das Anlegen nicht
+      geklappt hat
+    - Erweitert das Skript so, dass es einen Hilfe-Text ausgibt, wenn es als einzigen Parameter
+      `--help` oder `-h` übergeben bekommt
+    - Überlegt, wie Ihr ein Skript schreiben könntet, das User anlegt, die Usernamen (und Email-Adressen?)
+      genriereren könnten (Username 'monika.mustermann' Email: 'monika.mustermann@somwhere.com')?
+1. Schreibt ein Skript **`del.sh`**, das Dateien und Verzeichnisse löscht, aber statt sie zu löschen, soll
+  es die Dateien oder Verzeichnisse in einen Ordner `$HOME/.trash/` bewegen
+    - Schreibt ein Skript **`trash_bin.sh`**, die Euch die Größe Eures Trash-Ordners (in KB/MB/GB) anzeigt
+    - Erweitert **`trash_bin.sh`** so, dass es bei dem Parameter `trash_bin.sh --clean-all` alle Dateien aus dem Trash Ordner löscht
+    - Erweitert **`trash_bin.sh`** so, dass es bei dem Parameter `trash_bin.sh --clean +3` Dateien aus dem Trash Ordner
+      löscht, die älter als 3 Tage sind
+    - Schreibt ein Skript **`undel.sh`**, dass eine Datei aus dem Ordner wiederherstellt. Der Ort der Wiederherstellung soll übergeben werden
+      `undel.sh somefile.txt restore_here/`
+    - Überlegt, wie könntet Ihr das Skript `del.sh` so anpassen, dass eine Wiederherstellung an den Originalort möglich wird?
+
+
+
 
