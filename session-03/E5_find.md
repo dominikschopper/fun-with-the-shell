@@ -4,7 +4,7 @@ Vorbereitung: Dein Standort sollte Dein HOME-Verzeichnis sein. Lege ein Verzeich
 
 Das Wort "Einträge" meint hier "Dateien" und "Verzeichnisse", "Datei" meint einen "Eintrag" vom Typ "f", Verzeichnis meint einen Eintrag vom Typ "d"
 
-- suche ab Deinem Standort alle Eintröge, die `miraculix.haus` heißen
+- suche ab Deinem Standort alle Einträge, die `miraculix.haus` heißen
 - suche ab Deinem Standort alle Einträge, die auf `.zelt` enden
 - suche ab Deinem Standort alle Verzeichnisse(!), die ein `um` enthalten
 - suche ab Deinem Standort alle Verzeichnisse(!), die ein `um` enthalten, egal, ob groß oder klein geschrieben
