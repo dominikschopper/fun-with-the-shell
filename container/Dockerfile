@@ -3,7 +3,7 @@ FROM almalinux:8
 COPY --chmod=755 *.sh *.pl /scripts/
 
 ENV TRAINING_USER="shell-user"
-ENV INITITAL_PW="have-fun++"
+ENV INITITAL_PW="********"
 
 # initializing
 RUN chmod 755 /scripts/* ; \

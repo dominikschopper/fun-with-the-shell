@@ -1,32 +1,59 @@
 #!/bin/bash
-CONTAINER_BASENAME="shell-training"
-# IMAGE_NAME="public.ecr.aws/l3s2n2c7/cfp-shell-training:latest"
-IMAGE_NAME="shell-training"
-COUNT=0
-MAX=15
 
-# comment out to make script work for real
-# set -n
-# comment in see parsed command before executed
-# set -x
+# ===== KONFIGURATION =====
+ANZAHL_SCHUELER=10
+SCHUELER_PREFIX="shell-training-"
+LEHRER_NAME="shell-trainer"
+SCHUELER_BASE_PORT=22001
+LEHRER_PORT=22022
+ECR_IMAGE="595944282132.dkr.ecr.eu-central-1.amazonaws.com/my-ssh-server:latest"
+AWS_REGION="eu-central-1"
+# =========================
 
-echo -e "Script >>$0<< starts\n.....\n"
+# Farben
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+RESET='\033[0m'
 
-while [[ "$COUNT" -lt "$MAX" ]]
-do
-	COUNT=$[$COUNT + 1]
-	EXTERNAL_PORT=2221
-	CONTAINER_NAME="$CONTAINER_BASENAME-$COUNT"
+# ECR Login
+echo "ECR Login..."
+aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin 595944282132.dkr.ecr.$AWS_REGION.amazonaws.com
 
-	DOCKER_CMD="docker run --rm -d --name $CONTAINER_NAME -p$[$EXTERNAL_PORT + $COUNT]:22 $IMAGE_NAME"
-	if docker ps | grep "$CONTAINER_NAME" >/dev/null 2>&1
-	then
-		echo "Container with name >>$CONTAINER_NAME<< already running, doing nothing"
-	else
-		echo "running> $DOCKER_CMD"
-		$DOCKER_CMD
-	fi
+# Image pullen
+echo "Pulling Image..."
+docker pull $ECR_IMAGE
 
+# Schülermaschinen starten
+for i in $(seq 1 $ANZAHL_SCHUELER); do
+  container_name="${SCHUELER_PREFIX}${i}"
+  port=$((SCHUELER_BASE_PORT + i - 1))
+
+  # Check ob Container bereits existiert
+  if docker ps -a --format '{{.Names}}' | grep -q "^${container_name}$"; then
+    echo -e "${YELLOW}✓ ${container_name} läuft bereits (Port ${port})${RESET}"
+  else
+    docker run -d \
+      --name $container_name \
+      --hostname $container_name \
+      -p $port:22 \
+      $ECR_IMAGE
+    echo -e "${GREEN}✓ ${container_name} gestartet (Port ${port})${RESET}"
+  fi
 done
 
-echo -e "\n.....\nScript >>$0<< is done"
+# Lehrermaschine starten
+if docker ps -a --format '{{.Names}}' | grep -q "^${LEHRER_NAME}$"; then
+  echo -e "${YELLOW}✓ ${LEHRER_NAME} läuft bereits (Port ${LEHRER_PORT})${RESET}"
+else
+  docker run -d \
+    --name $LEHRER_NAME \
+    --hostname $LEHRER_NAME \
+    -p $LEHRER_PORT:22 \
+    $ECR_IMAGE
+  echo -e "${GREEN}✓ ${LEHRER_NAME} gestartet (Port ${LEHRER_PORT})${RESET}"
+fi
+
+# Status anzeigen
+echo -e "\n\n"
+echo "=== Container Übersicht ==="
+docker ps --filter "name=shell-" --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}"
