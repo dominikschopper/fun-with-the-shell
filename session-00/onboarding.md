@@ -9,16 +9,13 @@ Connection Data für z.B. PUTTY<!-- .element class="ta-left" -->
 ```bash
 # User
 shell-user
-# Hostname oder
-ec2-52-57-55-90.eu-central-1.compute.amazonaws.com
+
 # IP
-52.57.55.90
+18.193.122.242
 # Port 22XY s.u.
 
 # MacOS: open a Terminal and type
-ssh -p 22XY shell-user@ec2-52-57-55-90.eu-central-1.compute.amazonaws.com
-# or
-ssh -p 22XY shell-user@52.57.55.90
+ssh -p 22001 shell-user@18.193.122.242
 ```
 
 Portnummern: <!-- .element class="ta-left" -->
@@ -26,21 +23,18 @@ Portnummern: <!-- .element class="ta-left" -->
 <div class="flex-row" style="font-size:0.8em; font-family:Courier, 'Courier New', monospace">
 <div>
 
-- Basel     &rarr; Port: 2222
-- Vitali    &rarr; Port: 2223
-- Beauclair &rarr; Port: 2224
-- Christian &rarr; Port: 2225
-- Torben    &rarr; Port: 2226
-- Aaron     &rarr; Port: 2227
+
+- Mohammed  &rarr; Port: 22001
+- Jan       &rarr; Port: 22002
+- Khanh     &rarr; Port: 22003
+- Nils      &rarr; Port: 22004
 
 </div>
 <div>
 
-- Sophia    &rarr; Port: 2228
-- Theresa   &rarr; Port: 2229
-- Hendrik   &rarr; Port: 2230
-- André     &rarr; Port: 2231
-- Britta    &rarr; Port: 2232
+- Christian &rarr; Port: 22005
+- Omar      &rarr; Port: 22006
+- Danh      &rarr; Port: 22007
 
 </div>
 <div>

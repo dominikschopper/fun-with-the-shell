@@ -21,13 +21,13 @@
 </li>
 </ul>
 
-<div class="fragment" style="width:100%">
 
-## Wer sitzt mit uns hier?<!-- .element class="bg-lightblue pad-md" -->
+---
+
+
+## Wer sitzt mit uns hier?
 Kurze Vorstellungsrunde
 
 - Was bringt ihr an Terminal/Shell Kenntnissen mit?
 - Was wollt ihr hier lernen?
 - Was darf hier auf keinen Fall passieren?
-
-</div>
