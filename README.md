@@ -26,7 +26,7 @@ then open in **chrome-based(!)** browsers
   **add/choose your ssh key while creating the instance**
 1. login (as ec2-user) and install docker
   ```bash
-    # sudo yum update # nott needed for a freshly installed instance
+    # sudo yum update # not needed for a freshly installed instance
     sudo yum install docker
     sudo usermod -a -G docker ec2-user
     newgrp docker # get the docker group without logout/login
