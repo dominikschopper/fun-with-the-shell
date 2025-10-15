@@ -2,7 +2,8 @@
 
 Bitte mitmachen, im Verzeichnis `~/gallisches-dorf`
 
-<div style="display: flex;gap: 1rem">
+<div style="display: flex; gap:1rem" class="vim-example">
+
 
 ```bash
 vi asterix/asterix.haus
@@ -26,8 +27,16 @@ vi obelix/obelix.haus
 # - vi verlassen
 ```
 
-<div>
-    <div id="img-part"></div>
-</div>
+![vim mode overview](/images/vi-mental-model_no-legend.png)
 
 </div>
+
+<style>
+.vim-example pre {
+    width: 65%;
+    margin-bottom: 1rem;
+}
+.vim-example img {
+    width: calc(100% - 65% -1rem);
+}
+</style>

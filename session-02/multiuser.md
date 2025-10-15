@@ -1,11 +1,11 @@
 ## Mehrbenutzersystem
 
-Ein Multiuser-System ist ein Betriebssystem, dass Arbeitsumgebungen <!--.element class="ta-left" -->
+Ein Multiuser-System ist ein Betriebssystem, das Arbeitsumgebungen
 für verschiedene Benutzer bereitstellt und diese voneinander abgrenzt.
 Die Mehrbenutzerfähigkeit wird unter anderem durch umfassendes
 Zugriffsrechte-Management sichergestellt.
 
-<div class="fragment" style="width:100%">
+---
 
 ### Wer bin ich und wenn ja, wieviele?
 ```bash
@@ -19,9 +19,8 @@ shell-training> id
 uid=1000(shell-training) gid=1000(shell-training) groups=1000(shell-training)
 ```
 
-</div>
-
 ---
+
 ### Lokale Nutzer hinzufügen
 ```bash
 root> tail -3 /etc/group
@@ -56,12 +55,12 @@ sshd:!!:19611::::::
 shell-training:$6$x4yaca8epvXC8Vw7$7dn006Vua8aM4huvJ6ZfTOPwHtOkocmVh21Me4xiZzTVghH19XKyzKJLmAWP7qfwllnKFrtZGwwPigpO3T5m7.:19612:0:99999:7:::
 tester:!!:19616:0:99999:7:::
 ```
+
 ---
+
 ### Identitäten wechseln
 
-<p class="ta-left">
 sudo erlaubt dem gewöhnlichen Anwender vom Admin definierte Befehle mit root-Rechten auszuführen. Es erlaubt starke Einschränkungen bis "du-darfst-alles". Das Passwort des root-Nutzers muss dafür nicht bekannt sein.
-</p>
 
 ```bash
 shell-training> #sudo -i startet eine root-shell
@@ -69,9 +68,7 @@ shell-training> sudo -i
 root>
 ```
 
-<p class="ta-left">
 su ändert die Identität des eingeloggten Anwenders und fragt dafür auch das Passwort des Zielusers ab.
-</p>
 
 ```bash
 shell-training> #su - ändert den user und zieht dessen definierte Umgebung (ähnlich Login-Prozess)
@@ -80,4 +77,3 @@ Password:
 root>
 ```
 
-</div>

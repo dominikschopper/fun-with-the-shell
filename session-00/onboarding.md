@@ -12,7 +12,7 @@ shell-user
 
 # IP
 18.193.122.242
-# Port 22XY s.u.
+# Port 220XY s.u.
 
 # MacOS: open a Terminal and type
 ssh -p 22001 shell-user@18.193.122.242

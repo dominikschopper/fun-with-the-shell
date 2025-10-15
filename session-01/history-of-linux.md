@@ -6,7 +6,7 @@
 an even <!-- .element style="font-size: 0.4em" -->
 [more detailed chart](https://upload.wikimedia.org/wikipedia/commons/5/50/Unix_history-simple.png) <!-- .element target="_blank" -->
 
-notes:
+Note:
     - Unix aus Entwicklung von C
     - Bell Labs Unix nach Berkeley => BSD
     - GNU als Tool Entwicklung und dann HURD

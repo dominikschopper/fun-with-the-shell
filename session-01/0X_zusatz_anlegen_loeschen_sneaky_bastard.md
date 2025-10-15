@@ -1,4 +1,8 @@
-## Anlegen und Löschen von Dateien/Verzeichnissen für "sneaky bastards"
+## Anlegen/Löschen für "sneaky bastards"
+
+<img style="width: 60%;margin-inline:auto" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWtoM2h2eXoyMmUxbXA5bDF6dW1hZWk2YWxmM2lwZWpxZWQxc3FnbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SwyTq2jJxc9im6BYnN/giphy.gif" />
+
+---
 
 **the more ways you find, the sneakier you are!!!**
 
@@ -11,4 +15,3 @@
 1. Lege ein Verzeichnis mit dem Namen `. ..` an (in Worten "DOT" "SPACE" "DOT" "DOT"!) und lösche es wieder!
 
 
-![sneaky sneaky](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWtoM2h2eXoyMmUxbXA5bDF6dW1hZWk2YWxmM2lwZWpxZWQxc3FnbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SwyTq2jJxc9im6BYnN/giphy.gif)

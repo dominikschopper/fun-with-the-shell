@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Fun with the SHELL - reveal.js</title>
+    <base href="./">
 
     <!-- reveal default styles -->
     <link rel="stylesheet" href="./css/reset.css" />
@@ -20,8 +21,12 @@
             width: 100%;
         }
 
-    </style>
-    <style>
+        table tr td,
+        tr td,
+        td {
+            vertical-align: middle;
+        }
+
         #img-part {
             background-image: url("images/vi-mental-model_no-legend.png");
             background-position-x: -157px;
@@ -29,11 +34,72 @@
             height: 310px;
             width: 480px;
         }
-        .reveal:has(.present.trennblatt.use-img-baby-hacker):before {
-            background-image: url("/images/baby-can-u-hack.jpg");
-            height: 40%;
-            width: 40%;
+        .flex-row {
+            display: flex;
+            gap: 1em;
         }
+    </style>
+    <style>
+        .reveal:has(.present.trennblatt.use-img-baby-hacker):before {
+            content: '...me using Terminal';
+            padding: 1em;
+            color: #FD6202;
+            background-image: url("/images/baby-can-u-hack.jpg");
+            height: 45%;
+            width: 45%;
+        }
+        .reveal:has(.present.trennblatt.use-img-linuxcloud):before {
+            content: ' ';
+            background-image: url("./images/clouds-are-linux-servers.jpg");
+        }
+
+        .reveal:has(.present.trennblatt.use-img-yoda):before {
+            content: ' ';
+            background-image: url("./images/rtfm-joda-meme.jpg");
+            height: 70%;
+        }
+
+        .reveal:has(.present.trennblatt.use-img-expansions):before {
+            content: ' ';
+            background-image: url("./images/expansions.jpg");
+        }
+
+        .reveal:has(.present.trennblatt.use-img-root):before {
+            content: ' ';
+            background-image: url("./images/sudo-iamroot.jpg");
+        }
+
+        .reveal:has(.present.trennblatt.use-img-picard):before {
+            content: ' ';
+            background-image: url("/images/so-many-lessons.jpg");
+        }
+
+        .reveal:has(.present.trennblatt.use-img-sherlock):before {
+            content: ' ';
+            background-image: url("/images/sherlock.jpg");
+        }
+
+        .reveal:has(.present.trennblatt.use-img-indafile):before {
+            content: ' ';
+            background-image: url("/images/whats-in-the-file-meme.jpg");
+            width: unset;
+            aspect-ratio: 670 / 500;
+            background-size: contain;
+            background-position: top left;
+        }
+
+        .reveal:has(.present.trennblatt.use-img-fork-bomb):before {
+            content: ' ';
+            background-image: url("/images/please_fork_bomb.jpg");
+            aspect-ratio: 888 / 499;
+            height: unset;
+            width: 45%;
+            background-size: contain;
+            background-position: top left;
+            padding-right: 10%;
+            padding-top: -10%;
+        }
+
     </style>
 
 </head>
@@ -43,277 +109,228 @@
     <div class="reveal">
         <div class="slides">
 
-        <section class="trennblatt trennblatt-orange use-img use-img-baby-hacker">
-            <h1>Fun with the Shell<br />
-                <span style="font-size:.5em;" class="fragment">...me using Terminal</span>
-            </h1>
-        </section>
+            <section class="trennblatt trennblatt-orange use-img use-img-baby-hacker">
+                <h1>
+                    Fun with the Shell<br />
+                    <span style="font-size:0.6em">How using the terminal can be fun!</span>
+                </h1>
+                </section>
 
-      <section> <!-- Session 0 / Intro -->
-        <section id="vorstellungsrunde" data-markdown="session-00/vorstellungsrunde.md"></section>
-        <section id="onboarding" data-markdown="session-00/onboarding.md"></section>
-        <section id="first-login" data-markdown="session-00/first-login.md"></section>
-        <section id="first-steps" data-markdown="session-00/first-steps.md"></section>
-      </section> <!-- End of Session 0 / Intro -->
+            <section> <!-- Session 0 / Intro -->
+                <section id="vorstellungsrunde" data-markdown="/session-00/vorstellungsrunde.md"></section>
+                <section id="onboarding" data-markdown="/session-00/onboarding.md"></section>
+                <section id="first-login" data-markdown="/session-00/first-login.md"></section>
+                <section id="first-steps" data-markdown="/session-00/first-steps.md"></section>
+                </section> <!-- End of Session 0 / Intro -->
 
-    <section> <!-- Session 1 -->
+            <section class="trennblatt trennblatt-blue use-img use-img-MH">
+                <h2 class="c-orange">Vielen Dank und bis zum nächsten Mal!</h2>
+            </section>
 
-        <section data-background-image="./images/clouds-are-linux-servers.jpg" data-background-size="70%">
-        <h4 class="">...Linux hält die Welt<br />am Laufen</h4>
-        </section>
+            <section class="trennblatt trennblatt-blue use-img use-img-linuxcloud">
+                <h4 class="">...Linux hält die Welt<br />am Laufen</h4>
+            </section>
+            <section> <!-- Session 1 -->
 
-        <section data-background-image="./images/unix-bearded-guy.jpg"
-        data-background-position="bottom right"
-        data-background-size="48%">
-          <hgroup>
-            <h2>Session 1</h2>
-            <p>Geschichte, Einstieg, Prozesse und Bewegen im Dateibaum</p>
-          </hgroup>
-        </section>
+                <section class="trennblatt trennblatt-purple" data-background-image="./images/unix-bearded-guy.jpg" data-background-position="bottom right"
+                    data-background-size="48%">
+                        <h2>Session 1<br /><p>Geschichte, Einstieg, Prozesse und Bewegen im Dateibaum</p></h2>
+                </section>
 
-        <section id="history-of-linux"
-            data-markdown="session-01/history-of-linux.md" ></section>
-        <section id="processes"
-            data-markdown="session-01/processes.md" ></section>
-        <section id="showing-processes"
-            data-markdown="session-01/showing-processes.md" ></section>
-        <section id="process_commands"
-            data-markdown="session-01/process_commands.md" ></section>
-        <section id="end_processes"
-            data-markdown="session-01/end_processes.md" ></section>
-        <section id="interjection_run_a_command"
-            data-markdown="session-01/interjection_run_a_command.md"></section>
-        <section id="pfade_so_viele_pfade"
-            data-markdown="session-01/pfade_so_viele_pfade.md"></section>
-        <section id="exercises-process"
-            data-markdown="session-01/exercises-process.md" ></section>
-        <section id="bewegen_im_verzeichnisbaum"
-            data-markdown="session-01/bewegen_im_verzeichnisbaum.md" ></section>
-        <section id="exercises-file-movement"
-            data-markdown="session-01/exercises-file-movement.md" ></section>
-        <section id="exercises-file-movement"
-            data-markdown="session-01/0X_zusatz_anlegen_loeschen_sneaky_bastard.md"></section>
+                <section id="history-of-linux" data-markdown="session-01/history-of-linux.md"></section>
+                <section id="processes" data-markdown="session-01/processes.md"></section>
+                <section id="showing-processes" data-markdown="session-01/showing-processes.md"></section>
+                <section id="process_commands" data-markdown="session-01/process_commands.md"></section>
+                <section id="end_processes" data-markdown="session-01/end_processes.md"></section>
+                <section id="interjection_run_a_command" data-markdown="session-01/interjection_run_a_command.md">
+                </section>
+                <section id="pfade_so_viele_pfade" data-markdown="session-01/pfade_so_viele_pfade.md"></section>
+                <section id="exercises-process" data-markdown="session-01/exercises-process.md"></section>
+                <section id="bewegen_im_verzeichnisbaum" data-markdown="session-01/bewegen_im_verzeichnisbaum.md">
+                </section>
+                <section id="exercises-file-movement" data-markdown="session-01/exercises-file-movement.md"></section>
+                <!-- section id="exercises-file-movement" data-markdown="session-01/0X_zusatz_anlegen_loeschen_sneaky_bastard.md"></! -->
 
-      </section> <!-- End of Session 1 -->
+            </section> <!-- End of Session 1 -->
 
-      <section><!-- Session 2 -->
+            <section class="trennblatt trennblatt-green use-img use-img-yoda">
+                <h2>
+                    Session 2
+                    <p style="font-size:.75em">Bedienungsanleitung, Aliasse, Umgebung, Anmeldung, Kommandozeile, Dateisystem,
+                        Mehrbenutzersystem, Skripte</p>
+                </h2>
+            </section>
 
-        <section data-background-image="images/rtfm-joda-meme.jpg"
-        data-background-position="bottom right"
-        data-background-size="38%">
-          <hgroup>
-            <h2>Session 2</h2>
-            <p>Bedienungsanleitung, Aliasse, Umgebung, Anmeldung, Kommandozeile, Dateisystem, Mehrbenutzersystem, Skripte</p>
-          </hgroup>
-        </section>
-
+            <section><!-- Session 2a -->
                 <section id="manpages" data-markdown="session-02/manpages.md"></section>
                 <section id="aliases" data-markdown="session-02/aliases.md"></section>
                 <section id="environment" data-markdown="session-02/environment.md"></section>
                 <section id="login" data-markdown="session-02/login.md"></section>
-                <section id="cmdline-title" data-background-image="images/expansions.jpg"
-                    data-background-position="2% 97%" data-background-size="38%">
+            </section><!-- End of Session 2a -->
 
-            <h2>CMD-Line Expansion</h2>
+            <section id="cmdline-title" class="trennblatt trennblatt-orange use-img use-img-expansions">
+                <h2>CMD-Line Expansion</h2>
+            </section>
 
-                </section>
+            <section><!-- Session 2b -->
                 <section id="cmdline" data-markdown="session-02/cmdline.md"></section>
                 <section id="execution" data-markdown="session-02/execution.md"></section>
-                <section id="multiuser-title" data-background-image="images/sudo-iamroot.jpg"
-                    data-background-position="2% 97%" data-background-size="38%">
+            </section> <!--End of Session 2b -->
 
-            <h2>Mehrere User</h2>
-
-        </section>
-        <section id="multiuser"
-            data-markdown="session-02/multiuser.md"></section>
-
-        <section id="E0_man"
-            data-markdown="session-02/E0_man.md"></section>
-        <section id="E1_aliases"
-            data-markdown="session-02/E1_aliases.md"></section>
-        <section id="E2_environment"
-            data-markdown="session-02/E2_environment.md"></section>
-
-            </section> <!--End of Session 2 -->
-
-      <section><!-- Session 3 -->
-
-        <section data-background-image="images/so-many-lessons.jpg"
-            data-background-size="33%"
-            data-background-position="5% 90%">
-            <h3>Was vom Tage übrig blieb ...</h3>
-        </section>
+            <section id="multiuser-title" class="trennblatt trennblatt-purple use-img use-img-root">
+                <h2>Mehrere User</h2>
+            </section>
+            <section><!-- Session 2c -->
+                <section id="multiuser" data-markdown="session-02/multiuser.md"></section>
+                <section id="E0_man" data-markdown="session-02/E0_man.md"></section>
+                <section id="E1_aliases" data-markdown="session-02/E1_aliases.md"></section>
+                <section id="E2_environment" data-markdown="session-02/E2_environment.md"></section>
+            </section><!-- End of Session 2c -->
 
 
-        <section id="filesystem-rights" data-markdown="session-03/filesystem-rights.md"></section>
-        <section id="filesystem-exercises" data-markdown="session-03/E6_filesystem_rights.md"></section>
-
-        <section data-background-image="images/search-find-bg.jpg">
-            <hgroup class="bg-lightpink-50 pad-xl">
-                <h2>Suchet, so werdet ihr finden ...</h2>
-            </hgroup>
-        </section>
-
-        <section id="find-vorstellung"
-            data-markdown="session-03/find-vorstellung.md"></section>
-        <section id="find-beispiele"
-            data-markdown="session-03/find-beispiele.md"></section>
-        <section id="grep"
-            data-markdown="session-03/grep.md"></section>
-
-        <section id="E4_grep"
-            data-markdown="session-03/E4_grep.md"></section>
-        <section id="E5_find"
-            data-markdown="session-03/E5_find.md"></section>
-
-        <section id="editors" data-background-image="images/whats-in-the-file-meme.jpg"
-            data-background-size="37%"
-            data-background-position="98% 98%">
-
-            <hgroup>
-                <h3 class="red">Session 4.1</h3>
-                <p>Mal schauen was drin ist!</p>
-            </hgroup>
-        </section>
-
-        <section id="logfiles"
-            data-markdown="session-03/logfiles.md"></section>
-        <section id="tail"
-            data-background-image="images/dog-head-tail.jpg"
-            data-background-size="20%"
-            data-background-position="3% 97%"
-            data-markdown="session-03/tail.md"></section>
-        <section id="more-or-less"
-            data-background-image="images/more-less-meme.jpg"
-            data-background-size="20%"
-            data-background-position="95% 9%"
-            data-markdown="session-03/more-or-less.md"></section>
-        <section id="vi-intro"
-            data-background-image="images/exit-vim-orly.jpg"
-            data-background-size="25%"
-            data-background-position="2% 99%"
-            data-markdown="session-03/vi-intro.md"></section>
-        <section id="vi-modes"
-            data-markdown="session-03/vi-modes.md"></section>
-        <section id="vi-commands"
-            data-markdown="session-03/vi-commands.md"></section>
-        <section id="vi-examples"
-            data-markdown="session-03/vi-examples.md"></section>
+            <section class="trennblatt trennblatt-purple use-img use-img-picard">
+                <h3>Was vom Tage übrig blieb ...</h3>
+            </section>
+            <section><!-- Session 3a -->
 
 
-      </section> <!--End of Session 3 -->
+                <section id="filesystem-rights" data-markdown="session-03/filesystem-rights.md"></section>
+                <section id="filesystem-exercises" data-markdown="session-03/E6_filesystem_rights.md"></section>
+            </section> <!--End of Session 3a -->
 
-    <section><!-- Session 4 -->
-        <section data-background-image="images/io-problems.jpg" data-background-position="top center"
-            data-background-size="65%">
-            <hgroup class="bg-lightblue-50 red pad-lg" style="width: fit-content; margin-inline: auto">
-                <h3 class="red">Session 4.2 Input/Output</h3>
-                <p>chaining stuff</p>
-            </hgroup>
-        </section>
-        <section id="io-redirection" data-markdown="session-04/io-redirection.md"></section>
-        <section id="io-chaining" data-markdown="session-04/io-chaining.md"></section>
+            <section class="trennblatt trennblatt-green use-img use-img-sherlock">
+                <h2>Where to find ... <span class="fragment">stuff</span></h2>
+                </section>
 
-        <section id="scripting_00" data-background-image="./images/cat_fork_bomb.jpeg" data-background-position="5% 10%" data-background-size="20%">
-            <hgroup class="bg-lightblue-50 pad-lg">
-                <h2>Session 4.3 Shell Scripting</h2>
-                <p>scripting for the strong hearted</p>
-            </hgroup>
-        </section>
+            <section><!-- Session 3b -->
 
-        <section id="scripting_01" data-markdown="session-04/shell-scripting.md"></section>
+                <section id="find-vorstellung" data-markdown="session-03/find-vorstellung.md"></section>
+                <section id="find-beispiele" data-markdown="session-03/find-beispiele.md"></section>
+                <section id="grep" data-markdown="session-03/grep.md"></section>
 
-        <section data-background-image="images/the_end_is_near.jpg" data-background-position="top right" data-background-size="45%">
-            <hgroup class="bg-pink-50 pad-lg" style="width: fit-content; margin-inline: auto;">
-                <h3 class="red">Session 4++</h3>
-                <p>Der ganze Rest!</p>
-            </hgroup>
-        </section>
+                <section id="E4_grep" data-markdown="session-03/E4_grep.md"></section>
+                <section id="E5_find" data-markdown="session-03/E5_find.md"></section>
+            </section><!-- End of Session3b -->
 
-        <section data-background-image="images/on-and-off-again.gif"
-            data-background-position="top left"
-            data-background-size="25%">
-            <hgroup>
-                <h3>Filesystems</h3>
-                <p class="pink bg-brown">Admin basics ...</p>
-            </hgroup>
-        </section>
-        <section id="filesystem" data-markdown="session-04/filesystem.md"></section>
-        <section id="filesystem-commands" data-markdown="session-04/filesystem-commands.md"></section>
-        <section id="linux-dir-hirarchy" data-markdown="session-04/linux-dir-hirarchy.md"></section>
+            <section id="editors" class="trennblatt trennblatt-blue use-img use-img-indafile">
+                <h3 class="red">
+                    Session 4.1
+                    <p>Mal schauen was drin ist!</p>
+                </h3>
+            </section>
 
-                <section id="ssh-tricks-pt1"
-            data-background-image="images/forgot-password-meme.jpg"
-            data-background-size="20%"
-            data-background-position="bottom left"
-            data-markdown="session-04/ssh-tricks-pt1.md"></section>
-        <section id="ssh-tricks-pt2"
-            data-background-image="images/ssh-excited.jpg"
-            data-background-size="18%"
-            data-background-position="top left"
-            data-markdown="session-04/ssh-tricks-pt2.md"></section>
+            <section><!-- session 3b -->
+                <section id="logfiles" data-markdown="session-03/logfiles.md"></section>
+                <section id="tail" data-background-image="images/dog-head-tail.jpg" data-background-size="20%"
+                    data-background-position="3% 97%" data-markdown="session-03/tail.md"></section>
+                <section id="more-or-less" data-background-image="images/more-less-meme.jpg" data-background-size="20%"
+                    data-background-position="100% 50%" data-markdown="session-03/more-or-less.md"></section>
+                <section id="vi-intro" data-background-image="images/exit-vim-orly.jpg" data-background-size="20%"
+                    data-background-position="92% 95%" data-markdown="session-03/vi-intro.md"></section>
+                <section id="vi-modes" data-markdown="session-03/vi-modes.md"></section>
+                <section id="vi-commands" data-markdown="session-03/vi-commands.md"></section>
+                <section id="vi-examples" data-markdown="session-03/vi-examples.md"></section>
+            </section><!-- End of session 3b -->
 
-        <section data-background-image="images/iknow-regex.jpeg"
-            data-background-position="top left"
-            data-background-size="33%">
-            <hgroup>
-                <p class="green">... and now for something completely different</p>
-                <h2>Reg Ex</h2>
-            </hgroup>
-        </section>
 
-        <section id="regex-intro"
-            data-background-image="images/this-part-regex.jpg"
-            data-background-position="bottom right"
-            data-background-size="25%"
-            data-markdown="session-04/regex-intro.md"></section>
-        <section id="regex-chars" data-markdown="session-04/regex-chars.md"></section>
+            <section><!-- Session 4 -->
+                <section data-background-image="images/io-problems.jpg" data-background-position="top center"
+                    data-background-size="65%">
+                    <hgroup class="bg-lightblue-50 red pad-lg" style="width: fit-content; margin-inline: auto">
+                        <h3 class="red">Session 4.2 Input/Output</h3>
+                        <p>chaining stuff</p>
+                    </hgroup>
+                </section>
+                <section id="io-redirection" data-markdown="session-04/io-redirection.md"></section>
+                <section id="io-chaining" data-markdown="session-04/io-chaining.md"></section>
 
-        <section id="regex-quantifiers"
-            data-background-image="images/regex.jpg"
-            data-background-position="top left"
-            data-background-size="30%"
-            data-markdown="session-04/regex-quantifiers.md"></section>
-        <section id="regex-anchors" data-markdown="session-04/regex-anchors.md"></section>
+                <section id="scripting_00" class="trennblatt trennblatt-green use-img use-img-fork-bomb">
+                        <h2>
+                            Session 4.3 Shell Scripting
+                            <p style="font-size:.666em">scripting for the strong hearted</p>
+                        </h2>
 
-        <section id="regex-captgroups" data-markdown="session-04/regex-captgroups.md"></section>
-        <section id="regex-exercises" data-markdown="session-04/regex-exercise-01.md"></section>
-        <section id="regex-exercises" data-markdown="session-04/regex-exercise-02.md"></section>
+                </section>
 
-    </section><!-- End of Session 4-->
+                <section id="scripting_01" data-markdown="session-04/shell-scripting.md"></section>
 
-    <section> <!-- Backup -->
-        <section>
-            <h2>Backup (Session 5?)</h2>
-        </section>
+                <section data-background-image="images/the_end_is_near.jpg" data-background-position="top right"
+                    data-background-size="45%">
+                    <hgroup class="bg-pink-50 pad-lg" style="width: fit-content; margin-inline: auto;">
+                        <h3 class="red">Session 4++</h3>
+                        <p>Der ganze Rest!</p>
+                    </hgroup>
+                </section>
 
-        <section data-background-image="images/gup-business-it-alignment.jpeg" data-background-size="50% 100%">
-            <hgroup class="bg-lightblue-50 pad-lg">
-                <h3 class="red">Filesystem Aufbau &amp;<br/>Was sind Links?</h3>
-            </hgroup>
-        </section>
+                <section data-background-image="images/on-and-off-again.gif" data-background-position="top left"
+                    data-background-size="25%">
+                    <hgroup>
+                        <h3>Filesystems</h3>
+                        <p class="pink bg-brown">Admin basics ...</p>
+                    </hgroup>
+                </section>
+                <section id="filesystem" data-markdown="session-04/filesystem.md"></section>
+                <section id="filesystem-commands" data-markdown="session-04/filesystem-commands.md"></section>
+                <section id="linux-dir-hirarchy" data-markdown="session-04/linux-dir-hirarchy.md"></section>
 
-        <section id="inodes-beschreibung" data-markdown="session-backup/inodes-beschreibung.md"></section>
-        <section id="inodes-bild-1" data-markdown="session-backup/inodes-bild-1.md"></section>
-        <section id="inodes-bild-2" data-markdown="session-backup/inodes-bild-2.md"></section>
+                <section id="ssh-tricks-pt1" data-background-image="images/forgot-password-meme.jpg" data-background-size="20%"
+                    data-background-position="bottom left" data-markdown="session-04/ssh-tricks-pt1.md"></section>
+                <section id="ssh-tricks-pt2" data-background-image="images/ssh-excited.jpg" data-background-size="18%"
+                    data-background-position="top left" data-markdown="session-04/ssh-tricks-pt2.md"></section>
 
-        <section id="regex-comparison" data-markdown="session-backup/regex-comparison.md"></section>
+                <section data-background-image="images/iknow-regex.jpeg" data-background-position="top left" data-background-size="33%">
+                    <hgroup>
+                        <p class="green">... and now for something completely different</p>
+                        <h2>Reg Ex</h2>
+                    </hgroup>
+                </section>
 
-        <section id="end" data-background-image="images/silly_guess_game.jpg" data-background-position="2% 2%" data-background-size="38%">
-            <div style="max-width: 66%; margin-inline: auto;">
-                <hgroup class="bg-green pad-lg">
-                    <h2>So long ...</h2>
-                    <p class="fragment">... and thanks for all the fish!</p>
-                </hgroup>
+                <section id="regex-intro" data-background-image="images/this-part-regex.jpg" data-background-position="bottom right"
+                    data-background-size="25%" data-markdown="session-04/regex-intro.md"></section>
+                <section id="regex-chars" data-markdown="session-04/regex-chars.md"></section>
 
-                <p class="fragment mrg-top-xl bg-lightblue pad-lg">
-                    Marcus und Dominik bedanken sich bei allen, die hier angekommen sind
-                    und freuen sich über Feedback!
-                </p>
-            </div>
-        </section>
-    </section><!-- End of Backup -->
+                <section id="regex-quantifiers" data-background-image="images/regex.jpg" data-background-position="top left"
+                    data-background-size="30%" data-markdown="session-04/regex-quantifiers.md"></section>
+                <section id="regex-anchors" data-markdown="session-04/regex-anchors.md"></section>
+
+                <section id="regex-captgroups" data-markdown="session-04/regex-captgroups.md"></section>
+                <section id="regex-exercises" data-markdown="session-04/regex-exercise-01.md"></section>
+                <section id="regex-exercises" data-markdown="session-04/regex-exercise-02.md"></section>
+
+            </section><!-- End of Session 4-->
+
+            <section> <!-- Backup -->
+                <section>
+                    <h2>Backup (Session 5?)</h2>
+                </section>
+
+                <section data-background-image="images/gup-business-it-alignment.jpeg" data-background-size="50% 100%">
+                    <hgroup class="bg-lightblue-50 pad-lg">
+                        <h3 class="red">Filesystem Aufbau &amp;<br />Was sind Links?</h3>
+                        </hgroup>
+                        </section>
+
+                <section id="inodes-beschreibung" data-markdown="session-backup/inodes-beschreibung.md"></section>
+                <section id="inodes-bild-1" data-markdown="session-backup/inodes-bild-1.md"></section>
+                <section id="inodes-bild-2" data-markdown="session-backup/inodes-bild-2.md"></section>
+
+                <section id="regex-comparison" data-markdown="session-backup/regex-comparison.md"></section>
+
+                <section id="end" data-background-image="images/silly_guess_game.jpg" data-background-position="2% 2%"
+                    data-background-size="38%">
+                    <div style="max-width: 66%; margin-inline: auto;">
+                        <hgroup class="bg-green pad-lg">
+                            <h2>So long ...</h2>
+                            <p class="fragment">... and thanks for all the fish!</p>
+                        </hgroup>
+
+                        <p class="fragment mrg-top-xl bg-lightblue pad-lg">
+                            Marcus und Dominik bedanken sich bei allen, die hier angekommen sind
+                            und freuen sich über Feedback!
+                        </p>
+                        </div>
+                        </section>
+                        </section><!-- End of Backup -->
 
         </div>
     </div>
@@ -447,7 +464,7 @@
             //           is present on the current slide or fragment
             // - 1+:     All slides will progress automatically at the given interval
             // - false:  No auto-sliding, even if data-autoslide is present
-            autoSlide: 0,
+            autoSlide: false,
 
             // Stop auto-sliding after user input
             autoSlideStoppable: true,
@@ -510,7 +527,7 @@
             display: 'block',
 
             hideInactiveCursor: true,
-            hideCursorTime: 5000,
+            hideCursorTime: 2000,
         });
 
     </script>

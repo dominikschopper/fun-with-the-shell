@@ -10,7 +10,7 @@
 
 ```bash
 id               # data of logged in user
-cat  /etc/passwd # list all local users
+cat /etc/passwd  # list all local users
 ps               # all processes of the current user
 ps -f            # all processes full display
 sleep 30 &       # sleep 30s im hintergrund

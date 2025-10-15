@@ -12,6 +12,8 @@ total 4
 ```
 
 ---
+
+### Symbolisch => X-Bit setzen
 ```bash
 shell-training> # u=user, g=group, o=other erhalten Ausführungsberechtigung
 shell-training> chmod +x datei2
@@ -21,8 +23,7 @@ total 4
 -rwxrwxr-x. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
 
-<div class="fragment" style="width:100%">
-
+### Symbolisch => X-Bit wegnehmen
 ```bash
 shell-training> # eigentlich sollten alle anderen keine Ausführungsberechtigungen haben
 shell-training> chmod o-x datei2
@@ -38,9 +39,9 @@ total 4
 -rwxrw-r--. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
 
-</div>
-
 ---
+
+### Symbloisch alle Rechte (für jeden) nehmen
 
 ```bash
 shell-training> # es soll doch bitte niemand Leserechte (r), Schreibrechte (w) oder Ausführungsrechte (x) haben
@@ -51,7 +52,7 @@ total 4
 ----------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
 
-<div class="fragment" style="width:100%">
+### Symbolisch R-Bit für den Besitzer setzen
 
 ```bash
 shell-training> # nur der Eigentümer soll lesen können
@@ -62,15 +63,13 @@ total 4
 -r--------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
 
-</div>
-
 ---
 
 ### Rechte-Stenographie
 
 statt `u=rwx,g=rx,o-rwx` kann man auch einfach `750` schreiben
 
-<img src="./images/rights-string-octal.jpg" />
+![beschreibt Umrechnung Unix Dateberechtigungen](./images/rights-string-octal.jpg)
 
 ---
 ### chmod mit 2 hoch rwx (oktal)
@@ -94,6 +93,7 @@ total 4
 ```
 
 ---
+
 ### Verzeichnisse
 chmod funktioniert genauso für Verzeichnisse. Jedoch haben die Berechtigungen leicht andere Effekte als auf gewöhnlichen Dateien.
 + Das read-Bit (r) erlaubt dem Anwender Dateien im jeweiligen Verzeichnis aufzulisten.
@@ -101,6 +101,9 @@ chmod funktioniert genauso für Verzeichnisse. Jedoch haben die Berechtigungen l
 + Das execute-Bit (x) erlaubt dem Anwender das Verzeichnis zu betreten und auf Dateien und andere Verzeichnisse darin zuzugreifen.
 
 ---
+
+### Was tun diese Rechte genau? (Pt1)
+
 ```bash
 shell-training> # weder user, noch group, noch other soll Ausführungsrechte haben
 shell-training> chmod ugo-x temp
@@ -112,8 +115,9 @@ ls: cannot access 'temp/datei2': Permission denied
 shell-training> cat temp/datei2
 cat: temp/datei2: Permission denied
 ```
+---
 
-<div class="fragment" style="width:100%">
+### Was tun diese Rechte genau? (Pt2)
 
 ```bash
 shell-training> # wie sieht es mit nur (x) aber OHNE (r) aus?
@@ -127,10 +131,9 @@ shell-training> cat temp/datei2
 Hallo
 ```
 
-</div>
-
 ---
-### chown, chgrp
+
+### Besitzer und Besitzgruppe: chown, chgrp
 
 ```bash
 root> ls -l
@@ -149,7 +152,9 @@ total 4
 -r--------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
 
-<div class="fragment" style="width:100%">
+---
+
+### Datei zu verschenken ...
 
 ```bash
 root> chown tester:test datei2
@@ -159,9 +164,9 @@ total 4
 -r--------. 1 tester test 6 Sep 17 19:38 datei2
 ```
 
-</div>
 
 ---
+
 ### umask
 umask setzt den initialen Modus für neuerzeugte Dateien oder Verzeichnisse. Die Oktalnotation ist sozusagen invers. Mit umask 000 haben neue Dateien volle Berechtigungen.
 
@@ -186,6 +191,7 @@ total 0
 ```
 
 ---
+
 ## Weitere Berechtigungsmechanismen
 
 + chattr, lsattr
@@ -195,8 +201,6 @@ mosdoba> lsattr
 -------------------- ./school-of-rock
 -------------------- ./deep-purple.md
 ```
-
-<div class="flex-row">
 
 - (a) - append only file.
 - (A) - don't update atime.
@@ -209,7 +213,9 @@ mosdoba> lsattr
 - (F) - in dir all is not case sensitive
 - (h) - file is/was &gt; 2TB.
 
-&nbsp;
+...2becontinued...
+
+---
 
 - (i) - file won't be modified.
 - (I) - dir. indexed w. hashed trees.
@@ -223,9 +229,7 @@ mosdoba> lsattr
 - (u) - keep file for undeletion.
 - (V) - verify read cryptographically.
 
-</div>
-
-notes:
+Note:
 
 - good idea
 - never used it

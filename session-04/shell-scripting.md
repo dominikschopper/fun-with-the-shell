@@ -75,7 +75,7 @@ Funktionalitäten nicht enthält
 
 Variablen werden üblicherweise groß geschrieben und sind case-sensitive.
 
-Allerdings kann man das auch zur Vermeidung von Kllisionen verwenden und
+Allerdings kann man das auch zur Vermeidung von Kollisionen verwenden und
 die Variablen CamelCase schreiben!
 
 L-Values der Variablen müssen
@@ -198,8 +198,6 @@ komplexere Aktionen mit `getopts`
 ---
 ## Test Command
 
-<div style="text-align: left;">
-
 das `test` Kommando kann zB Vergleiche ausführen
 
 es hat den return 0 wenn die abgefregte Bedingung "wahr" ist
@@ -210,21 +208,28 @@ es hat den return 0 wenn die abgefregte Bedingung "wahr" ist
 - `test -f $x` ist $x eine Datei?
 - ... `man test`
 
+<div class="flex-row">
+<div>
+
 alte Schreibweise
 
-- `[ "$x" = "hallo" ]` enthält $x "hallo"?
+- `[ "$x" = "hallo" ]` $x enthält "hallo"?
 - `[ "$x" -lt 9 ]` ist $x kleiner als 9?
 - `[ "$x" -eq 11 ]` ist $x die Zahl 11?
 - `[ -f "$x" ]` ist $x eine Datei?
 
+</div>
+<div>
+
 neue Schreibweise
 
-- `[[ $x = "hallo" ]]` enthält $x "hallo"?
-- `[[ $x =~ "^hallo" ]]` enthält $x "hallo"?
+- `[[ $x = "hallo" ]]` $x enthält "hallo"?
+- `[[ $x =~ "^hallo" ]]` $x beginnt mit "hallo"?
 - `[[ $x -lt 9 ]]` ist $x kleiner als 9?
 - `[[ $x -eq 11 ]]` ist $x die Zahl 11?
 - `[[ -f $x ]]` ist $x eine Datei?
 
+</div>
 </div>
 
 ---
@@ -272,7 +277,7 @@ Kleine Helfer
 
 ## Aufgabe
 
-Die Aufgaben sind ALternativen
+Die Aufgaben sind Alternativen
 
 1. Schreibt ein Script **`add_users.sh`**, das eine Reihe von Usernamen als Argumente übernimmt
   es soll alle user anlegen, sicherstellen, dass es ein Home-Verzeichnis gibt und
