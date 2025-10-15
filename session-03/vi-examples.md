@@ -27,7 +27,7 @@ vi obelix/obelix.haus
 # - vi verlassen
 ```
 
-![vim mode overview](/images/vi-mental-model_no-legend.png)
+![vim mode overview](./images/vi-mental-model_no-legend.png)
 
 </div>
 
