@@ -10,7 +10,7 @@ ausführen kann.
 
 **python** gilt als Nachfolger von Bash Skripten für Admins!
 
-Aber! Shell-Skripte das Leben vereinfachen.
+Aber! Shell-Skripte können das Leben vereinfachen.
 
 </div>
 
