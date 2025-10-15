@@ -52,7 +52,7 @@ tester:x:1001:1002::/home/tester:/bin/bash
 
 root> tail -3 /etc/shadow
 sshd:!!:19611::::::
-shell-training:$6$x4yaca8epvXC8Vw7$7dn006Vua8aM4huvJ6ZfTOPwHtOkocmVh21Me4xiZzTVghH19XKyzKJLmAWP7qfwllnKFrtZGwwPigpO3T5m7.:19612:0:99999:7:::
+shell-training:$6$x4yaca8epvXC8Vw7$7dn006Vua8aM4...wwPigpO3T5m7.:19612:0:99999:7:::
 tester:!!:19616:0:99999:7:::
 ```
 

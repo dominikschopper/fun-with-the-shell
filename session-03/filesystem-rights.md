@@ -41,7 +41,7 @@ total 4
 
 ---
 
-### Symbloisch alle Rechte (für jeden) nehmen
+### Symbolisch alle Rechte (für jeden) wegnehmen
 
 ```bash
 shell-training> # es soll doch bitte niemand Leserechte (r), Schreibrechte (w) oder Ausführungsrechte (x) haben
@@ -52,7 +52,7 @@ total 4
 ----------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
 
-### Symbolisch R-Bit für den Besitzer setzen
+### Symbolisch => R-Bit für den Besitzer setzen
 
 ```bash
 shell-training> # nur der Eigentümer soll lesen können
@@ -72,7 +72,7 @@ statt `u=rwx,g=rx,o-rwx` kann man auch einfach `750` schreiben
 ![beschreibt Umrechnung Unix Dateberechtigungen](./images/rights-string-octal.jpg)
 
 ---
-### chmod mit 2 hoch rwx (oktal)
+### Oktal => chmod mit 2 hoch rwx
 
 ```bash
 shell-training> chmod 100 datei1
@@ -156,6 +156,10 @@ total 4
 
 ### Datei zu verschenken ...
 
+Das verändern des Datei-Besitzers benötigt Root-Rechte, also
+als `root` (d.h. vorher `sudo -i`) oder mit `sudo chmod ...`
+ausführen
+
 ```bash
 root> chown tester:test datei2
 root> ls -l
@@ -202,6 +206,8 @@ mosdoba> lsattr
 -------------------- ./deep-purple.md
 ```
 
+<div class="flex-row">
+
 - (a) - append only file.
 - (A) - don't update atime.
 - (c) - compress file.
@@ -213,9 +219,7 @@ mosdoba> lsattr
 - (F) - in dir all is not case sensitive
 - (h) - file is/was &gt; 2TB.
 
-...2becontinued...
-
----
+<br/>
 
 - (i) - file won't be modified.
 - (I) - dir. indexed w. hashed trees.
@@ -228,6 +232,8 @@ mosdoba> lsattr
 - (T) - top level hierarchy dir.
 - (u) - keep file for undeletion.
 - (V) - verify read cryptographically.
+
+</div>
 
 Note:
 
