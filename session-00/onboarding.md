@@ -1,10 +1,10 @@
-#### Ein Terminal mit einer shell?
+#### Ein Terminal mit einer shell?<!-- .element class="c-purple" -->
 
 - Jede/r benötigt einen `ssh` client zB `putty` unter Windows [https://putty.org/](https://putty.org/)<!-- .element target="_blank" -->
 - MacOS User öffnen einfach ein Terminal, dort findet ihr die lokale zsh. Kommando s.u.<br/>
-  Das initiale Passwort ist:     _**`have-fun++`**_
+  Das initiale Passwort ist:     _**`have-fun++`**_<!-- .element class="c-orange" -->
 
-Connection Data für z.B. PUTTY<!-- .element class="ta-left" -->
+Connection Data für z.B. PUTTY
 
 ```bash
 # User
@@ -18,11 +18,11 @@ shell-user
 ssh -p 22001 shell-user@18.193.122.242
 ```
 
-Portnummern: <!-- .element class="ta-left" -->
+Portnummern:
 
 <div class="flex-row" style="font-size:0.8em; font-family:Courier, 'Courier New', monospace">
-<div>
 
+<div>
 
 - Mohammed  &rarr; Port: 22001
 - Jan       &rarr; Port: 22002
@@ -30,6 +30,7 @@ Portnummern: <!-- .element class="ta-left" -->
 - Nils      &rarr; Port: 22004
 
 </div>
+
 <div>
 
 - Christian &rarr; Port: 22005
@@ -37,6 +38,6 @@ Portnummern: <!-- .element class="ta-left" -->
 - Danh      &rarr; Port: 22007
 
 </div>
-<div>
+</div>
 
 

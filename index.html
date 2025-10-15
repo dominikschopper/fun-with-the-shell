@@ -47,11 +47,12 @@
     <style>
         .reveal:has(.present.trennblatt.use-img-baby-hacker):before {
             content: ' ';
-            padding: 1em;
-            color: #FD6202;
             background-image: url("./images/baby-can-u-hack.jpg");
-            height: 45%;
-            width: 45%;
+            width: unset;
+            aspect-ratio: 643 / 530;
+            background-size: contain;
+            background-position: top left;
+            padding-right: 5%;
         }
         .reveal:has(.present.trennblatt.use-img-linuxcloud):before {
             content: ' ';
@@ -61,11 +62,18 @@
         .reveal:has(.present.trennblatt.use-img-yoda):before {
             content: ' ';
             background-image: url("./images/rtfm-joda-meme.jpg");
-            height: 70%;
+            width: unset;
+            aspect-ratio: 643 / 530;
+            background-size: contain;
+            background-position: top left;
+            padding-right: 5%;
+
         }
 
         .reveal:has(.present.trennblatt.use-img-expansions):before {
             content: ' ';
+            width: unset;
+            aspect-ratio: 625 / 500;
             background-image: url("./images/expansions.jpg");
         }
 
@@ -175,6 +183,10 @@
 
             </section> <!-- End of Session 1 -->
 
+            <section class="trennblatt trennblatt-blue use-img use-img-AS">
+                <h2 class="c-orange">Vielen Dank und bis zum nächsten Mal!</h2>
+            </section>
+
             <section class="trennblatt trennblatt-green use-img use-img-yoda">
                 <h2>
                     Session 2
@@ -207,18 +219,17 @@
                 <section id="E0_man" data-markdown="session-02/E0_man.md"></section>
                 <section id="E1_aliases" data-markdown="session-02/E1_aliases.md"></section>
                 <section id="E2_environment" data-markdown="session-02/E2_environment.md"></section>
-            </section><!-- End of Session 2c -->
-
-
-            <section class="trennblatt trennblatt-purple use-img use-img-picard">
-                <h3>Was vom Tage übrig blieb ...</h3>
-            </section>
-            <section><!-- Session 3a -->
-
-
                 <section id="filesystem-rights" data-markdown="session-03/filesystem-rights.md"></section>
                 <section id="filesystem-exercises" data-markdown="session-03/E6_filesystem_rights.md"></section>
-            </section> <!--End of Session 3a -->
+            </section><!-- End of Session 2c -->
+
+            <section class="trennblatt trennblatt-blue use-img use-img-JB">
+                <h2 class="c-orange">Vielen Dank und bis zum nächsten Mal!</h2>
+            </section>
+
+            <!--<section class="trennblatt trennblatt-purple use-img use-img-picard">
+                <h3>Was vom Tage übrig blieb ...</h3>
+            </section>-->
 
             <section class="trennblatt trennblatt-green use-img use-img-sherlock">
                 <h2>Where to find ... <span class="fragment">stuff</span></h2>
@@ -235,7 +246,7 @@
             </section><!-- End of Session3b -->
 
             <section id="editors" class="trennblatt trennblatt-blue use-img use-img-indafile">
-                <h3 class="red">
+                <h3>
                     Session 4.1
                     <p>Mal schauen was drin ist!</p>
                 </h3>
@@ -254,6 +265,9 @@
                 <section id="vi-examples" data-markdown="session-03/vi-examples.md"></section>
             </section><!-- End of session 3b -->
 
+            <section class="trennblatt trennblatt-blue use-img use-img-SOK">
+                <h2 class="c-orange">Vielen Dank und bis zum nächsten Mal!</h2>
+            </section>
 
             <section><!-- Session 4 -->
                 <section data-background-image="images/io-problems.jpg" data-background-position="top center"
@@ -291,14 +305,18 @@
                             <p class="pink bg-brown">Admin basics ...</p>
                         </h3>
                 </section>
-                <section id="filesystem" data-markdown="session-04/filesystem.md"></section>
-                <section id="filesystem-commands" data-markdown="session-04/filesystem-commands.md"></section>
-                <section id="linux-dir-hirarchy" data-markdown="session-04/linux-dir-hirarchy.md"></section>
+                <section>
+                    <section id="filesystem" data-markdown="session-04/filesystem.md"></section>
+                    <section id="filesystem-commands" data-markdown="session-04/filesystem-commands.md"></section>
+                    <section id="linux-dir-hirarchy" data-markdown="session-04/linux-dir-hirarchy.md"></section>
 
-                <section id="ssh-tricks-pt1" data-background-image="images/forgot-password-meme.jpg" data-background-size="20%"
-                    data-background-position="bottom left" data-markdown="session-04/ssh-tricks-pt1.md"></section>
-                <section id="ssh-tricks-pt2" data-background-image="images/ssh-excited.jpg" data-background-size="18%"
-                    data-background-position="top left" data-markdown="session-04/ssh-tricks-pt2.md"></section>
+                    <section id="ssh-tricks-pt1" data-background-image="images/forgot-password-meme.jpg" data-background-size="20%" data-background-position="bottom left" data-markdown="session-04/ssh-tricks-pt1.md"></section>
+                    <section id="ssh-tricks-pt2" data-background-image="images/ssh-excited.jpg" data-background-size="18%" data-background-position="top left" data-markdown="session-04/ssh-tricks-pt2.md"></section>
+                </section>
+
+                <section class="trennblatt trennblatt-blue use-img use-img-VP">
+                    <h2 class="c-orange">Vielen Dank und bis zum nächsten Mal!</h2>
+                </section>
 
                 <section data-background-image="images/iknow-regex.jpeg" data-background-position="top left" data-background-size="33%">
                     <hgroup>

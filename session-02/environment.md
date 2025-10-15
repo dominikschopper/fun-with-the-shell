@@ -18,7 +18,10 @@ mosdoba>
 
 ### Vom System bereitgestellte Umgebungsvariablen
 
+<div class="flex-row">
+
 ```bash
+# Systemvariablen
 mosdoba> echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 mosdoba> which bash
@@ -28,16 +31,17 @@ mosdoba> which bash
 bash not found
 ```
 
----
-
-### Sourcen von Fragmenten
 
 ```bash
+# sourcen von Fragmenten
+# wir schreiben in die Datei
 mosdoba> echo "MYVAR_IN_A_FILE='Led Zeppelin'" > rocknroll.rc
 mosdoba> . ./rocknroll.rc
 mosdoba> echo $MYVAR_IN_A_FILE
 Led Zeppelin
 ```
+
+</div>
 
 ---
 

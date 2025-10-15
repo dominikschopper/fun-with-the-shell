@@ -16,16 +16,12 @@ cd /var/log
     - `ls -a .`
     - `ls -l gallisches-dorf/asterix`
 
-<pre><div style="background-color:#323232; color: white; font-style: var(--r-code-font);font-size: 1.4em">
- <span style="color:lightgreen">ls</span>        <span style="color:orange">-i -a</span>      <span style="color:lightblue">gallisches-dorf/asterix/</span>
-
- <span style="color:lightgreen">Kommando</span>  <span style="color:orange">Optionen</span>   <span style="color:lightblue">Argument</span>
-
+<pre><div> <span class="c-green">ls</span>        <span class="c-orange">-i -a</span>      <span class="c-blue">gallisches-dorf/asterix/</span>
+ <span class="c-green">Kommando</span>  <span class="c-orange">Optionen</span>   <span class="c-blue">Argument</span>
 </div></pre>
 
 - kurze Option: `-a` `-i`
 - lange Option: `--all` `--inode`
-
 
 Notes:
 

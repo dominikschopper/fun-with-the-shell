@@ -1,4 +1,4 @@
-## Wer steht vor Euch?
+## Wer steht vor Euch?<!-- .element class="c-blue" -->
 
 |                                                      |                                                         |                                                                                  |
 | ---------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------- |
@@ -7,7 +7,7 @@
 
 <div class="fragment">
 
-## Wer sitzt mit uns hier?
+## Wer sitzt mit uns hier?<!-- .element class="c-orange" -->
 Kurze Vorstellungsrunde
 
 - Was bringt ihr an Terminal/Shell Kenntnissen mit?
