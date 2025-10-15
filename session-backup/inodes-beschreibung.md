@@ -1,5 +1,6 @@
-
 ### Wie funktionieren Dateien?
+
+#### Filesystem Basics
 
 - Filesystems sind **inode-basiert**, inodes enthalten Metadaten aller Einträge: `stat filename`
 - <!-- .element class="fragment" -->zB enthalten sie für jeden Eintrag im FS
@@ -18,18 +19,24 @@
     ls -li ./datei1 /somewhere/else/anderer-name
     ```
 
-Die<!-- .element class="fragment" --> Verzeichniseinträge `.` und `..` sind hard links auf das aktuelle Verzeichnis und werden automatisch
+
+---
+
+
+#### Hard Links
+
+- Die Verzeichniseinträge `.` und `..` sind hard links auf das aktuelle Verzeichnis und werden automatisch
 beim Anlegen mit angelegt
+- Hard Links können nur innerhalb desselben Dateisystems angelegt werden
 
-Hard<!-- .element class="fragment" --> Links können nur innerhalb desselben Dateisystems angelegt werden
-
-<div class="fragment">
+#### Soft Links vs Hard Links
 
 Sog. Soft Links sind eigentlich nur Textdateien, die auf das Original verweisen
+
 ```bash
 # softlinking
 ln -s ./datei2 /anderer/ort/anderer-name
 ls -li ./datei2 /anderer/ort/anderer-name
 ```
 
-</div>
+lorem

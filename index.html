@@ -37,6 +37,11 @@
         .flex-row {
             display: flex;
             gap: 1em;
+            width: 100%;
+            > * {
+                width: 50%;
+                min-height: max-content;
+            }
         }
     </style>
     <style>
@@ -100,6 +105,23 @@
             padding-top: -10%;
         }
 
+        .reveal:has(.present.trennblatt.use-img-theend):before {
+            content: ' ';
+            background-image: url("/images/the_end_is_near.jpg");
+            width: 45%;
+            background-size: contain;
+            background-position: top left;
+            padding-right: 10%;
+        }
+
+        .reveal:has(.present.trennblatt.use-img-helloit):before {
+            content: ' ';
+            background-image: url("/images/on-and-off-again.gif");
+            width: 45%;
+            background-size: contain;
+            background-position: top left;
+            padding-right: 10%;
+        }
     </style>
 
 </head>
@@ -254,20 +276,20 @@
 
                 <section id="scripting_01" data-markdown="session-04/shell-scripting.md"></section>
 
-                <section data-background-image="images/the_end_is_near.jpg" data-background-position="top right"
-                    data-background-size="45%">
-                    <hgroup class="bg-pink-50 pad-lg" style="width: fit-content; margin-inline: auto;">
-                        <h3 class="red">Session 4++</h3>
-                        <p>Der ganze Rest!</p>
-                    </hgroup>
+                <section class="trennblatt trennblatt-blue-light use-img use-img-theend">
+                        <h3 class="red">
+                            Session 4++
+                            <p style="font-size:.666em">Der ganze Rest!</p>
+                        </h3>
+
+
                 </section>
 
-                <section data-background-image="images/on-and-off-again.gif" data-background-position="top left"
-                    data-background-size="25%">
-                    <hgroup>
-                        <h3>Filesystems</h3>
-                        <p class="pink bg-brown">Admin basics ...</p>
-                    </hgroup>
+                <section class="trennblatt trennblatt-pink use-img use-img-helloit">
+                        <h3>
+                            Filesystems
+                            <p class="pink bg-brown">Admin basics ...</p>
+                        </h3>
                 </section>
                 <section id="filesystem" data-markdown="session-04/filesystem.md"></section>
                 <section id="filesystem-commands" data-markdown="session-04/filesystem-commands.md"></section>

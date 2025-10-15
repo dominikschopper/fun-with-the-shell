@@ -1,6 +1,4 @@
-## Shell Scripting
-
-<div style="text-align: left;">
+## Shell Scripting<!-- .element class="c-orange" -->
 
 ein Shell Script ist eine (meist ausführbare Datei), die shell Kommandos
 enthält und üblicherweise auf `.sh` endet.
@@ -12,11 +10,9 @@ ausführen kann.
 
 Aber! Shell-Skripte können das Leben vereinfachen.
 
-</div>
-
 ---
 
-## Wann sind Shell-Scripte keine gute Idee?
+## Wann sind Shell-Scripte keine gute Idee?<!-- .element class="c-blue" -->
 
 Projekte mit
 
@@ -44,7 +40,7 @@ Projekte mit
 
 ---
 
-## Syntax 1: SheBang
+## Syntax 1: SheBang<!-- .element class="c-purple" -->
 
 <div style="text-align: left;">
 
@@ -69,7 +65,7 @@ Funktionalitäten nicht enthält
 
 ---
 
-## Syntax 2: Variables
+## Syntax 2: Variables<!-- .element class="c-green" -->
 
 <div style="text-align: left;">
 
@@ -99,14 +95,15 @@ phrase="moo and foo have both two o."
 
 ---
 
-## Syntax 3: if/then/else
+## Syntax 3: if/then/else<!-- .element class="c-orange" -->
 
 ### IF
 
-<div style="text-align: left;">
+<div class="flex-row">
 
 
 ```bash
+# one true brace schreibweise
 if _command_ # return status 0 -> then
 then
     echo "something"
@@ -114,9 +111,9 @@ else
     echo "another thing"
 fi
 ```
-alternative Schreibweise
 
 ```bash
+#alternative Schreibweise
 if _command_; then
     echo "something"
 else
@@ -124,14 +121,16 @@ else
 fi
 ```
 
+</div>
+
 example (grep hat den return 0, wenn der Suchbegriff gefunden wird)
 
 ```bash
 SEARCH_USER="someuser"
 
-if grep $SEARCH_USER /etc/passwd >/dev/null 2>&1
+if grep -q $SEARCH_USER /etc/passwd
 then
-    echo "found '$SEARCH_USER' in system"
+    echo "'$SEARCH_USER' exists already in system"
 else
     echo "creating '$SEARCH_USER'"
     useradd -m $SEARCH_USER
@@ -141,7 +140,7 @@ fi
 </div>
 
 ---
-## Syntax 4: Schleifen
+## Syntax 4: Schleifen<!-- .element class="c-blue" -->
 
 While-Schleifen
 
@@ -153,6 +152,8 @@ done
 ```
 
 For-Schleifen
+
+<div class="flex-row">
 
 ```bash
 for LETTER in A B C D E F G
@@ -169,10 +170,11 @@ do
 done
 ```
 
----
-## Syntax 5: Zugriff auf Argumente
+</div>
 
-<div style="text-align: left;">
+---
+
+## Syntax 5: Zugriff auf Argumente<!-- .element class="c-purple" -->
 
 ```bash
 ./myscript.sh one two three
@@ -193,47 +195,53 @@ shift
 
 komplexere Aktionen mit `getopts`
 
-</div>
-
 ---
-## Test Command
+
+## Test Command<!-- .element class="c-green" -->
 
 das `test` Kommando kann zB Vergleiche ausführen
 
 es hat den return 0 wenn die abgefregte Bedingung "wahr" ist
 
-- `test "$x" = "hallo"` enthält $x "hallo"?
-- `test $x -lt 9` ist $x kleiner als 9?
-- `test $x -eq 11` ist $x die Zahl 11?
-- `test -f $x` ist $x eine Datei?
-- ... `man test`
+```bash
+test "$x" = "hallo" # enthält genau $x "hallo"?
+test $x -lt 9       # ist $x kleiner als 9?
+test $x -eq 11      # ist $x die Zahl 11?
+test -f $x          # ist $x eine Datei?
+man test            # weitere optionen
+```
 
 <div class="flex-row">
 <div>
 
-alte Schreibweise
-
-- `[ "$x" = "hallo" ]` $x enthält "hallo"?
-- `[ "$x" -lt 9 ]` ist $x kleiner als 9?
-- `[ "$x" -eq 11 ]` ist $x die Zahl 11?
-- `[ -f "$x" ]` ist $x eine Datei?
+**neue Schreibweise**<!-- .element class="c-purple" -->
+```bash
+[[ $x = "hallo" ]]   # $x enthält "hallo"?
+[[ $x =~ "^hallo" ]] # $x beginnt mit "hallo"?
+[[ $x < "a" ]]       # is $x alphabetically before "a"
+[[ $x -lt 9 ]]       # ist $x kleiner als 9?
+[[ $x -eq 11 ]]      # ist $x die Zahl 11?
+[[ -f $x ]]          # ist $x eine Datei?
+```
 
 </div>
 <div>
 
-neue Schreibweise
-
-- `[[ $x = "hallo" ]]` $x enthält "hallo"?
-- `[[ $x =~ "^hallo" ]]` $x beginnt mit "hallo"?
-- `[[ $x -lt 9 ]]` ist $x kleiner als 9?
-- `[[ $x -eq 11 ]]` ist $x die Zahl 11?
-- `[[ -f $x ]]` ist $x eine Datei?
+**alte Schreibweise**
+```bash
+[ "$x" = "hallo" ]  # $x enthält "hallo"?
+echo $x | grep -q "^hallo" # $x beginnt mit "hallo"?
+[ "$x" < "a" ]      # is $x alphabetically before "a"
+[ "$x" -lt 9 ]      # ist $x kleiner als 9?
+[ "$x" -eq 11 ]     # ist $x die Zahl 11?
+[ -f "$x" ]         # ist $x eine Datei?
+```
 
 </div>
 </div>
 
 ---
-## Syntax 6: functions / subroutinen
+## Syntax 6: functions / subroutinen<!-- .element class="c-orange" -->
 
 Subroutinen können mit sog. functions erzeugt werden
 
@@ -264,7 +272,7 @@ Im Script `source ./tools/something.rc` oder `. ./tools/something.rc`
 
 ---
 
-## Debugging
+## Debugging<!-- .element class="c-purple" -->
 
 Kleine Helfer
 
@@ -275,31 +283,31 @@ Kleine Helfer
 
 ---
 
-## Aufgabe
-
 Die Aufgaben sind Alternativen
 
-1. Schreibt ein Script **`add_users.sh`**, das eine Reihe von Usernamen als Argumente übernimmt
-  es soll alle user anlegen, sicherstellen, dass es ein Home-Verzeichnis gibt und
-  ihnen ein Standard-Passwort vergeben (Trick: `echo "$DEFAULT_PW" | passwd --stdin`).
-    - Erweitert das Skript, dass es sich beendet, wenn es nicht vom user `root` ausgeführt
-      wird
-    - Erweitert das Skript, dass es am Ende alle User ausgibt, bei denen das Anlegen nicht
-      geklappt hat
-    - Erweitert das Skript so, dass es einen Hilfe-Text ausgibt, wenn es als einzigen Parameter
-      `--help` oder `-h` übergeben bekommt
-    - Überlegt, wie Ihr ein Skript schreiben könntet, das User anlegt, die Usernamen (und Email-Adressen?)
-      genriereren könnten (Username 'monika.mustermann' Email: 'monika.mustermann@somwhere.com')?
-1. Schreibt ein Skript **`del.sh`**, das Dateien und Verzeichnisse löscht, aber statt sie zu löschen, soll
-  es die Dateien oder Verzeichnisse in einen Ordner `$HOME/.trash/` bewegen
-    - Schreibt ein Skript **`trash_bin.sh`**, die Euch die Größe Eures Trash-Ordners (in KB/MB/GB) anzeigt
-    - Erweitert **`trash_bin.sh`** so, dass es bei dem Parameter `trash_bin.sh --clean-all` alle Dateien aus dem Trash Ordner löscht
-    - Erweitert **`trash_bin.sh`** so, dass es bei dem Parameter `trash_bin.sh --clean +3` Dateien aus dem Trash Ordner
-      löscht, die älter als 3 Tage sind
-    - Schreibt ein Skript **`undel.sh`**, dass eine Datei aus dem Ordner wiederherstellt. Der Ort der Wiederherstellung soll übergeben werden
-      `undel.sh somefile.txt restore_here/`
-    - Überlegt, wie könntet Ihr das Skript `del.sh` so anpassen, dass eine Wiederherstellung an den Originalort möglich wird?
+## Aufgabe 1<!-- .element class="bg-blue c-green-light" -->
 
+Schreibt ein Script **`add_users.sh`**, das eine Reihe von Usernamen als Argumente übernimmt
+es soll alle user anlegen, sicherstellen, dass es ein Home-Verzeichnis gibt und
+ihnen ein Standard-Passwort vergeben (Trick: `echo "$DEFAULT_PW" | passwd --stdin`).
+- Erweitert das Skript, dass es sich beendet, wenn es nicht vom user `root` ausgeführt
+  wird
+- Erweitert das Skript, dass es am Ende alle User ausgibt, bei denen das Anlegen nicht
+  geklappt hat
+- Erweitert das Skript so, dass es einen Hilfe-Text ausgibt, wenn es als einzigen Parameter
+  `--help` oder `-h` übergeben bekommt
+- Überlegt, wie Ihr ein Skript schreiben könntet, das User anlegt, die Usernamen (und Email-Adressen?)
+  genriereren könnten (Username 'monika.mustermann' Email: 'monika.mustermann@somwhere.com')?
 
+---
 
-
+## Aufgabe 2<!-- .element class="bg-green-light c-blue" -->
+Schreibt ein Skript **`del.sh`**, das Dateien und Verzeichnisse löscht, aber statt sie zu löschen, soll
+es die Dateien oder Verzeichnisse in einen Ordner `$HOME/.trash/` bewegen
+- Schreibt ein Skript **`trash_bin.sh`**, die Euch die Größe Eures Trash-Ordners (in KB/MB/GB) anzeigt
+- Erweitert **`trash_bin.sh`** so, dass es bei dem Parameter `trash_bin.sh --clean-all` alle Dateien aus dem Trash Ordner löscht
+- Erweitert **`trash_bin.sh`** so, dass es bei dem Parameter `trash_bin.sh --clean +3` Dateien aus dem Trash Ordner
+  löscht, die älter als 3 Tage sind
+- Schreibt ein Skript **`undel.sh`**, dass eine Datei aus dem Ordner wiederherstellt. Der Ort der Wiederherstellung soll übergeben werden
+  `undel.sh somefile.txt restore_here/`
+- Überlegt, wie könntet Ihr das Skript `del.sh` so anpassen, dass eine Wiederherstellung an den Originalort möglich wird?
