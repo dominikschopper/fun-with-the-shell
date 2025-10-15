@@ -99,7 +99,7 @@ default # value of FOO or default if not set
 #### 4 command substitution
 
 in einer Kommandozeile kann mit `$(...)` eine Subshell geöffnet werden, und deren output
-in der aktuelen Cmdline verwendet werden
+in der aktuellen Cmdline verwendet werden
 
 ```bash
 shell-training> MYVAR=$(date)
@@ -130,10 +130,10 @@ Durch die einfache runde Klammer `( )` können ebenfalls Subshells geöffnet wer
 shell-training> diff <(ls -la /dir1) <(ls -la /dir2)
 ```
 
-#### word splitting
+#### (add) word splitting
 
 Die Cmdline wird nachdem alle diese Ersetzungen/Expansions gemacht wurden nochmals
-am Whitespace in WOrte gesplittet.
+am Whitespace in Worte gesplittet.
 
 ---
 
@@ -142,7 +142,7 @@ am Whitespace in WOrte gesplittet.
 Jetzt wird alles mit `*` und `?` zu einem existierenden Pfad erweitert.
 
 - `*` = 0 bis beliebig viele beliebige Chars
-- `?` ein beliebiger Char
+- `?` = ein beliebiger Char
 
 ```bash
 shell-training> ls gallisches-dorf/*lix
@@ -153,6 +153,8 @@ gallisches-dorf/obelix:
 obelix.haus
 ```
 
-#### quote removal
+#### (add) quote removal
 
 alle `"`, `'` und `\` werden entfernt
+
+**fertig ist die Interpretation Eurer eingegebenen CmdLine**
