@@ -347,11 +347,11 @@ section.has-dark-background h6 {
     right: 15px;
     background-repeat: no-repeat;
     background-size: 100%;
-    background-image: url(/assets/logo-trans.svg);
+    background-image: url(./assets/logo-trans.svg);
 }
 
 .reveal:has(.present.trennblatt-orange)::after {
-    background-image: url(/assets/logo-trans_white.svg);
+    background-image: url(./assets/logo-trans_white.svg);
 }
 
 /*********************************************
