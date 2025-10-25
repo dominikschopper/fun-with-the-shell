@@ -1,4 +1,4 @@
-### Immer in Bewegung bleiben
+### Immer in Bewegung bleiben<!-- .element class="c-pink" -->
 
 die wichtigsten Kommandos für das Dateisystem!
 

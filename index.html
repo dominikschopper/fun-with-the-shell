@@ -43,6 +43,18 @@
                 min-height: max-content;
             }
         }
+        .colored-code {
+            line-height: 1.6em;
+            font-size: 0.8em;
+
+            code {
+                background-color: #A0A0A060;
+                font-family: monospace;
+                padding: 2px 1ch;
+                border: 1px solid #131313;
+            }
+        }
+
     </style>
     <style>
         .reveal:has(.present.trennblatt.use-img-baby-hacker):before {
@@ -133,7 +145,6 @@
     </style>
 
 </head>
-
 <body>
 
     <div class="reveal">
@@ -151,7 +162,7 @@
                 <section id="onboarding" data-markdown="./session-00/onboarding.md"></section>
                 <section id="first-login" data-markdown="./session-00/first-login.md"></section>
                 <section id="first-steps" data-markdown="./session-00/first-steps.md"></section>
-                </section> <!-- End of Session 0 / Intro -->
+            </section> <!-- End of Session 0 / Intro -->
 
             <section class="trennblatt trennblatt-blue use-img use-img-MH">
                 <h2 class="c-orange">Vielen Dank und bis zum nächsten Mal!</h2>
@@ -161,27 +172,29 @@
                 <h4 class="">...Linux hält die Welt<br />am Laufen</h4>
             </section>
             <section> <!-- Session 1 -->
-
                 <section class="trennblatt trennblatt-purple" data-background-image="./images/unix-bearded-guy.jpg" data-background-position="bottom right"
                     data-background-size="48%">
                         <h2>Session 1<br /><p>Geschichte, Einstieg, Prozesse und Bewegen im Dateibaum</p></h2>
                 </section>
-
                 <section id="history-of-linux" data-markdown="session-01/history-of-linux.md"></section>
                 <section id="processes" data-markdown="session-01/processes.md"></section>
                 <section id="showing-processes" data-markdown="session-01/showing-processes.md"></section>
                 <section id="process_commands" data-markdown="session-01/process_commands.md"></section>
                 <section id="end_processes" data-markdown="session-01/end_processes.md"></section>
-                <section id="interjection_run_a_command" data-markdown="session-01/interjection_run_a_command.md">
-                </section>
+                <section id="interjection_run_a_command" data-markdown="session-01/interjection_run_a_command.md"></section>
                 <section id="pfade_so_viele_pfade" data-markdown="session-01/pfade_so_viele_pfade.md"></section>
                 <section id="exercises-process" data-markdown="session-01/exercises-process.md"></section>
-                <section id="bewegen_im_verzeichnisbaum" data-markdown="session-01/bewegen_im_verzeichnisbaum.md">
-                </section>
+                <section id="bewegen_im_verzeichnisbaum" data-markdown="session-01/bewegen_im_verzeichnisbaum.md"></section>
                 <section id="exercises-file-movement" data-markdown="session-01/exercises-file-movement.md"></section>
-                <!-- section id="exercises-file-movement" data-markdown="session-01/0X_zusatz_anlegen_loeschen_sneaky_bastard.md"></! -->
-
             </section> <!-- End of Session 1 -->
+
+            <section class="trennblatt trennblatt-pink">
+                <h2>Aufgaben für Session 01</h2>
+            </section>
+            <section id="exercises-process" data-markdown="session-01/exercises-process.md"></section>
+            <section id="exercises-file-movement" data-markdown="session-01/exercises-file-movement.md"></section>
+            <!-- section id="exercises-file-movement" data-markdown="session-01/0X_zusatz_anlegen_loeschen_sneaky_bastard.md"></! -->
+
 
             <section class="trennblatt trennblatt-blue use-img use-img-AS">
                 <h2 class="c-orange">Vielen Dank und bis zum nächsten Mal!</h2>

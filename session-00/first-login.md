@@ -1,4 +1,4 @@
-### Nach dem Anmelden
+### Nach dem Anmelden<!-- .element class="c-blue" -->
 
 Bitte ändert Euer Passwort auf ein sinnvolles neues Passwort
 

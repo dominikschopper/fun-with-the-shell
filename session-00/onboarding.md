@@ -27,7 +27,7 @@ Portnummern:
 - Mohammed  &rarr; Port: 22001
 - Jan       &rarr; Port: 22002
 - Khanh     &rarr; Port: 22003
-- Nils      &rarr; Port: 22004
+- Nils Lor. &rarr; Port: 22004
 
 </div>
 
@@ -36,7 +36,7 @@ Portnummern:
 - Christian &rarr; Port: 22005
 - Omar      &rarr; Port: 22006
 - Danh      &rarr; Port: 22007
-
+- Nils Leo. &rarr; Port: 22008
 </div>
 </div>
 
