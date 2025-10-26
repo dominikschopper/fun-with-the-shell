@@ -155,7 +155,7 @@
                     Fun with the Shell<br />
                     <span style="font-size:0.6em">How using the terminal can be fun!</span>
                 </h1>
-                </section>
+            </section>
 
             <section> <!-- Session 0 / Intro -->
                 <section id="vorstellungsrunde" data-markdown="./session-00/vorstellungsrunde.md"></section>
@@ -331,10 +331,11 @@
                     <h2 class="c-orange">Vielen Dank und bis zum nächsten Mal!</h2>
                 </section>
 
-                <section data-background-image="images/iknow-regex.jpeg" data-background-position="top left" data-background-size="33%">
-                    <hgroup>
-                        <p class="green">... and now for something completely different</p>
-                        <h2>Reg Ex</h2>
+                <section class="trennblatt trennblatt-blue-light use-img use-img-MK">
+                        <h2>
+                            <p class="c-green">... and now for something completely different</p>
+                            Reg Ex
+                        </h2>
                     </hgroup>
                 </section>
 
@@ -353,15 +354,13 @@
             </section><!-- End of Session 4-->
 
             <section> <!-- Backup -->
-                <section>
-                    <h2>Backup (Session 5?)</h2>
+                <section class="trennblatt trennblatt-black">
+                    <h2 class="c-white">Backup (Session ??)</h2>
                 </section>
 
-                <section data-background-image="images/gup-business-it-alignment.jpeg" data-background-size="50% 100%">
-                    <hgroup class="bg-lightblue-50 pad-lg">
-                        <h3 class="red">Filesystem Aufbau &amp;<br />Was sind Links?</h3>
-                        </hgroup>
-                        </section>
+                <section class="trennblatt trennblatt-green-light">
+                        <h3>Filesystem Aufbau &amp;<br />Was sind Links?</h3>
+                </section>
 
                 <section id="inodes-beschreibung" data-markdown="session-backup/inodes-beschreibung.md"></section>
                 <section id="inodes-bild-1" data-markdown="session-backup/inodes-bild-1.md"></section>
@@ -369,21 +368,21 @@
 
                 <section id="regex-comparison" data-markdown="session-backup/regex-comparison.md"></section>
 
-                <section id="end" data-background-image="images/silly_guess_game.jpg" data-background-position="2% 2%"
-                    data-background-size="38%">
-                    <div style="max-width: 66%; margin-inline: auto;">
-                        <hgroup class="bg-green pad-lg">
-                            <h2>So long ...</h2>
-                            <p class="fragment">... and thanks for all the fish!</p>
-                        </hgroup>
+                <section id="end" class="trennblatt trennblatt-palepink">
+                    <div>
+                        <h2>
+                            So long ...
+                            <p class="fragment" style="font-size: 075em">... and thanks for all the fish!</p>
+                        </h2>
+
 
                         <p class="fragment mrg-top-xl bg-lightblue pad-lg">
                             Marcus und Dominik bedanken sich bei allen, die hier angekommen sind
                             und freuen sich über Feedback!
                         </p>
-                        </div>
-                        </section>
-                        </section><!-- End of Backup -->
+                    </div>
+                </section>
+            </section><!-- End of Backup -->
 
         </div>
     </div>
@@ -422,10 +421,10 @@
             slideNumber: 'c/t',
             showSlideNumber: 'all',
             hashOneBasedIndex: false,
-            hash: true,
-            respondToHashChanges: true,
+            hash: false,
+            respondToHashChanges: false,
             jumpToSlide: true,
-            history: true,
+            history: false,
             keyboard: true,
 
             // Optional function that blocks keyboard events when returning false
@@ -495,7 +494,7 @@
             autoAnimateMatcher: null,
             autoAnimateEasing: 'ease',
             autoAnimateDuration: 1.0,
-            autoAnimateUnmatched: true,
+            autoAnimateUnmatched: false,
 
             autoAnimateStyles: [
                 'opacity',
@@ -520,7 +519,7 @@
             autoSlide: false,
 
             // Stop auto-sliding after user input
-            autoSlideStoppable: true,
+            autoSlideStoppable: false,
 
             // Use this method for navigation when auto-sliding (defaults to navigateNext)
             autoSlideMethod: null,
