@@ -1,9 +1,12 @@
-FROM almalinux:8
+FROM almalinux:10
 
 COPY --chmod=755 *.sh *.pl /scripts/
 
 ENV TRAINING_USER="shell-user"
 ENV INITITAL_PW="********"
+
+# Man-pages aktivieren (nodocs deaktivieren)
+RUN sed -i '/tsflags=nodocs/d' /etc/dnf/dnf.conf
 
 # initializing
 RUN chmod 755 /scripts/* ; \
@@ -14,7 +17,7 @@ RUN chmod 755 /scripts/* ; \
     # install ssh server
     && dnf install -y openssh-server openssh-clients;
     # install base tools (passwd man pstree )
-RUN dnf install -y passwd shadow-utils glibc-langpack-en man less vim fortune-mod cowsay sudo procps-ng psmisc htop; \
+RUN dnf install -y passwd shadow-utils glibc-langpack-en man less vim fortune-mod cowsay sudo procps-ng psmisc htop cronie; \
     # add user and set password
     useradd -m -s /bin/bash $TRAINING_USER \
     && echo "$INITITAL_PW" | passwd --stdin $TRAINING_USER
