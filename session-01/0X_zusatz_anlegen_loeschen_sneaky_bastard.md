@@ -10,8 +10,8 @@
 1. Lege eine Datei mit dem Namen `/` an und lösche sie wieder!
 1. Lege eine Datei mit dem Namen `..` an und lösche sie wieder!
 1. Lege ein Verzeichnis mit dem Namen `-f` an (in Worten "MINUS" "f"!) und lösche sie wieder!
-1. Lege ein Verzeichnis mit dem Namen ` -r` an (in Worten "SPACE" "MINUS" "r"!) und lösche sie wieder!
+1. Lege ein Verzeichnis mit dem Namen ` -r` an (in Worten "SPACE" "MINUS" "r"!) und lösche es wieder!
 1. Lege eine Datei an, deren Name ein Leerzeichen ist und lösche sie wieder!
 1. Lege ein Verzeichnis mit dem Namen `. ..` an (in Worten "DOT" "SPACE" "DOT" "DOT"!) und lösche es wieder!
 
-(nicht alles ist möglich!)
+(nicht alles ist möglich!)<!-- .element class="bg-pink" -->
