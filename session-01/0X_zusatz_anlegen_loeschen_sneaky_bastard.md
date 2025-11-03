@@ -14,4 +14,4 @@
 1. Lege eine Datei an, deren Name ein Leerzeichen ist und lösche sie wieder!
 1. Lege ein Verzeichnis mit dem Namen `. ..` an (in Worten "DOT" "SPACE" "DOT" "DOT"!) und lösche es wieder!
 
-
+(nicht alles ist möglich!)
