@@ -163,6 +163,14 @@
         width: 45%;
         background-position: top left;
       }
+
+      .reveal:has(.present.trennblatt.use-img-BOXES):before {
+        content: ' ';
+        background-image: url('./images/boxes-within-boxes.jpg');
+        background-position: center center;
+        background-size: contain;
+        aspect-ratio: 1 / 1;
+      }
     </style>
   </head>
   <body>
@@ -383,10 +391,6 @@
           ></section>
         </section>
 
-        <!--<section class="trennblatt trennblatt-purple use-img use-img-picard">
-                <h3>Was vom Tage übrig blieb ...</h3>
-            </section>-->
-
         <section class="trennblatt trennblatt-green use-img use-img-sherlock">
           <h2>Where to find ... <span class="fragment">stuff</span></h2>
         </section>
@@ -417,6 +421,25 @@
           ></section>
         </section>
         <!-- End of Session3b -->
+
+        <section class="trennblatt trennblatt-purple use-img use-img-picard" id="der-rest">
+            <h3>Was vom Tage übrig blieb ...</h3>
+        </section>
+
+        <section>
+            <h4>Mögliche Themen</h4>
+            <ul style="line-height: 1.75em">
+                <li><a href="#/editors">Pagers + Editors</a> Dateien anschauen + editieren</li>
+                <li><a href="#/io-pipes">Piping/Chaining</a> pipes und wie man Kommandos verkettet</li>
+                <li><a href="#/scripting_00">Shell Scripting</a> Kontrollstrukturen und Best Practices</li>
+                <li><a href="#/filesystemss">Filesystem Basics</a> Aufbau und Mounten</li>
+                <li><a href="#/linux-dir-hirarchy">Linux Verzeichnis Hierarchie</a> Was liegt wo und warum im Verzeichnisbaum</li>
+                <li><a href="#/ssh-tricks-pt1">Kleine Tricks mit SSH</a> SSH und wie das Leben leichter wird</li>
+                <li><a href="#/regex-intro">RegEx und grep/vi...</a> Refresher RegEx + Dialekte</li>
+                <li><a href="#/fs-links">Filesystem - was sind Links</a> wie funktionieren soft/hard Links</li>
+            </ul>
+        </section>
+
 
         <section
           id="editors"
@@ -468,61 +491,69 @@
             data-markdown="session-03/vi-examples.md"
           ></section>
         </section>
-        <!-- End of session 3b -->
 
-        <section class="trennblatt trennblatt-blue use-img use-img-SOK">
-          <h2 class="c-orange">Vielen Dank und bis zum nächsten Mal!</h2>
+        <section>
+          <!-- session 3b -->
+          <section
+            id="logfiles"
+            data-markdown="session-03/logfiles.md"
+          ></section>
+          <section
+            id="tail"
+            data-background-image="images/dog-head-tail.jpg"
+            data-background-size="20%"
+            data-background-position="3% 97%"
+            data-markdown="session-03/tail.md"
+          ></section>
+          <section
+            id="more-or-less"
+            data-background-image="images/more-less-meme.jpg"
+            data-background-size="20%"
+            data-background-position="100% 50%"
+            data-markdown="session-03/more-or-less.md"
+          ></section>
+          <section
+            id="vi-intro"
+            data-background-image="images/exit-vim-orly.jpg"
+            data-background-size="20%"
+            data-background-position="92% 95%"
+            data-markdown="session-03/vi-intro.md"
+          ></section>
+          <section
+            id="vi-modes"
+            data-markdown="session-03/vi-modes.md"
+          ></section>
+          <section
+            id="vi-commands"
+            data-markdown="session-03/vi-commands.md"
+          ></section>
+          <section
+            id="vi-examples"
+            data-markdown="session-03/vi-examples.md"
+          ></section>
         </section>
 
         <section>
-          <!-- Session 4 -->
           <section
+            id="io-pipes"
             data-background-image="images/io-problems.jpg"
-            data-background-position="top center"
-            data-background-size="65%"
-          >
-            <hgroup
-              class="bg-lightblue-50 red pad-lg"
-              style="width: fit-content; margin-inline: auto"
-            >
-              <h3 class="red">Session 4.2 Input/Output</h3>
+            data-background-position="top left"
+            data-background-size="35%">
+              <h3 class="c-blue">Session 4.2 Input/Output</h3>
               <p>chaining stuff</p>
-            </hgroup>
           </section>
-          <section
-            id="io-redirection"
-            data-markdown="session-04/io-redirection.md"
-          ></section>
-          <section
-            id="io-chaining"
-            data-markdown="session-04/io-chaining.md"
-          ></section>
+          <section id="io-redirection" data-markdown="session-04/io-redirection.md"></section>
+          <section id="io-chaining" data-markdown="session-04/io-chaining.md"></section>
+        </section>
 
-          <section
-            id="scripting_00"
-            class="trennblatt trennblatt-green use-img use-img-fork-bomb"
-          >
-            <h2>
-              Session 4.3 Shell Scripting
-              <p style="font-size: 0.666em">scripting for the strong hearted</p>
-            </h2>
+          <section id="scripting_00" class="trennblatt trennblatt-green use-img use-img-fork-bomb">
+            <h2>Shell Scripting</h2>
+          </section>
+          <section>
+            <section id="scripting_01" data-markdown="session-04/shell-scripting.md"></section>
           </section>
 
-          <section
-            id="scripting_01"
-            data-markdown="session-04/shell-scripting.md"
-          ></section>
-
-          <section
-            class="trennblatt trennblatt-blue-light use-img use-img-theend"
-          >
-            <h3 class="red">
-              Session 4++
-              <p style="font-size: 0.666em">Der ganze Rest!</p>
-            </h3>
-          </section>
-
-          <section class="trennblatt trennblatt-pink use-img use-img-helloit">
+          <section id="filesystemss" class="trennblatt trennblatt-pink use-img use-img-helloit">
             <h3>
               Filesystems
               <p class="pink bg-brown">Admin basics ...</p>
@@ -530,54 +561,55 @@
           </section>
           <section>
             <section
-              id="filesystem"
-              data-markdown="session-04/filesystem.md"
-            ></section>
-            <section
-              id="filesystem-commands"
-              data-markdown="session-04/filesystem-commands.md"
-            ></section>
-            <section
-              id="linux-dir-hirarchy"
-              data-markdown="session-04/linux-dir-hirarchy.md"
-            ></section>
+                data-markdown="session-04/filesystem.md">
+            </section>
 
             <section
-              id="ssh-tricks-pt1"
-              data-background-image="images/forgot-password-meme.jpg"
-              data-background-size="20%"
-              data-background-position="bottom left"
-              data-markdown="session-04/ssh-tricks-pt1.md"
-            ></section>
-            <section
-              id="ssh-tricks-pt2"
-              data-background-image="images/ssh-excited.jpg"
-              data-background-size="18%"
-              data-background-position="top left"
-              data-markdown="session-04/ssh-tricks-pt2.md"
-            ></section>
+                data-markdown="session-04/filesystem-commands.md">
+            </section>
           </section>
 
-          <section class="trennblatt trennblatt-blue-light use-img use-img-MK">
-            <h2>
-              <p class="c-green">
-                ... and now for something completely different
-              </p>
-              Reg Ex
-            </h2>
-          </section>
+        <section
+            id="linux-dir-hirarchy"
+            data-markdown="session-04/linux-dir-hirarchy.md">
+        </section>
 
+        <section>
+            <section
+                id="ssh-tricks-pt1"
+                data-background-image="images/forgot-password-meme.jpg"
+                data-background-size="15%"
+                data-background-position="bottom left"
+                data-markdown="session-04/ssh-tricks-pt1.md">
+            </section>
+            <section
+                id="ssh-tricks-pt2"
+                data-background-image="images/ssh-excited.jpg"
+                data-background-size="18%"
+                data-background-position="top left"
+                data-markdown="session-04/ssh-tricks-pt2.md">
+            </section>
+        </section>
+
+        <section id="regex-intro" class="trennblatt trennblatt-blue-light use-img use-img-MK">
+        <h2>
+            <p class="c-palepink">
+            ... and now for something completely different
+            </p>
+            Reg Ex
+        </h2>
+        </section>
+        <section>
           <section
-            id="regex-intro"
             data-background-image="images/this-part-regex.jpg"
             data-background-position="bottom right"
             data-background-size="25%"
-            data-markdown="session-04/regex-intro.md"
-          ></section>
+            data-markdown="session-04/regex-intro.md">
+        </section>
           <section
             id="regex-chars"
-            data-markdown="session-04/regex-chars.md"
-          ></section>
+            data-markdown="session-04/regex-chars.md">
+        </section>
 
           <section
             id="regex-quantifiers"
@@ -600,39 +632,38 @@
             data-markdown="session-04/regex-exercise-01.md"
           ></section>
           <section
-            id="regex-exercises"
+            id="regex-exercises2"
             data-markdown="session-04/regex-exercise-02.md"
           ></section>
         </section>
-        <!-- End of Session 4-->
+
+        <!-- Backup
+        <section class="trennblatt trennblatt-black">
+          <h2 class="c-white">Backup (Session ??)</h2>
+        </section>
+        -->
+        <section id="fs-links" class="trennblatt trennblatt-green-light use-img use-img-BOXES">
+          <h3>Filesystem Aufbau &amp;<br />Was sind Links?</h3>
+        </section>
 
         <section>
-          <!-- Backup -->
-          <section class="trennblatt trennblatt-black">
-            <h2 class="c-white">Backup (Session ??)</h2>
-          </section>
-
-          <section class="trennblatt trennblatt-green-light">
-            <h3>Filesystem Aufbau &amp;<br />Was sind Links?</h3>
-          </section>
-
           <section
             id="inodes-beschreibung"
-            data-markdown="session-backup/inodes-beschreibung.md"
-          ></section>
+            data-markdown="session-backup/inodes-beschreibung.md">
+        </section>
           <section
             id="inodes-bild-1"
-            data-markdown="session-backup/inodes-bild-1.md"
-          ></section>
+            data-markdown="session-backup/inodes-bild-1.md">
+        </section>
           <section
             id="inodes-bild-2"
-            data-markdown="session-backup/inodes-bild-2.md"
-          ></section>
+            data-markdown="session-backup/inodes-bild-2.md">
+        </section>
 
           <section
             id="regex-comparison"
-            data-markdown="session-backup/regex-comparison.md"
-          ></section>
+            data-markdown="session-backup/regex-comparison.md">
+        </section>
 
           <section
             id="end"

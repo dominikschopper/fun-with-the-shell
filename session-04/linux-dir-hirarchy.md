@@ -14,9 +14,9 @@
   +-[usr]         # **u**nix **s**ystem **r**esources
   |   +-[bin]     # binaries
   |   +-[sbin]    # admin binaries
-  +-[local]       # mounten von lokalen Besonderh.
-  |   +-[bin]     # binaries
-  |   +-[sbin]    # admin binaries
+  |  +-[local]       # mounten von lokalen Besonderh.
+  |       +-[bin]     # binaries
+  |       +-[sbin]    # admin binaries
   +-[var]         # sich häufig ändernde Daten
       +-[log]     # logfiles
       +-[lock]    # lockfiles

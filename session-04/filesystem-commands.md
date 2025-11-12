@@ -9,4 +9,4 @@ cat /etc/mtab                       # statische Tabelle aller gemounteten Volume
 
 Ich spreche hier von "volumes", das meint irgend eine Art von "storage", die auf einer klassischen
 HD zB einer Partition entspräche. Ggf. aber auch Netzwerk-Shares (NFS, CIFS), SAN oder NAS Volumes
-... sein können <!-- .element class="ta-right" style="font-size: 0.55em; width: 55%; float: right" -->
+... sein können

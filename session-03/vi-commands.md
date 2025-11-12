@@ -3,7 +3,7 @@
 | Ex Command    | Erklärung                          |
 |---------------|------------------------------------|
 |`:w`           | write (=save)                      |
-|`:w new-file`  | write to changes to "new-file".    |
+|`:w new-file`  | write changes to "new-file".       |
 |`:q`           | quit (no saving)                   |
 |`:wq`          | write and quit                     |
 |`:q!`          | quit no saving even if file changed|
