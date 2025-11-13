@@ -434,7 +434,7 @@
                 <li><a href="#/scripting_00">Shell Scripting</a> Kontrollstrukturen und Best Practices</li>
                 <li><a href="#/filesystemss">Filesystem Basics</a> Aufbau und Mounten</li>
                 <li><a href="#/linux-dir-hirarchy">Linux Verzeichnis Hierarchie</a> Was liegt wo und warum im Verzeichnisbaum</li>
-                <li><a href="#/ssh-tricks-pt1">Kleine Tricks mit SSH</a> SSH und wie das Leben leichter wird</li>
+                <li><a href="#/ssh-tricks-pt1">Kleine Tricks mit SSH + GIT</a> SSH und wie das Leben leichter wird</li>
                 <li><a href="#/regex-intro">RegEx und grep/vi...</a> Refresher RegEx + Dialekte</li>
                 <li><a href="#/fs-links">Filesystem - was sind Links</a> wie funktionieren soft/hard Links</li>
             </ul>
@@ -574,6 +574,13 @@
             data-markdown="session-04/linux-dir-hirarchy.md">
         </section>
 
+        <section class="trennblatt trennblatt-pink-light ">
+            <h3 class="c-blue">
+                Kleine Tricks erhalten die Freundschaft
+                <p class="c-grey" style="font-size:.7em">... wie man ssh (und git) gerne im Terminal nutzt</p>
+            </h3>
+        </section>
+
         <section>
             <section
                 id="ssh-tricks-pt1"
@@ -588,6 +595,26 @@
                 data-background-size="18%"
                 data-background-position="top left"
                 data-markdown="session-04/ssh-tricks-pt2.md">
+            </section>
+            <section>
+                <h4>Und was ähnliches für Git</h4>
+                <ul>
+                    <li>öffnet die <code>.gitconfig</code> in einem Editor</li>
+                    <li class="fragment">
+                        fügt eine Section <code>[alias]</code> ein
+                        <div class="fragment">und darunter ein
+                            <pre><code>[alias]
+    com = checkout master
+    fpa = fetch -pa
+    pl = pull
+    ps = push
+    all = !git fpa && git com && git pl</code></pre>
+                            </div>
+                    </li>
+                    <li class="fragment"> ab jetzt z.B. nur noch
+                        <pre><code class="bash">git all</code></pre>
+                        um auf den master auszuchecken und alles zu aktualisieren</li>
+                </ul>
             </section>
         </section>
 
@@ -637,6 +664,11 @@
           ></section>
         </section>
 
+          <section
+            id="regex-comparison"
+            data-markdown="session-backup/regex-comparison.md">
+        </section>
+
         <!-- Backup
         <section class="trennblatt trennblatt-black">
           <h2 class="c-white">Backup (Session ??)</h2>
@@ -646,11 +678,6 @@
           <h3>Filesystem Aufbau &amp;<br />Was sind Links?</h3>
         </section>
 
-        <section>
-          <section
-            id="inodes-beschreibung"
-            data-markdown="session-backup/inodes-beschreibung.md">
-        </section>
           <section
             id="inodes-bild-1"
             data-markdown="session-backup/inodes-bild-1.md">
@@ -660,9 +687,10 @@
             data-markdown="session-backup/inodes-bild-2.md">
         </section>
 
+        <section>
           <section
-            id="regex-comparison"
-            data-markdown="session-backup/regex-comparison.md">
+            id="inodes-beschreibung"
+            data-markdown="session-backup/inodes-beschreibung.md">
         </section>
 
           <section
