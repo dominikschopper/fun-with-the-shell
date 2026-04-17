@@ -14,7 +14,7 @@
 
 #### Commands #2: Search &amp; replace<!-- .element class="c-purple" -->
 
-| Ex Command                | Erklärung                                            |
+|  Command                  | Erklärung                                            |
 |---------------------------|------------------------------------------------------|
 | `/term`                   | search for `term` hit `n` next hit, `N` previous hit |
 | `?term`                   | search upwards for `term` hit `n` next, `N` previous |
@@ -26,7 +26,7 @@
 
 #### Movement<!-- .element class="c-blue" -->
 
-| Ex Command | Erklärung               |
+| Command    | Erklärung               |
 |------------|-------------------------|
 | `G`        | go to last line of file |
 | `2G`       | go to 2nd line of file  |
@@ -35,7 +35,7 @@
 
 #### Copy/Paste<!-- .element class="c-orange" -->
 
-| Ex Command | Erklärung                         |
+| Command    | Erklärung                         |
 |------------|-----------------------------------|
 | `yy`       | copy line                         |
 | `3yy`      | copy this and the next two lines  |
