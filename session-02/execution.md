@@ -1,15 +1,16 @@
-### Aufruf von Shell-Skripten
+### Execution of Shell Scripts
 <p class="aleft">
-Sämtliche Befehle, die interaktiv an der Eingabeaufforderung verwendet werden, können auch in einem Shell-Skript zusammengefasst und nacheinander ausgeführt werden. Mehr dazu in einer der nächsten Sessions. Wie aber kann ich solche "Befehlssammlungen" starten?
+All commands that can be used interactively at the command prompt can also be combined in a shell script
+and executed sequentially. More on this in one of the next sessions. But how can I start such "command collections"?
 </p>
 
 <table>
     <tr>
-        <td style="text-align: center">Aufruf in der Eingabeaufforderung</td>
-        <td style="text-align: center">muss sich im PATH befinden</td>
-        <td style="text-align: center">Ausführungsrecht notwendig</td>
-        <td style="text-align: center">Sub-Shell wird gestartet</td>
-        <td style="text-align: center">Rückkehr zur Ausgangsshell</td>
+        <td style="text-align: center">Call at the prompt</td>
+        <td style="text-align: center">must be in PATH</td>
+        <td style="text-align: center">Execute permission needed</td>
+        <td style="text-align: center">Sub-shell is started</td>
+        <td style="text-align: center">Return to original shell</td>
     </tr>
     <tr>
         <td style="text-align: center">cmd.sh</td>

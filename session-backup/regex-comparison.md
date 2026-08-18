@@ -1,18 +1,18 @@
-## comparing regex dialects
+## Comparing Regex Dialects
 
-Es gibt unterschiedliche RegExp Parser, die leicht unterschiedliche Dialekte haben.
+There are different RegExp parsers that have slightly different dialects.
 
-Ich schaue mir hier (aus meinem Buch "Linux in a Nutshell" mühsam abgetippt) folgende Programme an:
+I'm looking at the following programs here (laboriously typed from my book "Linux in a Nutshell"):
 `vi`, `sed`, `gawk` (gnu awk), `grep`, `egrep` (aka `grep -E`)
 
-in allen Dialekten einheitlich: `.`, `*`, `^`, `$`, `\` (als escape char), `[aei]`
+Uniform in all dialects: `.`, `*`, `^`, `$`, `\` (as escape char), `[aei]`
 
-| Beschr.     |   vi      |   sed     |  gawk    |  grep   | egrep     |
+| Description |   vi      |   sed     |  gawk    |  grep   | egrep     |
 | ----------- | --------- | --------- | -------- | ------- | --------- |
-| quantif.    | `\{3\}`   |  `\{3\}`  | `{3}`    | `\{3\}` |   `{3}`   |
+| quantifier  | `\{3\}`   |  `\{3\}`  | `{3}`    | `\{3\}` |   `{3}`   |
 | quant  `?`  |           |           |    `?`   |    `?`  |    `?`    |
 | quant  `+`  |           |           |   `\+`   |    `+`  |    `+`    |
-| capt.group  | `\(a\)`   |  `\(a\)`  | `(a)`    |         |   `(a)`   |
+| capt. group | `\(a\)`   |  `\(a\)`  | `(a)`    |         |   `(a)`   |
 | reuse capt. |  `\1`     |   `\1`    |          |         |   `\1`    |
 | grouping    |           |           | `(a\|b)`  |         | `(a\|b)`   |
 | word border | `\<` `\>` | `\<` `\>` |          |         | `\<` `\>` |

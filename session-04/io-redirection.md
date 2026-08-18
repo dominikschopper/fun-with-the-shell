@@ -1,16 +1,16 @@
 ## Input Output
-von Kommandos
+of Commands
 
 ![process io](images/process-io-single.jpg)
 
 ```bash
-# redirecting STDOUT und STDERR
+# redirecting STDOUT and STDERR
 find / -type f 1>findings.txt 2>error.txt
 find / -type f >findings.txt 2>/dev/null
 find / -type f >findings.txt 2>&1
 
-# redirecting STDIN und STDOUT
+# redirecting STDIN and STDOUT
 cat < /etc/passwd > passwd-copy
 ```
 
-`ls 1> file` und `ls > file` sind dasselbe ;)
+`ls 1> file` and `ls > file` are the same ;)

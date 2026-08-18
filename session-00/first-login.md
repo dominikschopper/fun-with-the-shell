@@ -1,18 +1,18 @@
-### Nach dem Anmelden<!-- .element class="c-blue" -->
+### After Login<!-- .element class="c-blue" -->
 
-Bitte ändert Euer Passwort auf ein sinnvolles neues Passwort
+Please change your password to a meaningful new password
 
-- gut zu merken und
-- mit hoher Entropie
-- speichert es in Eurem Password-Manager
+- easy to remember and
+- with high entropy
+- store it in your password manager
 
 
 ```bash
-# abbrechen [Ctrl]+[c]
+# cancel [Ctrl]+[c]
 passwd
- 
+ 
 ```
-**Achtung! Passwort vergessen = neue Installation! D.h. gespeicherte Dinge sind weg!**
+**Warning! Password forgotten = reinstallation! I.e., saved things are gone!**
 
 
 <div class="fragment">
@@ -20,15 +20,15 @@ passwd
 ```bash
 
 passwd --help
- 
+ 
 ```
-der Parameter **`--help`** lässt Euch zu (fast jedem!) Kommando eine Kurzhilfe ausgeben!
+the parameter **`--help`** lets you get short help for (almost every!) command!
 
 </div>
 
 <div class="fragment">
 
-die aller grundlegensten Kommandos
+the most fundamental commands
 
 ```bash
 pwd     # shows directory you are in

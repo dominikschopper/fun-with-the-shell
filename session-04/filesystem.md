@@ -1,4 +1,4 @@
-## Dateisystem / Mounten
+## Filesystem / Mounting
 
 <div style="position:relative;">
     <style>

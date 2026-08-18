@@ -1,26 +1,26 @@
-## Aufgaben zum Bewegen/Anlegen/Löschen<!-- .element class="c-green" -->
+## Exercises on Moving/Creating/Deleting<!-- .element class="c-green" -->
 
 <div class="colored-code">
 
-**Es ist nicht erlaubt, bestehende Pfade/Dateinamen zu tippen!**<!-- .element class="c-orange" --><br/>
-Gib immer nur den/die nächsten benötigten Buchstaben ein! und verwende **[&#8677;]**<!-- .element class="c-orange" -->!
+**It is not allowed to type existing paths/filenames!**<!-- .element class="c-orange" --><br/>
+Always enter only the next required letters! and use **[&#8677;]**<!-- .element class="c-orange" -->!
 
-- bewege dich ins Verzeichnis `gallisches-dorf` und wieder zurück (checke mit `pwd`)
-- gibt es dazu ein "Abkürzungskommando"?
-- gehe ins übergeordnete Verzeichnis (checke mit `pwd`)
-- gehe mit absolutem Pfad in dein Home-Verzeichnis.
-- kopiere die Datei `asterix.haus` ins Verzeichnis `obelix` unter dem Namen `asterix-ferienhaus`
-- lösche die Datei `asterix-ferienhaus` unter Verwendung des **absoluten** Pfads!
-- kopiere das Verzeichnis `miraculix` samt Inhalt im Ordner `gallisches-dorf`
-  das Zielverzeichnis soll `zweiter-druide` heißen. Benenne auch die neue Hausdatei in
-  `zweiter-druide.haus` um.
-- lösche das eben angelegte Verzeichnis
-- findest Du einen Weg, das Verzeichnis `methusalix` und das Unterverzeichnis
-  `methusalix/scheune` mit einem Kommando anzulegen?
-- lösche `methusalix` und Unterverzeichnisse mit `rmdir`
-- lege eine Kopie mit folgendem Befehl an<br/>
+- navigate to the directory `gallisches-dorf` and back again (check with `pwd`)
+- is there an "abbreviation command" for this?
+- go to the parent directory (check with `pwd`)
+- go to your home directory using an absolute path.
+- copy the file `asterix.haus` into the directory `obelix` with the name `asterix-ferienhaus`
+- delete the file `asterix-ferienhaus` using the **absolute** path!
+- copy the directory `miraculix` with its contents in the folder `gallisches-dorf`
+  the target directory should be named `zweiter-druide`. Also rename the new house file to
+  `zweiter-druide.haus`.
+- delete the newly created directory
+- can you find a way to create the directory `methusalix` and the subdirectory
+  `methusalix/scheune` with a single command?
+- delete `methusalix` and subdirectories using `rmdir`
+- create a copy with the following command<br/>
   `sudo cp ./miraculix/miraculix.haus ./miraculix/2miraculix.haus`.<br/>
-  Was fällt Dir an den angelegten Dateien auf? Was passiert, wenn Du sie mit
-  `rm -r` löschen willst? Warum?
+  What do you notice about the created files? What happens if you try to delete them with
+  `rm -r`? Why?
 
 </div>

@@ -1,4 +1,4 @@
-### Interpretation der Kommandozeile
+### Interpreting the Command Line
 
 http://www.compciv.org/topics/bash/text-values/
 
@@ -16,20 +16,19 @@ drwxr-xr-x@  2 mosdoba  staff   64  4 Aug 15:14 Led
 drwxr-xr-x@  2 mosdoba  staff   64  4 Aug 15:14 Zeppelin
 ```
 
-+ Jede Sequenz von Leerzeichen (oder Tabulatoren) leitet ein neues Token ein.
-+ Die Anführungszeichen verhindern die Zerlegung in mehrere Token.
-
++ Each sequence of spaces (or tabs) introduces a new token.
++ The quotes prevent splitting into multiple tokens.
 
 ---
 
-### Auflösungsreihenfolge (SHELL-Expansion)
+### Resolution Order (Shell Expansion)
 
-Es gibt 7 (sieben) verschiedene Ersetzungsarten. Das beschreibt, wie genau die Zeichenkette, die du
-eingibst nacheinander verarbeitet wird.
+There are 7 (seven) different types of substitutions. This describes how the string you
+enter is processed sequentially.
 
 1. Brace Expansion
 1. Tilde Expansion
-1. Parameter/Variablen Expansion
+1. Parameter/Variable Expansion
 1. Command Substitution
 1. Arithmetic Expansion
 1. Process Substitution
@@ -47,9 +46,8 @@ mosdoba> echo "*"
 
 #### 1 brace expansion
 
-mit `{...}` kann man ebenfalls ein wenig Spaß haben, zB um Dateien anzulegen.
-Alle Teile innerhalb einer geschweiften Klammer werden mit allen anderen Teilen
-verknüpft.
+With `{...}` you can also have a bit of fun, e.g. to create files.
+All parts within a curly brace are combined with all other parts.
 
 ```bash
 mosdoba> echo {"House of","Led"}+{Rock,Zeppelin}
@@ -71,7 +69,7 @@ Astrix    Miraculix Obelix
 
 #### 2 tilde expansion
 
-Die Tilde `~` hat eine besondere Bedeutung
+The tilde `~` has a special meaning
 
 ```bash
 mosdoba> cd ~          # gets you to your HOME
@@ -79,9 +77,9 @@ mosdoba> cd ~dschopper # gets you to HOME of dschopper user
 ```
 ---
 
-#### 3 parameter expansion (Variablen ersetzen und mehr)
+#### 3 parameter expansion (Replace variables and more)
 
-alles was mit `$` beginnt wird in diesem Schritt ersetzt, bzw, bearbeitet
+Everything that starts with `$` is replaced or edited in this step
 
 ```bash
 shell-training> echo $PATH
@@ -98,8 +96,8 @@ default # value of FOO or default if not set
 
 #### 4 command substitution
 
-in einer Kommandozeile kann mit `$(...)` eine Subshell geöffnet werden, und deren output
-in der aktuellen Cmdline verwendet werden
+In a command line you can open a subshell with `$(...)` and use its output
+in the current command line
 
 ```bash
 shell-training> MYVAR=$(date)
@@ -111,38 +109,38 @@ Mon Sep 18 20:06:34 UTC 2023
 
 #### 5 arithmetic expansion
 
-es können auch arithmetische Audrücke ausgwertet werden, die mit `$((...))` geschrieben wurden
+Arithmetic expressions can also be evaluated, written with `$((...))` 
 
 ```bash
-shell-training> echo "Das Produkt von 34 und 56 ist $((34 * 56))"
-Das Produkt von 34 und 56 ist 1904
+shell-training> echo "The product of 34 and 56 is $((34 * 56))"
+The product of 34 and 56 is 1904
 ```
 
 ---
 
 #### 6 process substitution
 
-Durch die einfache runde Klammer `( )` können ebenfalls Subshells geöffnet werden und mit `<` oder
-`>` an den Prozess ein oder ausgegeben werden.
+With simple round brackets `( )` you can also open subshells and with `<` or
+`>` you can input or output to the process.
 
 ```bash
-# Zwei Verzeichnislisten vergleichen
+# Compare two directory listings
 shell-training> diff <(ls -la /dir1) <(ls -la /dir2)
 ```
 
 #### (add) word splitting
 
-Die Cmdline wird nachdem alle diese Ersetzungen/Expansions gemacht wurden nochmals
-am Whitespace in Worte gesplittet.
+After all these substitutions/expansions are done, the command line is split
+again into words at whitespace.
 
 ---
 
 #### 7 pathname expansion
 
-Jetzt wird alles mit `*` und `?` zu einem existierenden Pfad erweitert.
+Now everything with `*` and `?` is expanded to an existing path.
 
-- `*` = 0 bis beliebig viele beliebige Chars
-- `?` = ein beliebiger Char
+- `*` = 0 to any number of any characters
+- `?` = any single character
 
 ```bash
 shell-training> ls gallisches-dorf/*lix
@@ -155,6 +153,6 @@ obelix.haus
 
 #### (add) quote removal
 
-alle `"`, `'` und `\` werden entfernt
+All `"`, `'` and `\` are removed
 
-**fertig ist die Interpretation Eurer eingegebenen CmdLine**
+**Your command line interpretation is now complete**

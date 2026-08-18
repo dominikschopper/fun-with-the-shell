@@ -1,8 +1,7 @@
-<h4>Prozessanzeige</h4>
+<h4>Process Display</h4>
 
 <p class="aleft">
-    Ähnlich wie im Taskmanager, kann man sich auf dem Unix/Linux Terminal, alle laufenden
-    Prozesse anzeigen lassen.
+    Similar to the task manager, you can display all running processes on the Unix/Linux terminal.
 </p>
 
 <pre><code class="language-bash">dschopper&gt; ps

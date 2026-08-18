@@ -1,7 +1,7 @@
-Überhang vom letzten Mal ...
-## Dateisystemberechtigungen
+Overflow from last time ...
+## Filesystem Permissions
 
-### chmod mit ugo
+### chmod with ugo
 ```bash
 shell-training> touch datei1
 shell-training> echo Hallo > datei2
@@ -13,9 +13,9 @@ total 4
 
 ---
 
-### Symbolisch => X-Bit setzen
+### Symbolic => Set X-Bit (execute permission)
 ```bash
-shell-training> # u=user, g=group, o=other erhalten Ausführungsberechtigung
+shell-training> # u=user, g=group, o=other get execute permission
 shell-training> chmod +x datei2
 shell-training> ls -l
 total 4
@@ -23,15 +23,15 @@ total 4
 -rwxrwxr-x. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
 
-### Symbolisch => X-Bit wegnehmen
+### Symbolic => Remove X-Bit
 ```bash
-shell-training> # eigentlich sollten alle anderen keine Ausführungsberechtigungen haben
+shell-training> # actually, all others should not have execute permissions
 shell-training> chmod o-x datei2
 shell-training> ls -l
 total 4
 -rw-rw-r--. 1 shell-training shell-training 0 Sep 17 19:38 datei1
 -rwxrwxr--. 1 shell-training shell-training 6 Sep 17 19:38 datei2
-shell-training> # die Gruppe bitte auch nicht
+shell-training> # the group should not either
 shell-training> chmod g-x datei2
 shell-training> ls -l
 total 4
@@ -41,10 +41,10 @@ total 4
 
 ---
 
-### Symbolisch alle Rechte (für jeden) wegnehmen
+### Symbolic remove all permissions (for everyone)
 
 ```bash
-shell-training> # es soll doch bitte niemand Leserechte (r), Schreibrechte (w) oder Ausführungsrechte (x) haben
+shell-training> # it should be that nobody has read (r), write (w) or execute (x) permissions
 shell-training> chmod -rwx datei2
 shell-training> ls -l
 total 4
@@ -52,10 +52,10 @@ total 4
 ----------. 1 shell-training shell-training 6 Sep 17 19:38 datei2
 ```
 
-### Symbolisch => R-Bit für den Besitzer setzen
+### Symbolic => Set R-Bit (read permission) for the owner
 
 ```bash
-shell-training> # nur der Eigentümer soll lesen können
+shell-training> # only the owner should be able to read
 shell-training> chmod u+r datei2
 shell-training> ls -l
 total 4
@@ -65,14 +65,14 @@ total 4
 
 ---
 
-### Rechte-Stenographie
+### Permissions Shorthand
 
-statt `u=rwx,g=rx,o-rwx` kann man auch einfach `750` schreiben
+instead of `u=rwx,g=rx,o-rwx` you can simply write `750`
 
-![beschreibt Umrechnung Unix Dateberechtigungen](./images/rights-string-octal.jpg)
+![describes conversion Unix file permissions](./images/rights-string-octal.jpg)
 
 ---
-### Oktal => chmod mit 2 hoch rwx
+### Octal => chmod with 2 to the power of rwx
 
 ```bash
 shell-training> chmod 100 datei1
@@ -94,18 +94,18 @@ total 4
 
 ---
 
-### Verzeichnisse
-chmod funktioniert genauso für Verzeichnisse. Jedoch haben die Berechtigungen leicht andere Effekte als auf gewöhnlichen Dateien.
-+ Das read-Bit (r) erlaubt dem Anwender Dateien im jeweiligen Verzeichnis aufzulisten.
-+ Das write-Bit (w) erlaubt dem Anwender Dateien im jeweiligen Verzeichnis zu erzeugen, umzubenennen oder zu löschen und die Verzeichnisattribute zu editieren.
-+ Das execute-Bit (x) erlaubt dem Anwender das Verzeichnis zu betreten und auf Dateien und andere Verzeichnisse darin zuzugreifen.
+### Directories
+chmod works the same way for directories. However, the permissions have slightly different effects than on regular files.
++ The read bit (r) allows the user to list files in the respective directory.
++ The write bit (w) allows the user to create, rename or delete files in the respective directory and edit directory attributes.
++ The execute bit (x) allows the user to enter the directory and access files and other directories within it.
 
 ---
 
-### Was tun diese Rechte genau? (Pt1)
+### What do these permissions do exactly? (Pt1)
 
 ```bash
-shell-training> # weder user, noch group, noch other soll Ausführungsrechte haben
+shell-training> # neither user, nor group, nor other should have execute permissions
 shell-training> chmod ugo-x temp
 shell-training> ls -ld temp
 drw-rw-r--. 2 shell-training shell-training 34 Sep 17 19:38 temp
@@ -117,10 +117,10 @@ cat: temp/datei2: Permission denied
 ```
 ---
 
-### Was tun diese Rechte genau? (Pt2)
+### What do these permissions do exactly? (Pt2)
 
 ```bash
-shell-training> # wie sieht es mit nur (x) aber OHNE (r) aus?
+shell-training> # what does it look like with only (x) but WITHOUT (r)?
 shell-training> chmod ugo+x temp
 shell-training> chmod ugo-r temp
 shell-training> ls -ld temp
@@ -133,7 +133,7 @@ Hallo
 
 ---
 
-### Besitzer und Besitzgruppe: chown, chgrp
+### Owner and owner group: chown, chgrp
 
 ```bash
 root> ls -l
@@ -154,11 +154,10 @@ total 4
 
 ---
 
-### Datei zu verschenken ...
+### Give away a file ...
 
-Das verändern des Datei-Besitzers benötigt Root-Rechte, also
-als `root` (d.h. vorher `sudo -i`) oder mit `sudo chmod ...`
-ausführen
+Changing the file owner requires root permissions, so
+run as `root` (i.e., first `sudo -i`) or with `sudo chmod ...`
 
 ```bash
 root> chown tester:test datei2
@@ -172,7 +171,7 @@ total 4
 ---
 
 ### umask
-umask setzt den initialen Modus für neuerzeugte Dateien oder Verzeichnisse. Die Oktalnotation ist sozusagen invers. Mit umask 000 haben neue Dateien volle Berechtigungen.
+umask sets the initial mode for newly created files or directories. The octal notation is, so to speak, inverse. With umask 000, new files have full permissions.
 
 ```bash
 shell-training> umask
@@ -186,7 +185,7 @@ total 0
 ```
 
 ```bash
-shell-training> umask 0077 # weder other, noch group sollen Berechtigungen haben
+shell-training> umask 0077 # neither other nor group should have permissions
 shell-training> touch DateiB
 shell-training> ls -l
 total 0
@@ -196,7 +195,7 @@ total 0
 
 ---
 
-## Weitere Berechtigungsmechanismen
+## Additional Permission Mechanisms
 
 + chattr, lsattr
 

@@ -1,9 +1,9 @@
 #### Commands #1: Exit and save<!-- .element class="c-orange" -->
 
-| Ex Command    | Erklärung                          |
+| Ex Command    | Explanation                        |
 |---------------|------------------------------------|
 |`:w`           | write (=save)                      |
-|`:w new-file`  | write to changes to "new-file".    |
+|`:w new-file`  | write changes to "new-file".       |
 |`:q`           | quit (no saving)                   |
 |`:wq`          | write and quit                     |
 |`:q!`          | quit no saving even if file changed|
@@ -12,10 +12,10 @@
 
 ---
 
-#### Commands #2: Search &amp; replace<!-- .element class="c-purple" -->
+#### Commands #2: Search & replace<!-- .element class="c-purple" -->
 
-|  Command                  | Erklärung                                            |
-|---------------------------|------------------------------------------------------|
+|  Command                  | Explanation                                           |
+|---------------------------|-------------------------------------------------------|
 | `/term`                   | search for `term` hit `n` next hit, `N` previous hit |
 | `?term`                   | search upwards for `term` hit `n` next, `N` previous |
 | `:s/term/replacement/`    | search and replace once in this line                 |
@@ -26,7 +26,7 @@
 
 #### Movement<!-- .element class="c-blue" -->
 
-| Command    | Erklärung               |
+| Command    | Explanation         |
 |------------|-------------------------|
 | `G`        | go to last line of file |
 | `2G`       | go to 2nd line of file  |
@@ -35,7 +35,7 @@
 
 #### Copy/Paste<!-- .element class="c-orange" -->
 
-| Command    | Erklärung                         |
+| Command    | Explanation                         |
 |------------|-----------------------------------|
 | `yy`       | copy line                         |
 | `3yy`      | copy this and the next two lines  |
@@ -43,20 +43,20 @@
 | `dd`       | delete line (into copy buffer).   |
 | `3dd`      | delete 3 lines (into copy buffer) |
 
-Man <!-- .element class="c-blue" --> kann die letzte Aktion mit `u` (=undo) rückgängig machen
+You <!-- .element class="c-blue" --> can undo the last action with `u` (=undo)
 
 ---
 
 ### VIM settings<!-- .element class="c-blue" -->
 
-vim kann man mit einer `~/.vimrc` konfigurieren (es gibt auch eine globale `/etc/vimrc`)
+vim can be configured with a `~/.vimrc` file (there is also a global `/etc/vimrc`)
 
-Einfach in die Datei in jeweils eine einzelne Zeilen z.B. diese Kommandos eintragen:
+Simply enter these commands in individual lines, for example:
 
-- `set number` = Zeilennummerierung
-- `set relativenumber` = Zeilennummerierung (plus anzeige relativ zum Standpunkt)
-- `syntax on` = Syntax highlighting
-- `"` am Anfang der Zeile ist ein Kommentar
+- `set number` = line numbering
+- `set relativenumber` = line numbering (plus display relative to your position)
+- `syntax on` = syntax highlighting
+- `"` at the beginning of the line is a comment
 
 ```vim
 set number
@@ -64,4 +64,4 @@ set number
 syntax on
 ```
 
-[VIM konfigurieren](https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/)
+[Configure VIM](https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/)

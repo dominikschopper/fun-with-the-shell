@@ -1,8 +1,8 @@
 ### Regex Exercises
 
-#### Deutsche Datumsangaben finden
+#### Find German Date Formats
 
-Finde in den Eingaben alle Deutschen numerischen Datumsangaben heraus. Beispiele, die gefunden werden sollen
+Find all German numerical date formats in the inputs. Examples that should be found
 
 ```plain
 01.12.2023
@@ -11,7 +11,7 @@ Finde in den Eingaben alle Deutschen numerischen Datumsangaben heraus. Beispiele
 1.02.1822
 ```
 
-es soll nicht gefunden werden
+Should not be found
 
 ```plain
 1. Dez. 2023

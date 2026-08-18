@@ -1,34 +1,34 @@
-### Als allererstes: Begriffsbestimmungen<!-- .element class="c-purple" -->
+### First Things First: Terminology<!-- .element class="c-purple" -->
 
 
 
 ```bash
 ls        # list current dir
-which ls  # zeigt, wo das Kommando ls liegt
+which ls  # shows where the command ls is located
 ls -l /etc
 cd /var/log
 ```
 
-- Was kann ich mit `ls` tun?
-- Verschiedene Arten des Aufrufs
+- What can I do with `ls`?
+- Different ways to call it
     - `ls`
     - `ls /home`
     - `ls -a .`
-    - `ls -l gallisches-dorf/asterix`
+    - `ls -l gallian-village/asterix`
 
-<pre><div> <span class="c-green">ls</span>        <span class="c-orange">-i -a</span>      <span class="c-blue">gallisches-dorf/asterix/</span>
- <span class="c-green">Kommando</span>  <span class="c-orange">Optionen</span>   <span class="c-blue">Argument</span>
+<pre><div> <span class="c-green">ls</span>        <span class="c-orange">-i -a</span>      <span class="c-blue">gallian-village/asterix/</span>
+ <span class="c-green">Command</span>  <span class="c-orange">Options</span>   <span class="c-blue">Argument</span>
 </div></pre>
 
-- kurze Option: `-a` `-i`
-- lange Option: `--all` `--inode`
+- short option: `-a` `-i`
+- long option: `--all` `--inode`
 
 Notes:
 
-- Kommando
-- Option oder Parameter
+- Command
+- Option or parameter
 - Argument
 
-- Kommandos und deren Argumente werden (oft) autocompleteds
+- Commands and their arguments are often autocompleted
 
-als nächstes aber erstmal historisches
+but next let's first get some history

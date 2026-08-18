@@ -1,10 +1,10 @@
 ## Unix
 - multi tasking / multi-user
-- Prozess-Environment
-- alle Prozesse gehören einem User
-- der "oberste" Admin ist immer der root User **`uid=0(root)`**
-- alle User hier könnten gleichzeitig auf _einem_ System angemeldet sein
-- Berechtigungsmangement steht im Kern von Unix-Systemen
+- Process environment
+- all processes belong to a user
+- the "top" admin is always the root user **`uid=0(root)`**
+- all users here could be logged in simultaneously on _one_ system
+- permission management is at the core of Unix systems
 
 <div class="fragment">
 
@@ -13,13 +13,13 @@ id               # data of logged in user
 cat /etc/passwd  # list all local users
 ps               # all processes of the current user
 ps -f            # all processes full display
-sleep 30 &       # sleep 30s im hintergrund
+sleep 30 &       # sleep 30s in the background
 ```
 
 </div>
 
 notes:
 
-    - Ausgabe des `id` Kommandos
+    - Output of the `id` command
     - ps in Unix/Shell
-    - jedes kommando ist ein prozess
+    - every command is a process

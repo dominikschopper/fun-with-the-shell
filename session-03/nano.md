@@ -1,5 +1,5 @@
-### Nano (klein und einfach)
+### Nano (small and simple)
 
-Wenn Ihr keinen Stress wollt und niemanden beeindrucken müsst, schaut, ob es auf dem system das Kommando `nano` gibt.
+If you don't want stress and don't need to impress anyone, check if your system has the command `nano`.
 
-Das ist ein kleiner selbsterklärender Editor!
+It's a small self-explanatory editor!

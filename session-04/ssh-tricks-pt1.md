@@ -1,29 +1,29 @@
 ## SSH Tricks
 
-#### Login mit ohne Passwort
+#### Login without password
 
 <div class="mrg-left-xl">
 
-1. erstelle ein ssh-Schlüsselpaar
-    - mit neuer encrypt. `ssh-keygen -t ed25519 -a 100` oder
-    - mit alter encrypt. `ssh-keygen -t rsa -b 4096 -o -a 100`
-1. kopiere den Inhalt d. öffentl. Schlüsseldatei auf den Server, dort ans Ende der Datei `.ssh/authorized_keys`.
-Beim Erstellen der Datei auf 600 setzen
+1. Create an SSH key pair
+    - with new encryption `ssh-keygen -t ed25519 -a 100` or
+    - with old encryption `ssh-keygen -t rsa -b 4096 -o -a 100`
+1. Copy the content of the public key file to the server, to the end of the `.ssh/authorized_keys` file.
+Set the file to 600 when creating
 ```bash
-# .ssh Verz. auf remote Server erstellen
+# Create .ssh directory on remote server
 ssh user@server "mkdir .ssh -m 700"
-# kopiere den Inhalt deines Pub-Keys auf den Server
+# Copy the content of your public key to the server
 cat .ssh/my-public-keyfile | ssh user@server "tee >> .ssh/authorized_keys"
-# mache die Datei nur für den Besitzer lesbar
+# Make the file readable only for the owner
 ssh user@server "chmod 600 .ssh/authorized_keys"
 ```
-ab jetzt wirst Du beim Login nur noch nach der Passphrase des Schlüssels gefragt!<!-- .element class="fragment" style="color:darkgreen;" -->
+From now on you will only be asked for the passphrase of the key when logging in!<!-- .element class="fragment" style="color:darkgreen;" -->
 
-1. nach jedem Reboot Deines Systems den priv. Schlüssel in Deinen `ssh-agent`.
-    1. Auf dem Mac zB mit `ssh-add --apple-use-keychain ~/.ssh/private-keyfile`<br/>
-    1. Auf Linux erst &nbsp; `eval $(ssh-agent)` &nbsp; um den ssh-agent zu starten
-       und dann `ssh-add ~/.ssh/private-keyfile`.
+1. After each reboot of your system, add the private key to your ssh-agent.
+    1. On Mac, for example with `ssh-add --apple-use-keychain ~/.ssh/private-keyfile`<br/>
+    1. On Linux first run &nbsp; `eval $(ssh-agent)` &nbsp; to start the ssh-agent
+       and then `ssh-add ~/.ssh/private-keyfile`.
 
-ab jetzt wirst Du nicht mehr nach der Passphrase des Schlüssels gefragt!<!-- .element class="fragment" style="color:darkgreen;" -->
+From now on you will no longer be asked for the key's passphrase!<!-- .element class="fragment" style="color:darkgreen;" -->
 
 </div>

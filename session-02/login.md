@@ -1,14 +1,11 @@
-### Anmeldung
+### Login
 
+The environment after logging into a system is partly predetermined by the administrator <!-- .element class="ta-left" -->
+but can also be individually customized. Depending on the distribution, different mechanisms are used.
 
-
-Die Umgebung nach dem Login in ein System ist teils vom Administrator <!-- .element class="ta-left" -->
-vorgegeben, kann aber auch individuell festgeschrieben werden. Je nach Distribution greifen
-unterschiedliche Mechanismen.
-
-Üblich ist die systemweite <!-- .element class="ta-left" -->
-`/etc/profile` ergänzt um persönliche Konfigurationsdateien wie<br/>
-`.bashrc` oder `.bash_profile` im `HOME`-Verzeichnis.
+Typical is the system-wide <!-- .element class="ta-left" -->
+`/etc/profile` supplemented by personal configuration files such as<br/>
+`.bashrc` or `.bash_profile` in the `HOME` directory.
 
 <div class="fragment" style="width:100%">
 

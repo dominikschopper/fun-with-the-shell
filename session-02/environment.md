@@ -1,8 +1,8 @@
-## Ausführungsumgebung
+## Execution Environment
 
-Die Ausführungsumgebung kann auf Variablen zurückgreifen, die entweder selber definiert oder bereits vom System vergeben wurden.
+The execution environment can access variables that have been either defined by itself or assigned by the system.
 
-### Variable setzen und wieder löschen
+### Set and Delete Variables
 
 ```bash
 mosdoba> MYVAR1="Unix rocks\!"
@@ -16,12 +16,12 @@ mosdoba>
 
 ---
 
-### Vom System bereitgestellte Umgebungsvariablen
+### System-Provided Environment Variables
 
 <div class="flex-row">
 
 ```bash
-# Systemvariablen
+# System variables
 mosdoba> echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 mosdoba> which bash
@@ -31,10 +31,9 @@ mosdoba> which bash
 bash not found
 ```
 
-
 ```bash
-# sourcen von Fragmenten
-# wir schreiben in die Datei
+# Sourcing fragments
+# we write to the file
 mosdoba> echo "MYVAR_IN_A_FILE='Led Zeppelin'" > rocknroll.rc
 mosdoba> . ./rocknroll.rc
 mosdoba> echo $MYVAR_IN_A_FILE
@@ -45,18 +44,18 @@ Led Zeppelin
 
 ---
 
-### Exportieren für Subprozesse
+### Export for Subprocesses
 
 ```bash
 mosdoba> MYVAR1="The Who"
 mosdoba> echo $MYVAR1
 The Who
-mosdoba> bash # neuer Subprozess
+mosdoba> bash # new subprocess
 bash-3.2$ echo $MYVAR1
 
-bash-3.2$ exit # wieder in Elternprozess
+bash-3.2$ exit # back to parent process
 mosdoba> export MYVAR1
-mosdoba> bash # neuer Subprozess
+mosdoba> bash # new subprocess
 bash-3.2$ echo $MYVAR1
 The Who
 ```

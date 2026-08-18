@@ -1,10 +1,10 @@
 ### RTFM
 
-Wer die Werbung bei Stack-Overflow nicht mag oder eine schwache Internetverbindung hat,
-kann die lokal installierte Dokumentation nutzen.
-Besonders empfehlenswert sind die EXAMPLES.
+If you don't like the ads on Stack Overflow or have a slow internet connection,
+you can use the locally installed documentation.
+The EXAMPLES sections are particularly recommended.
 
-Als Pager wird standardmäßig less verwendet. D.h. die Suche erfolgt mit "/". Verlassen mit "q".
+By default, `less` is used as the pager. This means searching is done with "/". Exit with "q".
 
 ```bash
 mosdoba> man man
@@ -44,5 +44,5 @@ DESCRIPTION
 
 Notes:
 
-- `man -k suchwort` für suche nach themen
-- `apropos suchwort` dto
+- `man -k keyword` to search for topics
+- `apropos keyword` same

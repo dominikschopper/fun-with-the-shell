@@ -1,30 +1,30 @@
-### head &amp; tail
+### head & tail
 
-- `head` gibt die ersten 10 Zeilen aus
-- `tail` gibt die letzten 10 Zeilen aus
+- `head` outputs the first 10 lines
+- `tail` outputs the last 10 lines
 
 <pre style="max-width: 90ch"><code style="max-width: 90ch" class="bash">
-# logging output nach '/var/log/fake-service.log' starten
+# start logging output to '/var/log/fake-service.log'
 sudo /scripts/start-logging.sh
 
-head -n 3 /var/log/fake-service.log # die ersten 3 Zeilen
-head /var/log/fake-service.log      # die ersten 10 Zeilen (default)
-tail -n 3 /var/log/fake-service.log # die letzten 3 Zeilen
-tail /var/log/fake-service.log      # die letzten 10 Zeilen (default)
+head -n 3 /var/log/fake-service.log # the first 3 lines
+head /var/log/fake-service.log      # the first 10 lines (default)
+tail -n 3 /var/log/fake-service.log # the last 3 lines
+tail /var/log/fake-service.log      # the last 10 lines (default)
 </code></pre>
 
-das ist doch alles boooring? <!-- .element class="fragment red" -->
+that's all boring? <!-- .element class="fragment red" -->
 
 <div class="fragment">
 
 ```bash
-# logging output nach '/var/log/fake-service.log' starten
+# start logging output to '/var/log/fake-service.log'
 sudo /scripts/start-logging.sh
 
-# schau mal mit more/less in die Datei
+# look into the file with more/less
 more /var/log/fake-service.log
 
-# dann mit tail
+# then with tail
 tail -f /var/log/fake-service.log
 ```
 

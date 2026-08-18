@@ -2,15 +2,15 @@
 
 <div class="bg-lightblue-50 pad-md">
 
-`vi` = visual editor, als visual part von `ex`*
+`vi` = visual editor, as the visual part of `ex`*
 
-ex hat/te einen starken Fokus auf suchen/ersetzen mit RegEx
+ex had/has a strong focus on search/replace with RegEx
 
 
-- vi zeigt Dir die gesamte Datei im Überblick (in der Computersteinzeit ein feat)!!
-- `vi` "enthält" `ex`
-- Navigation im Standard-vi `[h]`, `[j]`, `[k]`, `[l]` &nbsp; !!
-- heute meistens durch `vim` ersetzt
+- vi shows you the entire file at a glance (in the computer stone age a feat)!!
+- `vi` "contains" `ex`
+- Navigation in standard vi `[h]`, `[j]`, `[k]`, `[l]` &nbsp; !!
+- nowadays mostly replaced by `vim`
 
 </div>
 

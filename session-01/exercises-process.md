@@ -1,20 +1,20 @@
-## Aufgaben zu Prozessen<!-- .element class="c-blue" -->
+## Exercises on Processes<!-- .element class="c-blue" -->
 
 <div class="colored-code">
 
-- Was ist der Unterschied zwischen `ps`, `ps -f` und `ps -e`?
-- Welche Parameter für das Kommando `ps` gibt es noch?
-    - Was fällt Dir bei der Suche nach weiteren Parametern auf?
-- Wie kannst Du Dir im `pstree` Kommando die PID<sup>*</sup> mit anzeigen lassen?
-- Was fällt Dir auf, wenn Du das Kommando `ps` oder `pstree` mit PID* mehrmals ausführst?
-- Führe das Kommando<br/>
+- What is the difference between `ps`, `ps -f` and `ps -e`?
+- What other parameters does the `ps` command have?
+    - What do you notice when searching for more parameters?
+- How can you display the PID<sup>*</sup> in the `pstree` command?
+- What do you notice when you run the command `ps` or `pstree` with PID<sup>*</sup> multiple times?
+- Run the command<br/>
   `start-logging.sh`<br/>
-  aus. Dann lass Dir `pstree` anzeigen.
-- Führe das Kommando `fake-logging.pl --count=1500` aus. Dann lass Dir `pstree` anzeigen.
-- Suche mit `pstree` nach dem Prozess, der mit dem Parameter `--count=1500` gestartet wurde und lass Dir die PID dieses Prozesses anzeigen. Dann beende ihn mit `kill`. Überprüfe, ob es geklappt hat.
-- Suche mit `ps` danach
-- Führe das Kommando `sleep 90 &` (mit &) aus und lass Dir die PID<sup>*</sup> dieses Prozesses anzeigen. Dann beende ihn mit dem "bösen" `kill -9`
+  and then display `pstree`.
+- Run the command `fake-logging.pl --count=1500`. Then display `pstree`.
+- Search with `pstree` for the process started with the parameter `--count=1500` and display its PID. Then terminate it with `kill`. Verify if it worked.
+- Search for it with `ps`
+- Run the command `sleep 90 &` (with &) and display the PID<sup>*</sup> of this process. Then terminate it with the "evil" `kill -9`
 
 </div>
 
-<sup>*</sup>PID = Prozess ID
+<sup>*</sup>PID = Process ID

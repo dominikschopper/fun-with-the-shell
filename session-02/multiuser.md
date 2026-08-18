@@ -1,13 +1,13 @@
-## Mehrbenutzersystem
+## Multi-User System
 
-Ein Multiuser-System ist ein Betriebssystem, das Arbeitsumgebungen
-für verschiedene Benutzer bereitstellt und diese voneinander abgrenzt.
-Die Mehrbenutzerfähigkeit wird unter anderem durch umfassendes
-Zugriffsrechte-Management sichergestellt.
+A multi-user system is an operating system that provides work environments
+for different users and separates them from each other.
+Multi-user capability is ensured, among other things, by comprehensive
+access rights management.
 
 ---
 
-### Wer bin ich und wenn ja, wieviele?
+### Who am I and if so, how many?
 ```bash
 shell-training> who
 shell-training pts/0        Sep 16 20:14 (84.157.82.51)
@@ -21,7 +21,7 @@ uid=1000(shell-training) gid=1000(shell-training) groups=1000(shell-training)
 
 ---
 
-### Lokale Nutzer hinzufügen
+### Add Local Users
 ```bash
 root> tail -3 /etc/group
 ssh_keys:x:996:
@@ -58,20 +58,20 @@ tester:!!:19616:0:99999:7:::
 
 ---
 
-### Identitäten wechseln
+### Switch Identities
 
-sudo erlaubt dem gewöhnlichen Anwender vom Admin definierte Befehle mit root-Rechten auszuführen. Es erlaubt starke Einschränkungen bis "du-darfst-alles". Das Passwort des root-Nutzers muss dafür nicht bekannt sein.
+sudo allows ordinary users to execute commands defined by the admin with root privileges. It allows strong restrictions up to "you-can-do-everything". The root user's password does not need to be known for this.
 
 ```bash
-shell-training> #sudo -i startet eine root-shell
+shell-training> #sudo -i starts a root shell
 shell-training> sudo -i
 root>
 ```
 
-su ändert die Identität des eingeloggten Anwenders und fragt dafür auch das Passwort des Zielusers ab.
+su changes the identity of the logged-in user and asks for the password of the target user.
 
 ```bash
-shell-training> #su - ändert den user und zieht dessen definierte Umgebung (ähnlich Login-Prozess)
+shell-training> #su - changes the user and loads their defined environment (similar to login process)
 shell-training> su -
 Password:
 root>

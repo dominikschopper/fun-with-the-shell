@@ -2,26 +2,26 @@
 
 `grep` = global regular expression print
 
-`grep` durchsucht Dateien zeilenweise nach Suchworten
+`grep` searches files line by line for search terms
 
-`grep` ist per default case-sensitive
+`grep` is case-sensitive by default
 
 ```bash
-# sucht nach "SuchWort" in datei.md
-grep SuchWort datei.md
+# searches for "SearchWord" in datei.md
+grep SearchWord datei.md
 
-# sucht nach "suchwort" egal ob groß/klein in datei1.md und datei2.md
-grep -i suchwort datei1.md datei2.md
+# searches for "searchword" regardless of uppercase/lowercase in datei1.md and datei2.md
+grep -i searchword datei1.md datei2.md
 
-# sucht nach "SuchWort" egal ob groß/klein unterhalb von ./directory
-grep -r SuchWort ./directory/
+# searches for "SearchWord" regardless of uppercase/lowercase below ./directory
+grep -r SearchWord ./directory/
 ```
 
-es gibt "verbesserte" `grep` Kommandos, aber grep ist der default auf allen Systemen
+there are "improved" `grep` commands, but grep is the default on all systems
 
 notes:
 
-- grep ist der "Standardbefehl"
-- lokal würde ich immer mit `hg` (SilverSurfer) oder besser mit ripgrep = `rg` suchen
-    - `.git`/`.svn` Verz. werden nicht durchsucht
-    - neuer thread für jedes Sub-Dir macht Suche schneller
+- grep is the "standard command"
+- locally I would always search with `hg` (SilverSurfer) or better with ripgrep = `rg`
+    - `.git`/`.svn` directories are not searched
+    - new thread for each sub-directory makes search faster

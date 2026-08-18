@@ -1,39 +1,38 @@
 ## Shell Scripting<!-- .element class="c-orange" -->
 
-ein Shell Script ist eine (meist ausführbare Datei), die shell Kommandos
-enthält und üblicherweise auf `.sh` endet.
+A Shell Script is a (usually executable file) that contains shell commands
+and usually ends with `.sh`.
 
-Gut für kurze, kleine, repetitive Aufgaben, die man sonst auch gut auf der cmdline
-ausführen kann.
+Good for short, small, repetitive tasks that you could otherwise easily run on the command line.
 
-**python** gilt als Nachfolger von Bash Skripten für Admins!
+**Python** is considered the successor to Bash scripts for admins!
 
-Aber! Shell-Skripte können das Leben vereinfachen.
+But! Shell scripts can simplify life.
 
 ---
 
-## Wann sind Shell-Scripte keine gute Idee?<!-- .element class="c-blue" -->
+## When are Shell Scripts not a good idea?<!-- .element class="c-blue" -->
 
-Projekte mit
+Projects with
 
 <div class="flex-row">
 
-- Number Crunching / Ressourcen hungrige Aufgaben
-- Cross-Plattform Kompatibilität
-- Komplexe Applikationen (type safety, structure)
+- Number Crunching / Resource-hungry tasks
+- Cross-platform compatibility
+- Complex Applications (type safety, structure)
 - Business-Critical Applications
-- komplexen Abhängigkeiten
-- komplexen GUIs
+- Complex dependencies
+- Complex GUIs
 
 <br/>
 
-- intensive/feingranulare Dateioperationen
-  (Shells sind sequentiell ablaufende Operationen)
-- die komplexe Datenstrukturen benötigen
-- die komplexe Chart-/Grafikmanipulation benötigen
-- die hardware-nah sind
-- die mit Ports/Sockets arbeiten
-- die ausgeliefert und closed-source sein sollen
+- Intensive/fine-grained file operations
+  (Shells are sequentially running operations)
+- That need complex data structures
+- That need complex chart/graphics manipulation
+- That are hardware-close
+- That work with ports/sockets
+- That should be delivered as closed-source
 
 </div>
 
@@ -44,22 +43,20 @@ Projekte mit
 
 <div style="text-align: left;">
 
-ein Shell Script beginnt in der ersten Zeile mit der Shebang Zeile
+A Shell Script begins in the first line with the shebang line
 ```bash
 #!/bin/bash
 ```
 
-das legt fest, mit welcher Shell das Skript ausgeführt wird. Fehlt diese Zeile, wird es mit der aufrufenden Shell ausgeführt.
+This determines which shell the script is executed with. If this line is missing, it will be executed with the calling shell.
 
-Skripte, die von System zu System kopiert werden müssen verwenden daher
-meist den "kleinsten gemeinsamen Nenner"
+Scripts that need to be copied from system to system therefore usually use the smallest common denominator
 
 ```bash
 #!/bin/sh
 ```
 
-Das ist die Bourne Shell, der Vorgänger der `bash`, die einige
-Funktionalitäten nicht enthält
+This is the Bourne Shell, the predecessor of `bash`, which doesn't have some functionalities
 
 </div>
 
@@ -69,19 +66,18 @@ Funktionalitäten nicht enthält
 
 <div style="text-align: left;">
 
-Variablen werden üblicherweise groß geschrieben und sind case-sensitive.
+Variables are usually written in uppercase and are case-sensitive.
 
-Allerdings kann man das auch zur Vermeidung von Kollisionen verwenden und
-die Variablen CamelCase schreiben!
+However, you can also use this to avoid collisions and write the variables in CamelCase!
 
-L-Values der Variablen müssen
-- mit einem Buchstaben beginnen
-- dürfen nur `A-Za-z`, `0-9` und `_` enthalten
+L-Values of variables must
+- Start with a letter
+- May only contain `A-Za-z`, `0-9` and `_`
 
-R-Values werden meist ge-quotet, selbst wenn keine Sonderzeichen enthalten sind,
-das ist das aber nicht zwingend notwendig.
+R-Values are usually quoted, even if they don't contain special characters,
+but this is not necessarily required.
 
-Beispiele
+Examples
 
 ```bash
 SSH_CMD="ssh"
@@ -103,7 +99,7 @@ phrase="moo and foo have both two o."
 
 
 ```bash
-# one true brace schreibweise
+# one true brace style
 if _command_ # return status 0 -> then
 then
     echo "something"
@@ -113,7 +109,7 @@ fi
 ```
 
 ```bash
-#alternative Schreibweise
+# alternative style
 if _command_; then
     echo "something"
 else
@@ -123,7 +119,7 @@ fi
 
 </div>
 
-example (grep hat den return 0, wenn der Suchbegriff gefunden wird)
+Example (grep returns 0 when the search term is found)
 
 ```bash
 SEARCH_USER="someuser"
@@ -140,18 +136,18 @@ fi
 </div>
 
 ---
-## Syntax 4: Schleifen<!-- .element class="c-blue" -->
+## Syntax 4: Loops<!-- .element class="c-blue" -->
 
-While-Schleifen
+While Loops
 
 ```bash
 while _cmnd_
 do
-    echo "solange _cmnd_ return 0 hat"
+    echo "as long as _cmnd_ returns 0"
 done
 ```
 
-For-Schleifen
+For Loops
 
 <div class="flex-row">
 
@@ -174,7 +170,7 @@ done
 
 ---
 
-## Syntax 5: Zugriff auf Argumente<!-- .element class="c-purple" -->
+## Syntax 5: Access to Arguments<!-- .element class="c-purple" -->
 
 ```bash
 ./myscript.sh one two three
@@ -182,68 +178,68 @@ done
 
 - **$0** = `./myscript.sh`
 - **$1** = `one`
-- **$2** = `two` ... usw
+- **$2** = `two` ... etc
 
 ```bash
-# im Skript
-# der Aufruf von shift
+# in the script
+# the call of shift
 shift
 ```
 - **$0** = `./myscript.sh`
 - **$1** = `two`
-- **$2** = `three` ... usw
+- **$2** = `three` ... etc
 
-komplexere Aktionen mit `getopts`
+More complex actions with `getopts`
 
 ---
 
 ## Test Command<!-- .element class="c-green" -->
 
-das `test` Kommando kann zB Vergleiche ausführen
+The `test` command can, for example, perform comparisons
 
-es hat den return 0 wenn die abgefregte Bedingung "wahr" ist
+it returns 0 when the queried condition is "true"
 
 ```bash
-test "$x" = "hallo" # enthält genau $x "hallo"?
-test $x -lt 9       # ist $x kleiner als 9?
-test $x -eq 11      # ist $x die Zahl 11?
-test -f $x          # ist $x eine Datei?
-man test            # weitere optionen
+test "$x" = "hallo"    # does $x contain exactly "hallo"?
+test $x -lt 9          # is $x less than 9?
+test $x -eq 11         # is $x the number 11?
+test -f $x             # is $x a file?
+man test               # further options
 ```
 
 <div class="flex-row">
 <div>
 
-**neue Schreibweise**<!-- .element class="c-purple" -->
+**New style**<!-- .element class="c-purple" -->
 ```bash
-[[ $x = "hallo" ]]   # $x enthält "hallo"?
-[[ $x =~ "^hallo" ]] # $x beginnt mit "hallo"?
-[[ $x < "a" ]]       # is $x alphabetically before "a"
-[[ $x -lt 9 ]]       # ist $x kleiner als 9?
-[[ $x -eq 11 ]]      # ist $x die Zahl 11?
-[[ -f $x ]]          # ist $x eine Datei?
+[[ $x = "hallo" ]]   # $x contains "hallo"?
+[[ $x =~ "^hallo" ]] # $x starts with "hallo"?
+[[ $x < "a" ]]       # is $x alphabetically before "a"?
+[[ $x -lt 9 ]]       # is $x less than 9?
+[[ $x -eq 11 ]]      # is $x the number 11?
+[[ -f $x ]]          # is $x a file?
 ```
 
 </div>
 <div>
 
-**alte Schreibweise**
+**Old style**
 ```bash
-[ "$x" = "hallo" ]  # $x enthält "hallo"?
-echo $x | grep -q "^hallo" # $x beginnt mit "hallo"?
-[ "$x" < "a" ]      # is $x alphabetically before "a"
-[ "$x" -lt 9 ]      # ist $x kleiner als 9?
-[ "$x" -eq 11 ]     # ist $x die Zahl 11?
-[ -f "$x" ]         # ist $x eine Datei?
+[ "$x" = "hallo" ]  # $x contains "hallo"?
+echo $x | grep -q "^hallo" # $x starts with "hallo"?
+[ "$x" < "a" ]      # is $x alphabetically before "a"?
+[ "$x" -lt 9 ]      # is $x less than 9?
+[ "$x" -eq 11 ]     # is $x the number 11?
+[ -f "$x" ]         # is $x a file?
 ```
 
 </div>
 </div>
 
 ---
-## Syntax 6: functions / subroutinen<!-- .element class="c-orange" -->
+## Syntax 6: Functions / Subroutines<!-- .element class="c-orange" -->
 
-Subroutinen können mit sog. functions erzeugt werden
+Subroutines can be created with so-called functions
 
 ```bash
 function name() {
@@ -253,7 +249,7 @@ function name() {
 name Bob
 ```
 
-Besonderheiten in Functions
+Special features in Functions
 
 ```bash
 function something() {
@@ -266,48 +262,41 @@ function something() {
 }
 ```
 
-Functions, die in mehreren Scripten gebraucht werden in Dateien `something.rc`
+Functions that are needed in several scripts are in files `something.rc`
 
-Im Script `source ./tools/something.rc` oder `. ./tools/something.rc`
+In the script use `source ./tools/something.rc` or `. ./tools/something.rc`
 
 ---
 
 ## Debugging<!-- .element class="c-purple" -->
 
-Kleine Helfer
+Small helpers
 
-- `set -n` lässt nichts ausführen, sondern prüft nur auf syntaktische Korrektheit
-- `set -x` zeige Kommando an, bevor es ausgeführt wird
-- schalte Anzeige wieder aus `set +x`
-- `set -e` exit wenn Kommando nicht statuscode 0 hat
-
----
-
-Die Aufgaben sind Alternativen
-
-## Aufgabe 1<!-- .element class="bg-blue c-green-light" -->
-
-Schreibt ein Script **`add_users.sh`**, das eine Reihe von Usernamen als Argumente übernimmt
-es soll alle user anlegen, sicherstellen, dass es ein Home-Verzeichnis gibt und
-ihnen ein Standard-Passwort vergeben (Trick: `echo "$DEFAULT_PW" | passwd --stdin`).
-- Erweitert das Skript, dass es sich beendet, wenn es nicht vom user `root` ausgeführt
-  wird
-- Erweitert das Skript, dass es am Ende alle User ausgibt, bei denen das Anlegen nicht
-  geklappt hat
-- Erweitert das Skript so, dass es einen Hilfe-Text ausgibt, wenn es als einzigen Parameter
-  `--help` oder `-h` übergeben bekommt
-- Überlegt, wie Ihr ein Skript schreiben könntet, das User anlegt, die Usernamen (und Email-Adressen?)
-  genriereren könnten (Username 'monika.mustermann' Email: 'monika.mustermann@somwhere.com')?
+- `set -n` don't execute anything, just check for syntactic correctness
+- `set -x` show command before it is executed
+- Turn off display again `set +x`
+- `set -e` exit when command doesn't have status code 0
 
 ---
 
-## Aufgabe 2<!-- .element class="bg-green-light c-blue" -->
-Schreibt ein Skript **`del.sh`**, das Dateien und Verzeichnisse löscht, aber statt sie zu löschen, soll
-es die Dateien oder Verzeichnisse in einen Ordner `$HOME/.trash/` bewegen
-- Schreibt ein Skript **`trash_bin.sh`**, die Euch die Größe Eures Trash-Ordners (in KB/MB/GB) anzeigt
-- Erweitert **`trash_bin.sh`** so, dass es bei dem Parameter `trash_bin.sh --clean-all` alle Dateien aus dem Trash Ordner löscht
-- Erweitert **`trash_bin.sh`** so, dass es bei dem Parameter `trash_bin.sh --clean +3` Dateien aus dem Trash Ordner
-  löscht, die älter als 3 Tage sind
-- Schreibt ein Skript **`undel.sh`**, dass eine Datei aus dem Ordner wiederherstellt. Der Ort der Wiederherstellung soll übergeben werden
-  `undel.sh somefile.txt restore_here/`
-- Überlegt, wie könntet Ihr das Skript `del.sh` so anpassen, dass eine Wiederherstellung an den Originalort möglich wird?
+The tasks are alternatives
+
+## Task 1<!-- .element class="bg-blue c-green-light" -->
+
+Write a script **`add_users.sh`** that accepts a series of usernames as arguments.
+It should create all users, ensure that there is a home directory, and assign them a default password (Trick: `echo "$DEFAULT_PW" | passwd --stdin`).
+- Extend the script so that it exits if not run by the user `root`
+- Extend the script so that at the end it outputs all users for whom creation didn't work
+- Extend the script so that it displays a help text when it receives `--help` or `-h` as the only parameter
+- Think about how you could write a script that creates users and could generate usernames (and email addresses?) (Username 'monika.mustermann' Email: 'monika.mustermann@somwhere.com')?
+
+---
+
+## Task 2<!-- .element class="bg-green-light c-blue" -->
+Write a script **`del.sh`**, that deletes files and directories, but instead of deleting them,
+it should move the files or directories to a folder named `$HOME/.trash/`
+- Write a script **`trash_bin.sh`** that displays the size of your Trash folder (in KB/MB/GB)
+- Extend **`trash_bin.sh`** so that, when run with the parameter `trash_bin.sh --clean-all`, it deletes all files from the Trash folder
+- Extend **`trash_bin.sh`** so that, when run with the parameter `trash_bin.sh --clean +3`, it deletes files from the Trash folder that are older than 3 days
+- Write a script **`undel.sh`** that restores a file from the folder. The restoration location should be specified `undel.sh somefile.txt restore_here/`
+- Think about how you could adapt the `del.sh` script to allow restoration to the original location.

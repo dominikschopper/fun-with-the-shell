@@ -1,8 +1,8 @@
 ### Regex Exercises
 
-#### Kommazahlen finden
+#### Find Decimal Numbers
 
-Finde in einer Eingabe alle amerikanischen Kommazahlen heraus. Beispiele, die gefunden werden sollen
+Find all American decimal numbers in an input. Examples that should be found
 
 ```plain
 123.5678
@@ -11,7 +11,7 @@ Finde in einer Eingabe alle amerikanischen Kommazahlen heraus. Beispiele, die ge
 .257
 ```
 
-es soll nicht gefunden werden
+Should not be found
 
 ```plain
 Hallo
